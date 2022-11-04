@@ -8,13 +8,21 @@
 		INSERT INTO TABLE_USER VALUES 
 		(SEQ_USER.NEXTVAL,#{user_name},#{user_email},#{user_pw},#{birth_year},0)
 	</insert>
-<!-- 로그인 -->
-	<select id="login" parameterType="userVO">
-		SELECT * FROM "user" WHERE user_name IN (#{user_name})
+<!-- 로그인 이름-->
+	<select id="loginName" parameterType="string" resultType="userVO">
+		SELECT * FROM TABLE_USER WHERE USER_NAME = #{user_name}
 	</select>
-<!-- 아이디 중복 확인 -->
-	<select id="checkId" parameterType="string" resultType="_int">
-		
+<!-- 로그인 이메일-->
+	<select id="loginEmail" parameterType="string" resultType="userVO">
+		SELECT * FROM TABLE_USER WHERE USER_EMAIL = #{user_email}
+	</select>
+<!-- 이메일 중복 확인 -->
+	<select id="emailCheck" parameterType="string" resultType="_int">
+		SELECT count(*) FROM TABLE_USER WHERE user_email IN (#{user_email})
+	</select>
+<!-- 이름 중복 확인 -->
+	<select id="nameCheck" parameterType="string" resultType="_int">
+		SELECT count(*) FROM TABLE_USER WHERE user_name IN (#{user_name})
 	</select>
 <!-- 아이디 찾기 -->
 	<select id="findId" parameterType="string" resultType="string">
@@ -24,4 +32,5 @@
 	<select id="findPw" parameterType="string" resultType="string">
 		
 	</select>
+	
 </mapper>

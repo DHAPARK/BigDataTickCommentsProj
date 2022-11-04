@@ -15,7 +15,6 @@ public class UserJoinOkAction implements Action {
 		ActionForward forward = new ActionForward();
 		UserDAO udao = new UserDAO();
 		UserVO uvo = new UserVO();
-		System.out.println("액션들어옴");
 		
 		uvo.setUser_name(req.getParameter("user_name"));
 		uvo.setUser_email(req.getParameter("user_email"));

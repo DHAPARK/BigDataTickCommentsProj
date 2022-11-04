@@ -4,7 +4,7 @@ public class ActionForward {
 	private boolean isRedirect;
 	private String path;
 	
-	public ActionForward() {};
+	public ActionForward(){};
 
 	public ActionForward(boolean isRedirect, String path) {
 		super();

@@ -309,7 +309,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body"> 
-          <form>
+          <form action="/user/UserLoginOk.us" method="post" id="loginForm">
             <div class="mb-3">
               <label for="loginId" class="col-form-label">간편 로그인</label>
               <!-- ################간편 로그인################### -->
@@ -319,12 +319,12 @@
             <!-- ---or--- 한줄 넣어야함-->
 
             <div class="mb-3">
-              <label for="loginId" class="col-form-label">아이디</label>
-              <input type="text" class="form-control" id="loginId">
+              <label for="loginId" class="col-form-label">이메일 또는 이름</label>
+              <input type="text" class="form-control" id="loginId" >
             </div>
             <div class="mb-3">
               <label for="loginPw" class="col-form-label">비밀번호</label>
-              <input type="password" class="form-control" id="loginPw">
+              <input type="password" class="form-control" id="loginPw" name="loginPw">
             </div>
           </form>
         </div>
@@ -332,7 +332,7 @@
           <!-- 비밀번호 찾기 -->
           <!-- <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#findPwModal" data-bs-dismiss="modal">비밀번호 찾기</button> -->
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
-          <button type="button" class="btn btn-primary">로그인</button>
+          <button type="button" class="btn btn-primary" onclick="login();">로그인</button>
         </div>
       </div>
     </div>
@@ -353,15 +353,18 @@
           <form action="/user/UserJoinOk.us" method="post" id="joinForm">
             <div class="mb-3">
               <label for="joinEmail" class="col-form-label">이메일</label>
-              <input type="text" class="form-control" id="joinEmail" name="user_email">
+              <input type="text" class="form-control" id="joinEmail" name="user_email" onkeyup="checkEmail();">
+              <p id="emailCheck"></p>
             </div>
             <div class="mb-3">
               <label for="joinPw" class="col-form-label">비밀번호</label>
-              <input type="password" class="form-control" id="joinPw" name="user_pw">
+              <input type="password" class="form-control" id="joinPw" name="user_pw" onkeyup="checkPw();">
+              <p id="pwCheck"></p>
             </div>
             <div class="mb-3">
               <label for="joinName" class="col-form-label">이름</label>
-              <input type="text" class="form-control" id="joinName" name="user_name">
+              <input type="text" class="form-control" id="joinName" name="user_name" onkeyup="checkName();">
+              <p id="nameCheck"></p>
             </div>
             <!-- <div class="mb-3">
               <label for="joinId" class="col-form-label"></label>
@@ -374,6 +377,7 @@
             <div class="mb-3">
               <label for="joinBirth" class="col-form-label">생년월일</label>
               <input type="date" class="form-control" id="joinBirth" name="birth_year">
+              <p id="birthCheck"></p>
             </div>
 	        <div class="modal-footer">
 	          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
@@ -424,15 +428,13 @@ $(document).ready(function () {
   $("#no-fouc").delay(250).animate({"opacity": "1"}, 250);
 });
 
-function join() {
-	alert("되라!")
-	$("#joinForm").submit();
-	alert("서브밋완료!")
-		
-}
+
 </script>
 <!-- 폰트 깜박임 방지 끝 -->
+<!-- 가입하기 유효성검사-->
+<script type="text/javascript" src="./assets/js/user.js">
 
+</script>
 <!-- 부트스트랩 -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 </body>

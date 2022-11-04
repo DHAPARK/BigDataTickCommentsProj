@@ -10,7 +10,7 @@ public class UserLoginAction implements Action{
 
 	@Override
 	public ActionForward execute(HttpServletRequest req, HttpServletResponse resp) {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 

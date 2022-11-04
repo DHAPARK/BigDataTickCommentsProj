@@ -11,8 +11,12 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.bigdata.action.ActionForward;
 import com.bigdata.user.controller.CheckUsernameOk;
+import com.bigdata.user.controller.UserJoinEmailOkAction;
+import com.bigdata.user.controller.UserJoinNameOkAction;
 import com.bigdata.user.controller.UserJoinOkAction;
+import com.bigdata.user.controller.UserLoginIdOkAction;
 import com.bigdata.user.controller.UserLoginOkAction;
+import com.bigdata.user.controller.UserLoginPwOkAction;
 import com.bigdata.user.controller.UserLogoutAction;
 
 @WebServlet("*.us")
@@ -37,9 +41,24 @@ public class UserFrontController extends HttpServlet{
 			try {forward = new CheckUsernameOk().execute(req, resp);} catch(Exception e) {System.out.println(e); System.out.println("/user/CheckUsernameOk.us에서 오류");}
 	    	break;
 		case "/user/UserJoinOk.us": 
-			System.out.println("가입 프론트컨트롤러들어옴");
 			try {forward = new UserJoinOkAction().execute(req, resp);} catch(Exception e) {System.out.println(e); System.out.println("/user/UserJoinOk.us에서 오류");}
 	    	break;
+		case "/user/UserJoinEmailOk.us": 
+			UserJoinEmailOkAction emailOkAction  = new UserJoinEmailOkAction();
+			emailOkAction.execute(req, resp);
+			break;
+		case "/user/UserJoinNameOk.us": 
+			UserJoinNameOkAction joinNameOkAction  = new UserJoinNameOkAction();
+			joinNameOkAction.execute(req, resp);
+			break;
+		case "/user/UserLoginIdOk.uss": 
+			UserLoginIdOkAction loginIdOkAction= new UserLoginIdOkAction();
+			loginIdOkAction.execute(req, resp);
+			break;
+		case "/user/UserLoginPwOk.us": 
+			UserLoginPwOkAction loginPwOkAction  = new UserLoginPwOkAction();
+			loginPwOkAction.execute(req, resp);
+			break;
 		case "/user/UserLogin.us":
 			forward = new ActionForward(false, "/index.jsp");
 			break;
@@ -61,4 +80,5 @@ public class UserFrontController extends HttpServlet{
 			}
 		}
 	}
+
 }

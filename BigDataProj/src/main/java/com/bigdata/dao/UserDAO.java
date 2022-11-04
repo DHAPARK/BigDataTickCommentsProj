@@ -1,5 +1,8 @@
 package com.bigdata.dao;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
@@ -17,16 +20,36 @@ public class UserDAO {
 	}
 //	회원가입
 	public boolean join(UserVO uvo) {
-		 System.out.println("다오들어옴");
 		boolean result = false;
 		if(sqlSession.insert("User.join",uvo) != 0) {
 			result = true;
 		}
 		return result;
 	}
+
+//  이메일 중복확인
+	public int emailCheck(String user_email) {
+		return sqlSession.selectOne("User.emailCheck",user_email);
+	}
+// 	이름 중복확인
+	public int nameCheck(String user_name) {
+		return sqlSession.selectOne("User.nameCheck",user_name);
+	}
 //	로그인
-	public UserVO login(String userid, String userpw) {
-		UserVO uvo = sqlSession.selectOne("User.login", userid);
+	public UserVO login(String user_name,String loginPw) {
+		UserVO uvo = new UserVO();
+		String pattern = "^[_a-z0-9-]+(.[_a-z0-9-]+)*@(?:\\w+\\.)+\\w+$";
+		Pattern p = Pattern.compile(pattern);
+		Matcher m = p.matcher(user_name);
+		if(m.matches()) {
+			String user_email = user_name;
+			 uvo = sqlSession.selectOne("User.loginEmail", user_email);
+			 System.out.println("이메일 입력");
+		}else {
+			 uvo = sqlSession.selectOne("User.loginName", user_name);
+			 System.out.println("이름 입력");
+		}
 		return uvo;
 	}
+
 }
