@@ -12,10 +12,7 @@ public class BoardListAction implements Action{
 	@Override
 	public ActionForward execute(HttpServletRequest req, HttpServletResponse resp) {
 		ActionForward forward = new ActionForward();
-		UserDAO udao = new UserDAO();
-		req.setAttribute("name",udao.name());
-		forward.setPath("/bigdata/boardlist.jsp");
-		forward.setRedirect(false);
+
 		return forward;
 	}
 

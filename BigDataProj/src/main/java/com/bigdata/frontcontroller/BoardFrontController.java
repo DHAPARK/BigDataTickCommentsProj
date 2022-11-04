@@ -16,7 +16,7 @@ import com.bigdata.user.controller.UserLoginOkAction;
 import com.bigdata.user.controller.UserLogoutAction;
 
 
-@WebServlet("*.bo")
+//@WebServlet("*.bo")
 public class BoardFrontController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

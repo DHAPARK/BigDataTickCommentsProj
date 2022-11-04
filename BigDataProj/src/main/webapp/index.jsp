@@ -350,18 +350,18 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body"> 
-          <form>
+          <form action="/user/UserJoinOk.us" method="post" id="joinForm">
             <div class="mb-3">
               <label for="joinEmail" class="col-form-label">이메일</label>
-              <input type="text" class="form-control" id="joinEmail">
+              <input type="text" class="form-control" id="joinEmail" name="user_email">
             </div>
             <div class="mb-3">
               <label for="joinPw" class="col-form-label">비밀번호</label>
-              <input type="password" class="form-control" id="joinPw">
+              <input type="password" class="form-control" id="joinPw" name="user_pw">
             </div>
             <div class="mb-3">
               <label for="joinName" class="col-form-label">이름</label>
-              <input type="text" class="form-control" id="joinName">
+              <input type="text" class="form-control" id="joinName" name="user_name">
             </div>
             <!-- <div class="mb-3">
               <label for="joinId" class="col-form-label"></label>
@@ -373,13 +373,13 @@
             </div> -->
             <div class="mb-3">
               <label for="joinBirth" class="col-form-label">생년월일</label>
-              <input type="date" class="form-control" id="joinBirth">
+              <input type="date" class="form-control" id="joinBirth" name="birth_year">
             </div>
+	        <div class="modal-footer">
+	          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+	          <button type="button" class="btn btn-primary" onclick="join();">회원가입</button>
+	        </div>
           </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
-          <button type="button" class="btn btn-primary">회원가입</button>
         </div>
       </div>
     </div>
@@ -423,6 +423,13 @@
 $(document).ready(function () {  
   $("#no-fouc").delay(250).animate({"opacity": "1"}, 250);
 });
+
+function join() {
+	alert("되라!")
+	$("#joinForm").submit();
+	alert("서브밋완료!")
+		
+}
 </script>
 <!-- 폰트 깜박임 방지 끝 -->
 
