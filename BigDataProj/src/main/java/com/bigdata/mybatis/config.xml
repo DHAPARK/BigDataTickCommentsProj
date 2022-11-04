@@ -4,9 +4,10 @@
  "https://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<typeAliases>
-		<typeAlias type="com.bigdata.dto.UserDTO" alias="userdto"/>
-		<typeAlias type="com.bigdata.dto.BoardDTO" alias="Boarddto"/>
-		<typeAlias type="com.bigdata.dto.ReplyDTO" alias="replydto"/>
+		<typeAlias type="com.bigdata.vo.UserVO" alias="userVO"/>
+		<typeAlias type="com.bigdata.vo.BoardVO" alias="boardVO"/>
+		<typeAlias type="com.bigdata.vo.ReplyVO" alias="replyVO"/>
+		<typeAlias type="com.bigdata.vo.FileVO" alias="fileVO"/>
 	</typeAliases>
 
 	<environments default="development">
@@ -16,8 +17,8 @@
 				<property name="driver"
 					value="oracle.jdbc.driver.OracleDriver" />
 				<property name="url"
-					value="jdbc:oracle:thin:@192.168.0.61:1524:xe" />
-				<property name="username" value="id" />
+					value="jdbc:oracle:thin:@localhost:1521:xe" />
+				<property name="username" value="dt" />
 				<property name="password" value="1234" />
 			</dataSource>
 		</environment>
@@ -27,6 +28,7 @@
 		<mapper resource="./com/bigdata/xml/user.xml" />
 		<mapper resource="./com/bigdata/xml/board.xml" />
 		<mapper resource="./com/bigdata/xml/reply.xml" />
+		<mapper resource="./com/bigdata/xml/file.xml" />
 	</mappers>
 </configuration>
  

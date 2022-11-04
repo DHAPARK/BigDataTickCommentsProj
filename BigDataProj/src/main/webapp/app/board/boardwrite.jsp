@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!doctype html>
 <!-- <html lang="en"> 폰트깜빡임 없애기 위해서 아래로 대체 -->
 <html lang="ko" id="no-fouc"></html>

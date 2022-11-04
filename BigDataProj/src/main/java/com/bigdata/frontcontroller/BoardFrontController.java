@@ -10,43 +10,53 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.bigdata.action.ActionForward;
-import com.bigdata.controller.BoardListAction;
+import com.bigdata.user.controller.CheckUsernameOk;
+import com.bigdata.user.controller.UserJoinOkAction;
+import com.bigdata.user.controller.UserLoginOkAction;
+import com.bigdata.user.controller.UserLogoutAction;
+
 
 @WebServlet("*.bo")
-public class BoardFrontController extends HttpServlet{
+public class BoardFrontController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		doprocess(req, resp);
 	}
-	
+
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		doprocess(req, resp);
 	}
-	
+
 	protected void doprocess(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String requestURI = req.getRequestURI();
 		ActionForward forward = null;
-		
-		
-		switch(requestURI) {
-			case "/bigdata/boardList.bo" :
-				forward = new BoardListAction().execute(req, resp);
-				break;
-			case "/bigdata/getBoard.bo" :
-				forward = new ActionForward(false,"/bigdata/boardview.jsp");
-				break;
 
-				
-		} 	
-		
+		switch (requestURI) {
+		case "/user/CheckUsernameOk.us": 
+			try {forward = new CheckUsernameOk().execute(req, resp);} catch(Exception e) {System.out.println(e); System.out.println("/user/CheckUsernameOk.us에서 오류");}
+	    	break;
+		case "/user/UserJoinOk.us": 
+			try {forward = new UserJoinOkAction().execute(req, resp);} catch(Exception e) {System.out.println(e); System.out.println("/user/UserJoinOk.us에서 오류");}
+	    	break;
+		case "/user/UserLogin.us":
+			forward = new ActionForward(false, "/index.jsp");
+			break;
+		case "/user/UserLoginOk.us":
+			try {forward = new UserLoginOkAction().execute(req, resp);} catch(Exception e) {System.out.println(e); System.out.println("/user/UserLoginOk.us에서 오류");}
+	    	break;
+		case "/user/UserLogout.us":
+			try {forward = new UserLogoutAction().execute(req, resp);} catch(Exception e) {System.out.println(e); System.out.println("/user/UserLogout.us에서 오류");}
+			break;
+		}
+
 //		전송방식
-		if(forward != null) {
-			if(forward.isRedirect()) {
+		if (forward != null) {
+			if (forward.isRedirect()) {
 				resp.sendRedirect(forward.getPath());
-			}else {
+			} else {
 				RequestDispatcher disp = req.getRequestDispatcher(forward.getPath());
-				disp.forward(req ,resp);
+				disp.forward(req, resp);
 			}
 		}
 	}
