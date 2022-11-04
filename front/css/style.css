@@ -1,0 +1,56 @@
+*{
+  font-family: 'Noto Sans KR', sans-serif;
+}
+/* ########### 여기서부터 
+    cloudChart & rankingDiv 스타일 ########### */
+
+    .style__List-sc-bte0qo-2 dlzZdX { font-size: 10px; font-family: "Noto Sans KR", sans-serif; line-height: normal; word-break: keep-all; 
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0); touch-action: manipulation; width: 30%; height: 36rem; overflow-y: scroll; }
+
+    .jHMAQF { height: 3.6rem; box-sizing: border-box; padding: 0.8rem 0.6rem 0.8rem 0rem; border-bottom: 0.1rem solid rgb(241, 241, 243); display: flex;
+      -webkit-box-align: center; align-items: center; -webkit-box-pack: justify; justify-content: space-between; }
+    
+    .jnpAn { white-space: nowrap; }
+
+    .iWxOhy { width: 4rem; display: inline-block; text-align: center; font-size: 1.3rem; color: rgb(84, 84, 86); cursor: default; }
+
+    .bFxVkK { width: 100%; margin-right: 0.8rem; white-space: nowrap; overflow-x: scroll; }
+
+    .bFxVkK * { color: rgb(84, 84, 86); }
+
+    .giyaCH { color: rgb(81, 169, 243); outline: none; cursor: pointer; display: inline-flex; -webkit-box-align: center; align-items: center; text-decoration: none; }
+
+    .lmTsWA { font-size: 0.8rem; color: rgb(174, 174, 176); }
+
+    .lmTsWA svg { width: 0.8rem !important; height: 0.8rem !important; }
+
+    .UkVPi { text-align: right; font-size: 0.8rem; color: rgb(81, 169, 243); cursor: default; }
+
+    .bUJbre { width: 4rem; display: inline-block; text-align: center; font-size: 1.0rem; color: rgb(84, 84, 86); cursor: default; }
+
+
+/* ########### cloudChart & rankingDiv 스타일 끝 ########### */
+
+/* navbarDropdownMenuLink를 폭 880px이하에서 안보이게 */
+@media screen and (max-width: 890px) {
+  #navbarDropdownMenuLink {
+    display: none;
+  }
+}
+
+li{
+  font-size: small;
+}
+
+.bg-dark{
+  background-color: #000000 !important;
+}
+
+a{
+  text-decoration: none;
+  color: #333333;
+}
+
+a::after{
+  color: #333333;
+}
