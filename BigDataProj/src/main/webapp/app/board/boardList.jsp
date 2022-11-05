@@ -39,7 +39,14 @@
   <!-- #################################################################################################################### -->
   <!-- 네비게이션 시작-->
   <nav class="navbar navbar-expand-md navbar-dark bg-dark px-2 border-bottom fixed-top" aria-label="Third navbar example">
-  	<jsp:include page="/fixed/nav.jsp"></jsp:include>
+  	<c:choose>
+      		<c:when test="${session_id==null }">
+        		 <jsp:include page="/fixed/nav.jsp"></jsp:include>
+      		</c:when>
+      		<c:otherwise>
+		         <jsp:include page="/fixed/nav_login.jsp"></jsp:include>
+      		</c:otherwise>
+      	</c:choose>
   </nav>
   <!-- 네비게이션 끝 -->
   <!-- #################################################################################################################### -->

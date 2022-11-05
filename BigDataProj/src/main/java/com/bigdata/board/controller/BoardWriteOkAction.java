@@ -9,19 +9,19 @@ import com.bigdata.action.ActionForward;
 import com.bigdata.dao.BoardDAO;
 import com.bigdata.vo.BoardVO;
 
-
 public class BoardWriteOkAction implements Action {
 
 	@Override
 	public ActionForward execute(HttpServletRequest req, HttpServletResponse response) throws Exception {
 		ActionForward forward = new ActionForward();
-		
+
 		BoardDAO bdao = new BoardDAO();
 		BoardVO bvo = new BoardVO();
 		
 		bvo.setBoard_title(req.getParameter("board_title"));
 		bvo.setBoard_content(req.getParameter("board_content"));
 		bvo.setUser_name(req.getParameter("user_name"));
+		
 		bdao.insertBoard(bvo);
 		
 		forward.setRedirect(true);

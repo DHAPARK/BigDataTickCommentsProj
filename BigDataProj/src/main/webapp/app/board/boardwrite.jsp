@@ -40,7 +40,7 @@
 	<c:if test="${session_id eq null}">
 		<script>
 			alert("로그인 후 이용하세요.");
-			location.replace("${pageContext.request.contextPath}/user/UserLogin.us");
+			location.replace("${pageContext.request.contextPath}/index.jsp");
 		</script>
 	</c:if>
 
@@ -74,6 +74,7 @@
             	</article>
 	            <article>
 	            	<input type="hidden" name="user_name" value="${session_id}">
+	            	<input type="hidden" name="age" value="${age}">
 	                <!-- 제목을 입력해주세요. -->
 	                <input id="board_title" name="board_title" type="text" class="form-control form-control-sm mb-3" placeholder="제목을 입력해주세요.">
 	            </article>

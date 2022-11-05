@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page session="true" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <!doctype html>
 <!-- <html lang="en"> 폰트깜빡임 없애기 위해서 아래로 대체 -->
 <html lang="ko" id="no-fouc">
@@ -24,16 +27,24 @@
 
   <!-- style.css -->
   <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/style.css">
-  
+
 </head>
 
 <body>
   <header>
   </header>
+  
   <!-- #################################################################################################################### -->
   <!-- 네비게이션 시작-->
   <nav class="navbar navbar-expand-md navbar-dark bg-dark px-2 border-bottom fixed-top" aria-label="Third navbar example">
-  	<jsp:include page="/fixed/nav.jsp"></jsp:include>
+  	<c:choose>
+      		<c:when test="${ empty userInfo }">
+        		 <jsp:include page="/fixed/nav.jsp"></jsp:include>
+      		</c:when>
+      		<c:otherwise>
+		         <jsp:include page="/fixed/nav_login.jsp"></jsp:include>
+      		</c:otherwise>
+      	</c:choose>
   </nav>
   <!-- 네비게이션 끝 -->
   <!-- #################################################################################################################### -->
