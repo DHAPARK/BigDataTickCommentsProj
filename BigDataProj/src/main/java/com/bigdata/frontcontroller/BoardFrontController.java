@@ -10,13 +10,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.bigdata.action.ActionForward;
+import com.bigdata.board.controller.BoardListAction;
+import com.bigdata.board.controller.BoardWriteOkAction;
 import com.bigdata.user.controller.CheckUsernameOk;
 import com.bigdata.user.controller.UserJoinOkAction;
 import com.bigdata.user.controller.UserLoginOkAction;
 import com.bigdata.user.controller.UserLogoutAction;
 
-
-//@WebServlet("*.bo")
 public class BoardFrontController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -32,21 +32,15 @@ public class BoardFrontController extends HttpServlet {
 		String requestURI = req.getRequestURI();
 		ActionForward forward = null;
 
-		switch (requestURI) {
-		case "/user/CheckUsernameOk.us": 
-			try {forward = new CheckUsernameOk().execute(req, resp);} catch(Exception e) {System.out.println(e); System.out.println("/user/CheckUsernameOk.us에서 오류");}
+		switch(requestURI) {
+		case "/board/BoardList.bo": 
+			try {forward = new BoardListAction().execute(req, resp);} catch(Exception e) {System.out.println(e); System.out.println("/board/BoardList.bo에서 오류");}
 	    	break;
-		case "/user/UserJoinOk.us": 
-			try {forward = new UserJoinOkAction().execute(req, resp);} catch(Exception e) {System.out.println(e); System.out.println("/user/UserJoinOk.us에서 오류");}
-	    	break;
-		case "/user/UserLogin.us":
-			forward = new ActionForward(false, "/index.jsp");
+		case "/board/BoardWrite.bo":
+			forward = new ActionForward(false, "/app/board/boardwrite.jsp");
 			break;
-		case "/user/UserLoginOk.us":
-			try {forward = new UserLoginOkAction().execute(req, resp);} catch(Exception e) {System.out.println(e); System.out.println("/user/UserLoginOk.us에서 오류");}
-	    	break;
-		case "/user/UserLogout.us":
-			try {forward = new UserLogoutAction().execute(req, resp);} catch(Exception e) {System.out.println(e); System.out.println("/user/UserLogout.us에서 오류");}
+		case "/board/BoardWriteOk.bo":
+			try {forward = new BoardWriteOkAction().execute(req, resp);} catch (Exception e) {System.out.println(e); System.out.println("/board/BoardWriteOk.bo에서 오류");}		
 			break;
 		}
 

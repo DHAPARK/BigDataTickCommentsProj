@@ -23,7 +23,7 @@
   <!-- 폰트링크 끝 -->
 
   <!-- style.css -->
-  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/style.css">
   
 </head>
 
@@ -256,7 +256,7 @@
         <!-- 검은 버튼 -->
         <button class="btn btn-dark">무료 가입하기</button>
         <!-- 흰색 버튼 -->
-        <button class="btn btn-outline-dark">문의하기</button>
+        <button class="btn btn-outline-dark" type="button" onclick="location.href='${pageContext.request.contextPath}/board/BoardList.bo'">게시판으로 이동</button>
       </article>
 
     </section>
@@ -319,7 +319,7 @@
             <!-- ---or--- 한줄 넣어야함-->
 
             <div class="mb-3">
-              <label for="loginId" class="col-form-label">이메일 또는 이름</label>
+              <label for="loginId" class="col-form-label">이메일 또는 사용자 이름</label>
               <input type="text" class="form-control" id="loginId" name="loginId" onkeyup="checkLoginId();">
               <p id="checkLoginId"></p>
             </div>
@@ -364,7 +364,7 @@
               <p id="pwCheck"></p>
             </div>
             <div class="mb-3">
-              <label for="joinName" class="col-form-label">이름</label>
+              <label for="joinName" class="col-form-label">사용자 이름</label>
               <input type="text" class="form-control" id="joinName" name="user_name" onkeyup="checkName();">
               <p id="nameCheck"></p>
             </div>

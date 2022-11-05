@@ -3,7 +3,7 @@ package com.bigdata.dao;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
-import com.bigdata.mybatis.SqlMapConfig;
+import com.bigdata.mybatis.config.SqlMapConfig;
 
 
 public class ReplyDAO {

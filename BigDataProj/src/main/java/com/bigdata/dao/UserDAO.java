@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
-import com.bigdata.mybatis.SqlMapConfig;
+import com.bigdata.mybatis.config.SqlMapConfig;
 import com.bigdata.vo.UserVO;
 
 

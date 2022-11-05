@@ -1,8 +1,8 @@
 package com.bigdata.vo;
 
 public class BoardVO {
-	private int board_no, user_no, likes;
-	private String user_name, board_select, board_title, board_content, board_date;
+	private int board_no, likes;
+	private String user_name, age_range, board_title, board_content, board_date;
 	
 	public BoardVO() {;}
 
@@ -12,14 +12,6 @@ public class BoardVO {
 
 	public void setBoard_no(int board_no) {
 		this.board_no = board_no;
-	}
-
-	public int getUser_no() {
-		return user_no;
-	}
-
-	public void setUser_no(int user_no) {
-		this.user_no = user_no;
 	}
 
 	public int getLikes() {
@@ -38,12 +30,12 @@ public class BoardVO {
 		this.user_name = user_name;
 	}
 
-	public String getBoard_select() {
-		return board_select;
+	public String getAge_range() {
+		return age_range;
 	}
 
-	public void setBoard_select(String board_select) {
-		this.board_select = board_select;
+	public void setAge_range(String age_range) {
+		this.age_range = age_range;
 	}
 
 	public String getBoard_title() {

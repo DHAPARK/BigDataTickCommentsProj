@@ -25,10 +25,10 @@
 	</environments>
 
 	<mappers>
-		<mapper resource="./com/bigdata/xml/user.xml" />
-		<mapper resource="./com/bigdata/xml/board.xml" />
-		<mapper resource="./com/bigdata/xml/reply.xml" />
-		<mapper resource="./com/bigdata/xml/file.xml" />
+		<mapper resource="./com/bigdata/mybatis/xml/user.xml" />
+		<mapper resource="./com/bigdata/mybatis/xml/board.xml" />
+		<mapper resource="./com/bigdata/mybatis/xml/reply.xml" />
+		<mapper resource="./com/bigdata/mybatis/xml/file.xml" />
 	</mappers>
 </configuration>
  
