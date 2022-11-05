@@ -320,7 +320,7 @@
 
             <div class="mb-3">
               <label for="loginId" class="col-form-label">이메일 또는 이름</label>
-              <input type="text" class="form-control" id="loginId" >
+              <input type="text" class="form-control" id="loginId" name="loginId">
             </div>
             <div class="mb-3">
               <label for="loginPw" class="col-form-label">비밀번호</label>

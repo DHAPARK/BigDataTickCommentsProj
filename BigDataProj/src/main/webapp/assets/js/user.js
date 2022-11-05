@@ -118,16 +118,13 @@ function checkName(){
 	
 
  // submit
- if(nameCheckOk){
-	if(emailCheckOk){
-		$("#joinForm").submit();
+ 	if(nameCheckOk){
+		if(emailCheckOk){
+			$("#joinForm").submit();
+		}
 	}
 }
-	
- 
- }
 
- 
 // 로그인
 
 	let loginId = $("input[name=loginId]")
@@ -137,7 +134,7 @@ function checkName(){
 	let loginPwCheck = false;
 	
 	
-//function login(e){
+function login(e){
 //	// 아이디 확인
 //	alert("아이디확인")
 //	let obj = "";
@@ -180,7 +177,7 @@ function checkName(){
 //	}
 //	if(loginIdCheck){
 //		if(loginPwCheck){
-//			$("#loginForm").submit();
+			$("#loginForm").submit();
 //		}
 //	}
-//}
+}
