@@ -37,9 +37,8 @@ public class BoardDAO {
 	//게시글 추가
 	public void insertBoard(BoardVO board) {
 		
-		board.setAge_range(  board.getAge_range() == null ? "임시" : board.getAge_range() );
-		
-		System.out.println(board.getAge_range());
+//		board.setAge_range(  board.getAge_range() == null ? "임시" : board.getAge_range() );	
+//		System.out.println(board.getAge_range());
 		
 		sqlsession.insert("Board.insertBoard", board);
 		

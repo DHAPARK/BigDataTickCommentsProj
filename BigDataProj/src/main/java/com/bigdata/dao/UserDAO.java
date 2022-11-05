@@ -44,9 +44,13 @@ public class UserDAO {
 		if(m.matches()) {
 			String user_email = user_name;
 			 uvo = sqlSession.selectOne("User.loginEmail", user_email);
+			 sqlSession.update("User.birthYearToAge", uvo);
+			 System.out.println("뭐나오려나.. " + uvo.getAge_range());
 			 System.out.println("이메일 입력");
 		}else {
 			 uvo = sqlSession.selectOne("User.loginName", user_name);
+			 sqlSession.update("User.birthYearToAge", uvo);
+			 System.out.println("뭐나오려나.. " + uvo.getAge_range());
 			 System.out.println("이름 입력");
 		}
 		return uvo;

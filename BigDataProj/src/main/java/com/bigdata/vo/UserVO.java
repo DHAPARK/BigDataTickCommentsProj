@@ -2,7 +2,7 @@ package com.bigdata.vo;
 
 public class UserVO {
 	
-	private int user_no, user_status;
+	private int user_no, age_range, user_status;
 	private String user_name, user_email, user_pw, birth_year;
 	
 	public UserVO() {;}
@@ -13,6 +13,14 @@ public class UserVO {
 
 	public void setUser_no(int user_no) {
 		this.user_no = user_no;
+	}
+
+	public int getAge_range() {
+		return age_range;
+	}
+
+	public void setAge_range(int age_range) {
+		this.age_range = age_range;
 	}
 
 	public int getUser_status() {

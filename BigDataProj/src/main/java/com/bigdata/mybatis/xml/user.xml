@@ -6,7 +6,7 @@
 <!-- 회원가입 -->
 	<insert id="join" parameterType="userVO" >
 		INSERT INTO TABLE_USER VALUES 
-		(SEQ_USER.NEXTVAL,#{user_name},#{user_email},#{user_pw},#{birth_year},0)
+		(SEQ_USER.NEXTVAL,#{user_name},#{user_email},#{user_pw},#{birth_year},0,0)
 	</insert>
 <!-- 로그인 이름-->
 	<select id="loginName" parameterType="string" resultType="userVO">
@@ -32,5 +32,13 @@
 	<select id="findPw" parameterType="string" resultType="string">
 		
 	</select>
+	
+	<!-- 생년월일 나이로 업데이트 -->
+	<update id="birthYearToAge" parameterType="userVO">
+		UPDATE TABLE_USER
+		SET 
+		AGE_RANGE = (SELECT TRUNC(MONTHS_BETWEEN(TRUNC(SYSDATE), TO_DATE(BIRTH_YEAR,'YYYY-MM-DD')) / 12) AS AGE FROM TABLE_USER WHERE USER_NAME = #{user_name})
+		WHERE USER_NAME = #{user_name}
+	</update>
 	
 </mapper>
