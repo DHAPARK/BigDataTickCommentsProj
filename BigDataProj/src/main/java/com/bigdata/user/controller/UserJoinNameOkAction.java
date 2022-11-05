@@ -13,7 +13,6 @@ public class UserJoinNameOkAction {
 	public void execute(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 		UserDAO duao = new UserDAO();
 		String user_name = req.getParameter("user_name");
-		
 		PrintWriter out = resp.getWriter();
 		out.print(duao.emailCheck(user_name));
 	}

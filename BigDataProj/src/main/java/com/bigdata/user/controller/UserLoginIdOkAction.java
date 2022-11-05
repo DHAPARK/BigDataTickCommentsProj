@@ -15,20 +15,20 @@ public class UserLoginIdOkAction {
 	public void execute(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 		UserDAO udao = new UserDAO();
 		String user_name = req.getParameter("loginId");
+		System.out.println(user_name);
 		String pattern = "^[_a-z0-9-]+(.[_a-z0-9-]+)*@(?:\\w+\\.)+\\w+$";
 		Pattern p = Pattern.compile(pattern);
 		Matcher m = p.matcher(user_name);
 		int check = 0;
 		if(m.matches()) {
 			String user_email = user_name;
-			check = udao.emailCheck(user_name);
-			 System.out.println("이메일 입력");
+			check = udao.emailCheck(user_email);
 		}else {
 			check= udao.nameCheck(user_name);
-			 System.out.println("이름 입력");
 		}
 		
 		PrintWriter out = resp.getWriter();
+		System.out.println("넘어가는 값: "+check);
 		out.print(check);
 	}
 }

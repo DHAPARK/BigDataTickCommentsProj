@@ -51,7 +51,7 @@ public class UserFrontController extends HttpServlet{
 			UserJoinNameOkAction joinNameOkAction  = new UserJoinNameOkAction();
 			joinNameOkAction.execute(req, resp);
 			break;
-		case "/user/UserLoginIdOk.uss": 
+		case "/user/UserLoginIdOk.us": 
 			UserLoginIdOkAction loginIdOkAction= new UserLoginIdOkAction();
 			loginIdOkAction.execute(req, resp);
 			break;

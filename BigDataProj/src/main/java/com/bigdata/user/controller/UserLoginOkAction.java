@@ -25,12 +25,10 @@ public class UserLoginOkAction implements Action {
 				req.setAttribute("user", uvo);
 				forward.setPath("/index.jsp");
 				forward.setRedirect(false);
-				System.out.println("로그인성공");
 			}
 		}else {
 			forward.setPath("/index.jsp");
 			forward.setRedirect(true);
-			System.out.println("로그인실패");
 		}
 		
 		return forward;
