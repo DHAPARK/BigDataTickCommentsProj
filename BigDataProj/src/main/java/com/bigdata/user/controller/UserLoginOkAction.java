@@ -25,13 +25,7 @@ public class UserLoginOkAction implements Action {
 			
 			uvo = udao.login(user_name,loginPw);
 			
-			System.out.println( "확인" + uvo.getUser_name() );
-			
 			if(uvo.getUser_pw().equals(loginPw)) {	
-				
-				//session.setAttribute("session_id", user_name);
-				//session.setAttribute("age", req.getParameter("age_range"));
-				//req.setAttribute("user", uvo);
 				
 				session.setAttribute( "userInfo" , uvo );
 				
