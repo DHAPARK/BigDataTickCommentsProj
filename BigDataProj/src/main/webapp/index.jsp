@@ -331,12 +331,12 @@
 
             <div class="mb-3">
               <label for="loginId" class="col-form-label">이메일 또는 사용자 이름</label>
-              <input type="text" class="form-control" id="loginId" name="loginId" onkeyup="checkLoginId();">
+              <input type="text" class="form-control" id="loginId" name="loginId" >
               <p id="checkLoginId"></p>
             </div>
             <div class="mb-3">
               <label for="loginPw" class="col-form-label">비밀번호</label>
-              <input type="password" class="form-control" id="loginPw" name="loginPw" onkeyup="checkLoginPw();">
+              <input type="password" class="form-control" id="loginPw" name="loginPw" >
            	  <p id="checkLoginPw"></p>
             </div>
           </form>

@@ -198,6 +198,7 @@ function checkLoginPw(){
 function login(e){
 //	
 // 아이디 입력
+/*
 	if(loginId.val() == ""){
 		$(loginId).val('');
 		$("#checkLoginId").css("color","red");
@@ -205,21 +206,27 @@ function login(e){
 		$(loginId).focus();
 		return false;
 	}
+*/
 	
 // 아이디 확인
+/*
 	if(!loginIdCheck){
 		$("#checkLoginId").html("입력하신 이메일이나 이름이 없습니다.");
 		$(loginId).focus();
 		return false;
 	}
+*/
 // 	비밀번호 입력
+/*
  	if(loginPw.val() == ""){
 		$("#checkLoginPw").css("color","red");
 		$("#checkLoginPw").html("비밀번호를 입력하세요.");
 		$(loginPw).focus();
 		return false;
 	}
+*/
 // 비밀번호는 6자이상
+/*
  	if(loginPw.val().length < 6 ){
 		$("#checkLoginPw").css("color","red");
 		$("#checkLoginPw").html("비밀번호는 6자리 이상 입력해주세요.");
@@ -228,8 +235,10 @@ function login(e){
 	}else if(loginPw.val().length > 6 ){
 		$("#checkLoginPw").html("");
 	}
+*/
 
-//	비밀번호 확인	
+//	비밀번호 확인
+/*
 	let obj2 = "";
 	let xhr2 = new XMLHttpRequest();
 	xhr2.open("GET","/user/UserLoginPwOk.us?loginPw="+loginPw.val()+"&loginId="+loginId.val(),true);
@@ -247,11 +256,11 @@ function login(e){
 			}
 		}
 	}
-	
+*/
 // 로그인하기
-	if(loginIdCheck){
-		if(loginPwCheck){
-			$("#loginForm").submit();
-		}
-	}
+	//if(loginIdCheck){
+	//	if(loginPwCheck){
+	$("#loginForm").submit();
+	//	}
+	//}
 }
