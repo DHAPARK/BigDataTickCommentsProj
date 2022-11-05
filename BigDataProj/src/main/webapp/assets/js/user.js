@@ -32,6 +32,7 @@ function checkEmail(){
 			}else if(obj != 0){
 				$("#emailCheck").css("color","red");
 				$("#emailCheck").html("중복된 이메일 입니다.");
+				emailCheckOk = false;
 				}	
 			}	
 		}
@@ -66,6 +67,7 @@ function checkName(){
 			}else if(obj != 0){
 				$("#nameCheck").css("color","red");
 				$("#nameCheck").html("중복된 이름 입니다.");
+				nameCheckOk = false;
 				}	
 			}
 		}
@@ -81,7 +83,7 @@ function checkName(){
 	}
 // 이메일중복 확인
 	if(!emailCheckOk){
-		$("#emailCheck").html("중복된 이메일 입니다.");
+		$("#emailCheck").html("이메일을 확인하세요.");
 		$(user_email).focus();
 		return false;
 	}
@@ -127,7 +129,9 @@ function checkName(){
 
  // submit
  	if(nameCheckOk){
+		alert(nameCheckOk)
 		if(emailCheckOk){
+			alert(emailCheckOk)
 			$("#joinForm").submit();
 		}
 	}
@@ -140,77 +144,77 @@ function checkName(){
 	
 	let loginIdCheck = false;
 	let loginPwCheck = false;
-function checkLoginId(){
-		// 아이디 확인
-	alert("아이디확인")
-	let obj = "";
-		let xhr = new XMLHttpRequest();
-		xhr.open("GET","/user/UserLoginIdOk.us?loginId="+loginId.val(),true);
-		xhr.send();
-		xhr.onreadystatechange = function(){
-		if(xhr.readyState == xhr.DONE && xhr.status == 200){
-			obj = xhr.responseText;
-			if(obj == 0){
-				$("#checkLoginId").css("color","red");
-				$("#checkLoginId").html("입력하신 이름이나 이메일이 없습니다.");
-				$(loginId).focus();
-				return false;
-			}else{
-				loginIdCheck = true;
-			}
-		}
-	}
-	alert("아이디확인끝")
-}
-function checkLoginPw(){
-		// 비밀번호 확인
-		let obj2 = "";
-		let xhr2 = new XMLHttpRequest();
-		xhr2.open("GET","/user/UserLoginPwOk.us?loginPw="+loginPw.val(),true);
-		xhr2.send();
-		xhr2.onreadystatechange = function(){
-		if(xhr2.readyState == xhr2.DONE && xhr2.status == 200){
-			obj2 = xhr2.responseText;
-			if(obj2 == 0){
-				$("#checkLoginPw").css("color","red");
-				$("#checkLoginPw").html("비밀번호가 일치하지 않습니다.");
-				$(loginPw).focus();
-				return false;
-			}else{
-				loginPwCheck = true;
-			}
-		}
-	}
-}
+//function checkLoginId(){
+//		// 아이디 확인
+//	let obj = "";
+//		let xhr = new XMLHttpRequest();
+//		xhr.open("GET","/user/UserLoginIdOk.us?loginId="+loginId.val(),true);
+//		xhr.send();
+//		xhr.onreadystatechange = function(){
+//		if(xhr.readyState == xhr.DONE && xhr.status == 200){
+//			obj = xhr.responseText;
+//			if(obj == 0){
+//				$("#checkLoginId").css("color","red");
+//				$("#checkLoginId").html("입력하신 이름이나 이메일이 없습니다.");
+//				$(loginId).focus();
+//				loginIdCheck = false;
+//			}else{
+//				loginIdCheck = true;
+//			}
+//		}
+//	}
+//}
+//function checkLoginPw(){
+//		// 비밀번호 확인
+//		let obj2 = "";
+//		let xhr2 = new XMLHttpRequest();
+//		xhr2.open("GET","/user/UserLoginPwOk.us?loginPw="+loginPw.val(),true);
+//		xhr2.send();
+//		xhr2.onreadystatechange = function(){
+//		if(xhr2.readyState == xhr2.DONE && xhr2.status == 200){
+//			obj2 = xhr2.responseText;
+//			if(obj2 == 0){
+//				$("#checkLoginPw").css("color","red");
+//				$("#checkLoginPw").html("비밀번호가 일치하지 않습니다.");
+//				$(loginPw).focus();
+//				loginPwCheck = false;
+//			}else{
+//				loginPwCheck = true;
+//			}
+//		}
+//	}
+//}
 	
 function login(e){
-	
-	 // 이메일 입력
-	if(loginId.val() == ""){
-		$(loginId).val('');
-		$("#checkLoginId").css("color","red");
-		$("#checkLoginId").html("이름이나 이메일을 입력하세요.");
-		$(loginId).focus();
-		return false;
-	}
-
-	 // 비밀번호 입력
- 	if(loginPw.val() == ""){
-		$("#checkLoginPw").css("color","red");
-		$("#checkLoginPw").html("비밀번호를 입력하세요.");
-		$(loginPw).focus();
-		return false;
-	}
-	 // 비밀번호는 6자이상
- 	if(loginPw.val().length < 6 ){
-		$("#checkLoginPw").css("color","red");
-		$("#checkLoginPw").html("비밀번호는 6자리 이상 입력해주세요.");
-		$(loginPw).focus();
-		return false;
-	}
-	if(loginIdCheck){
-		if(loginPwCheck){
+//	
+//	 // 이메일 입력
+//	if(loginId.val() == ""){
+//		$(loginId).val('');
+//		$("#checkLoginId").css("color","red");
+//		$("#checkLoginId").html("이름이나 이메일을 입력하세요.");
+//		$(loginId).focus();
+//		return false;
+//	}
+//
+//	 // 비밀번호 입력
+// 	if(loginPw.val() == ""){
+//		$("#checkLoginPw").css("color","red");
+//		$("#checkLoginPw").html("비밀번호를 입력하세요.");
+//		$(loginPw).focus();
+//		return false;
+//	}
+//	 // 비밀번호는 6자이상
+// 	if(loginPw.val().length < 6 ){
+//		$("#checkLoginPw").css("color","red");
+//		$("#checkLoginPw").html("비밀번호는 6자리 이상 입력해주세요.");
+//		$(loginPw).focus();
+//		return false;
+//	}
+//	if(loginIdCheck){
+//		if(loginPwCheck){
 			$("#loginForm").submit();
-		}
-	}
+//		}else{
+//			alert("로그인 실패");
+//		}
+//	}
 }

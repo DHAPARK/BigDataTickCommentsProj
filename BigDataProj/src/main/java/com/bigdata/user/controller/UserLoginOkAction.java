@@ -18,10 +18,17 @@ public class UserLoginOkAction implements Action {
 		String user_name = req.getParameter("loginId");
 		String loginPw = req.getParameter("loginPw");
 		uvo = udao.login(user_name,loginPw);
+		if(uvo.getUser_pw().equals(loginPw)) {
+			req.setAttribute("user", uvo);
+			forward.setPath("/index.jsp");
+			forward.setRedirect(false);
+			System.out.println("로그인성공");
+		}else {
+			forward.setPath("/index.jsp");
+			forward.setRedirect(true);
+			System.out.println("로그인실패");
+		}
 		
-		req.setAttribute("user", uvo);
-		forward.setPath("/index.jsp");
-		forward.setRedirect(true);
 		
 		return forward;
 	}
