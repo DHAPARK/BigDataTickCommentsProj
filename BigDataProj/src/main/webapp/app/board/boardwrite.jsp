@@ -114,8 +114,8 @@
                     <option value="5">50대</option>
                 </select>
                 	<div>
-	                    <button type="button" class="btn btn-dark btn-sm mb-3">등록</button>
                     	<button type="button" class="btn btn-outline-dark btn-sm mb-3">취소</button>
+	                    <button type="button" class="btn btn-dark btn-sm mb-3">등록</button>
                 	</div>
             </article>
 
