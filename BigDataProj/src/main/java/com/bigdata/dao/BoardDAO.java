@@ -16,7 +16,6 @@ public class BoardDAO {
 	
 	public BoardDAO() {
 		sqlsession = factory.openSession(true);
-		
 	}
 
 	public List<BoardVO> getBoardList(int startRow, int endRow) {
@@ -43,6 +42,9 @@ public class BoardDAO {
 		sqlsession.insert("Board.insertBoard", board);
 	}
 	
+	public BoardVO getDetail(int board_no) {
+		return sqlsession.selectOne("Board.getDetail", board_no);
+	}
 	
 
 }

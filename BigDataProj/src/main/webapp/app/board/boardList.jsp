@@ -90,7 +90,7 @@
                                 <c:forEach var="board" items="${boardList}">
                                     <tr align="center" valign="middle">
                                         <td height="24px">${board.board_no }</td>
-                                        <td><a href="${pageContext.request.contextPath}/app/board/boardView.jsp" style="color: #777777 !important">${board.board_title }</a></td>
+                                        <td><a href="${pageContext.request.contextPath}/board/BoardViewOk.bo?board_no=${board.board_no}" style="color: #777777 !important">${board.board_title }</a></td>
                                         <td>${board.user_name }</td>
                                         <td>${board.board_date }</td>
                                         <td>${board.likes }</td>

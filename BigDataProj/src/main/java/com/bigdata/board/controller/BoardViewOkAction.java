@@ -1,4 +1,4 @@
-package com.bigdata.frontcontroller;
+package com.bigdata.board.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -14,8 +14,13 @@ public class BoardViewOkAction implements Action {
 		ActionForward forward = new ActionForward();
 		BoardDAO bdao = new BoardDAO();
 		
-		req.setAttribute("board", bdao);
-		return null;
+		int board_no = Integer.parseInt(req.getParameter("board_no"));
+		
+		req.setAttribute("board", bdao.getDetail(board_no));
+		
+		forward.setRedirect(false);
+		forward.setPath("/app/board/boardView.jsp");
+		
+		return forward;
 	}
-
 }

@@ -26,7 +26,8 @@
 	</insert>
 	
 	<select id="getDetail" parameterType="_int" resultType="boardVO">
-		
+		SELECT 	BOARD_NO, USER_NAME, BOARD_TITLE, BOARD_CONTENT, BOARD_DATE, LIKES 
+		FROM 	TABLE_BOARD WHERE BOARD_NO = #{board_no}
 	</select>
 
 </mapper>

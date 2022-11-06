@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.bigdata.action.ActionForward;
 import com.bigdata.board.controller.BoardListAction;
+import com.bigdata.board.controller.BoardViewOkAction;
 import com.bigdata.board.controller.BoardWriteOkAction;
 import com.bigdata.user.controller.CheckUsernameOk;
 import com.bigdata.user.controller.UserJoinOkAction;
