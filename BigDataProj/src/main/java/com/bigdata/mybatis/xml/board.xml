@@ -29,5 +29,16 @@
 		SELECT 	BOARD_NO, USER_NAME, BOARD_TITLE, BOARD_CONTENT, BOARD_DATE, LIKES 
 		FROM 	TABLE_BOARD WHERE BOARD_NO = #{board_no}
 	</select>
+	
+	<update id="updateBoard" parameterType="boardVO">
+		UPDATE TABLE_BOARD
+		SET BOARD_TITLE = #{board_title}, BOARD_CONTENT = #{board_content}
+		WHERE BOARD_NO = #{board_no}
+	</update>
+	
+	<delete id="deletePost">
+		DELETE FROM TABLE_BOARD
+		WHERE BOARD_NO = ${board_no}
+	</delete>
 
 </mapper>

@@ -10,9 +10,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.bigdata.action.ActionForward;
+import com.bigdata.board.controller.BoardEditAction;
+import com.bigdata.board.controller.BoardEditOkAction;
 import com.bigdata.board.controller.BoardListAction;
 import com.bigdata.board.controller.BoardViewOkAction;
 import com.bigdata.board.controller.BoardWriteOkAction;
+import com.bigdata.board.controller.DeletePostOkAction;
 import com.bigdata.user.controller.CheckUsernameOk;
 import com.bigdata.user.controller.UserJoinOkAction;
 import com.bigdata.user.controller.UserLoginOkAction;
@@ -45,6 +48,15 @@ public class BoardFrontController extends HttpServlet {
 			break;
 		case "/board/BoardViewOk.bo":
 			try {forward = new BoardViewOkAction().execute(req, resp);} catch (Exception e) {System.out.println(e); System.out.println("/board/BoardViewOk.bo에서 오류");}		
+			break;
+		case "/board/BoardEdit.bo":
+			try {forward = new BoardEditAction().execute(req, resp);} catch (Exception e) {System.out.println(e); System.out.println("/board/BoardEdit.bo에서 오류");}		
+			break;
+		case "/board/BoardEditOk.bo":
+			try {forward = new BoardEditOkAction().execute(req, resp);} catch (Exception e) {System.out.println(e); System.out.println("/board/BoardEditOk.bo에서 오류");}		
+			break;
+		case "/board/DeletePostOk.bo":
+			try {forward = new DeletePostOkAction().execute(req, resp);} catch (Exception e) {System.out.println(e); System.out.println("/board/DeletePostOk.bo에서 오류");}		
 			break;
 		}
 

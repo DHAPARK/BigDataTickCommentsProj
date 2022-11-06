@@ -46,5 +46,11 @@ public class BoardDAO {
 		return sqlsession.selectOne("Board.getDetail", board_no);
 	}
 	
-
+	public void updateBoard(BoardVO board) {
+		sqlsession.update("Board.updateBoard", board);
+	}
+	
+	public void deletePost(int board_no) {
+		sqlsession.delete("Board.deletePost", board_no);
+	}
 }
