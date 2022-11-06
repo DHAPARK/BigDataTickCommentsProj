@@ -8,7 +8,7 @@
 </head>
 <body>
 	<div class="container-fluid">
-      <a class="navbar-brand" aria-current="page" href="#">Daunter</a>
+      <a class="navbar-brand" aria-current="page" href="${pageContext.request.contextPath}/index.jsp">Daunter</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>

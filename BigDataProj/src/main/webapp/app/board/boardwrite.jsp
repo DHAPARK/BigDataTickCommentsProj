@@ -10,10 +10,13 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Daunter</title>
+    <title>트롤링</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 
+	<!-- favicon -->
+  	<link rel="icon" href="${pageContext.request.contextPath}/assets/images/favicon.ico" type="image/x-icon">
+  	
     <!-- 스택 오버플로우 시작 -->
     <style type="text/css">
     #no-fouc { opacity: 0; }
@@ -102,6 +105,16 @@
 	<!-- #################################################################################################################### -->
 
 
+	<!-- #################################################################################################################### -->
+	  <!-- 로그인 모달창 시작 -->
+	  <jsp:include page="/app/user/login.jsp"></jsp:include>
+	  <!-- 로그인 모달창 끝 -->
+	
+	  <!-- 회원가입 모달창 시작 -->
+	  <jsp:include page="/app/user/join.jsp"></jsp:include>
+  	  <!-- 회원가입 모달창 끝 -->
+	<!-- #################################################################################################################### -->
+
 <script>
 	function sendForm(){
 		if(!$("input#board_title").val()){
@@ -143,6 +156,8 @@ $(document).ready(function () {
 </script>
 <!-- 폰트 깜박임 방지 끝 -->
 
+<!-- 가입하기 유효성검사-->
+<script type="text/javascript" src="${pageContext.request.contextPath}/assets/js/user.js"></script>
 <!-- 부트스트랩 -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>Ï
 </html>

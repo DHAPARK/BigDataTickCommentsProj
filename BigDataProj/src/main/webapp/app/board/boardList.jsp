@@ -6,7 +6,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Community</title>
+    <title>트롤링</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -14,6 +14,9 @@
   	<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/board.css" />
   	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
   	integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+	<!-- favicon -->
+  	<link rel="icon" href="${pageContext.request.contextPath}/assets/images/favicon.ico" type="image/x-icon">
 
   <!-- 스택 오버플로우 시작 -->
   <style type="text/css">
@@ -72,9 +75,7 @@
                 </div>
                 <!-- div_table 시작 -->
                 <div id="div_table">
-                    
-                    <!-- <caption style="text-align: left; margin-bottom: 3%;"></caption> -->
-
+                 
                     <table>
                         <thead>
                             <tr>
@@ -82,7 +83,7 @@
                                 <th class="th-title1">제목</th>
                                 <th class="th-writer1">작성자</th>
                                 <th class="th-date1">작성일</th>
-                                <th class="th-no1">추천수</th>
+                                <th class="th-no1">좋아요</th>
                             </tr>
                         </thead>
                         <c:choose>
@@ -132,10 +133,11 @@
                         </tr>
                     </table>
 
+                    
                     <div id="write_button_div">
-                        <%-- <a id="write" href="${pageContext.request.contextPath }/app/board/boardwrite.jsp" class="button">글쓰기</a> --%>
-                        <%-- <button class="btn btn-dark" type="button" onclick="location.href='${pageContext.request.contextPath}/app/board/boardwrite.jsp'" style="font-size:12px;">글쓰기</button> --%>
-                        <button class="btn btn-dark" type="button" onclick="location.href='${pageContext.request.contextPath}/board/BoardWrite.bo'" style="font-size:12px;">글쓰기</button>
+                    	<c:if test="${ not empty userInfo }">
+                        	<button class="btn btn-dark" type="button" onclick="location.href='${pageContext.request.contextPath}/board/BoardWrite.bo'" style="font-size:12px;">글쓰기</button>
+                        </c:if>
                     </div>
 
                 </div>
@@ -168,17 +170,19 @@
         </div>
         <!-- Wrapper 끝 -->
     </div>
-    
-	<!-- #################################################################################################################### -->
-  	<!-- footer 시작 -->
-  	<footer class="container-fluid bg-dark p-5" style="margin-top: auto;">
-    	<jsp:include page="/fixed/footer.jsp"></jsp:include>
-  	</footer>
-  	<!--footer 끝 -->
-	<!-- #################################################################################################################### -->
 
-</body>
-<script>
+	<!-- #################################################################################################################### -->
+	  <!-- 로그인 모달창 시작 -->
+	  <jsp:include page="/app/user/login.jsp"></jsp:include>
+	  <!-- 로그인 모달창 끝 -->
 	
-</script>
+	  <!-- 회원가입 모달창 시작 -->
+	  <jsp:include page="/app/user/join.jsp"></jsp:include>
+  	  <!-- 회원가입 모달창 끝 -->
+	<!-- #################################################################################################################### -->
+</body>
+<!-- 가입하기 유효성검사-->
+<script type="text/javascript" src="${pageContext.request.contextPath}/assets/js/user.js"></script>
+<!-- 부트스트랩 -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 </html>
