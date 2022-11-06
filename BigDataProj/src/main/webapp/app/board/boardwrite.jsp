@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page session="true" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <!doctype html>
@@ -37,7 +38,7 @@
 </head>
 
 <body>
-	<c:if test="${session_id eq null}">
+	<c:if test="${ empty userInfo }">
 		<script>
 			alert("로그인 후 이용하세요.");
 			location.replace("${pageContext.request.contextPath}/index.jsp");
@@ -47,7 +48,14 @@
   <!-- #################################################################################################################### -->
   <!-- 네비게이션 시작-->
   <nav class="navbar navbar-expand-md navbar-dark bg-dark px-2 border-bottom fixed-top" aria-label="Third navbar example">
-  	<jsp:include page="/fixed/nav.jsp"></jsp:include>
+  	<c:choose>
+      		<c:when test="${ empty userInfo }">
+        		 <jsp:include page="/fixed/nav.jsp"></jsp:include>
+      		</c:when>
+      		<c:otherwise>
+		         <jsp:include page="/fixed/nav_login.jsp"></jsp:include>
+      		</c:otherwise>
+      	</c:choose>
   </nav>
   <!-- 네비게이션 끝 -->
   <!-- #################################################################################################################### -->
@@ -73,8 +81,7 @@
                 	</div>
             	</article>
 	            <article>
-	            	<input type="hidden" name="user_name" value="${session_id}">
-	            	<input type="hidden" name="age" value="${age}">
+	            	<input type="hidden" name="user_name" value="${userInfo.user_name}">
 	                <!-- 제목을 입력해주세요. -->
 	                <input id="board_title" name="board_title" type="text" class="form-control form-control-sm mb-3" placeholder="제목을 입력해주세요.">
 	            </article>

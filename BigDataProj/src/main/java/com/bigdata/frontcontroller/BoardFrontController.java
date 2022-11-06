@@ -42,6 +42,9 @@ public class BoardFrontController extends HttpServlet {
 		case "/board/BoardWriteOk.bo":
 			try {forward = new BoardWriteOkAction().execute(req, resp);} catch (Exception e) {System.out.println(e); System.out.println("/board/BoardWriteOk.bo에서 오류");}		
 			break;
+		case "/board/BoardViewOk.bo":
+			try {forward = new BoardViewOkAction().execute(req, resp);} catch (Exception e) {System.out.println(e); System.out.println("/board/BoardViewOk.bo에서 오류");}		
+			break;
 		}
 
 //		전송방식

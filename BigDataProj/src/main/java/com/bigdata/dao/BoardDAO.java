@@ -41,7 +41,8 @@ public class BoardDAO {
 		System.out.println(board.getAge_range());
 		
 		sqlsession.insert("Board.insertBoard", board);
-		
 	}
+	
+	
 
 }

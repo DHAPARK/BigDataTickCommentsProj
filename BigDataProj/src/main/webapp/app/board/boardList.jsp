@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page session="true" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>  
 <!DOCTYPE HTML>
@@ -40,7 +41,7 @@
   <!-- 네비게이션 시작-->
   <nav class="navbar navbar-expand-md navbar-dark bg-dark px-2 border-bottom fixed-top" aria-label="Third navbar example">
   	<c:choose>
-      		<c:when test="${session_id==null }">
+      		<c:when test="${ empty userInfo }">
         		 <jsp:include page="/fixed/nav.jsp"></jsp:include>
       		</c:when>
       		<c:otherwise>

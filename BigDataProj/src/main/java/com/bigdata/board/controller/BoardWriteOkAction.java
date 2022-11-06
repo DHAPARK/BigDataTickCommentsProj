@@ -12,7 +12,10 @@ import com.bigdata.vo.BoardVO;
 public class BoardWriteOkAction implements Action {
 
 	@Override
-	public ActionForward execute(HttpServletRequest req, HttpServletResponse response) throws Exception {
+	public ActionForward execute(HttpServletRequest req, HttpServletResponse resp) throws Exception {
+		req.setCharacterEncoding("UTF-8");
+		resp.setCharacterEncoding("UTF-8");
+		
 		ActionForward forward = new ActionForward();
 
 		BoardDAO bdao = new BoardDAO();

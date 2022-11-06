@@ -25,5 +25,8 @@
 		VALUES(SEQ_BOARD.NEXTVAL, #{user_name}, #{age_range}, #{board_title}, #{board_content}, SYSDATE, 0)
 	</insert>
 	
+	<select id="getDetail" parameterType="_int" resultType="boardVO">
+		
+	</select>
 
 </mapper>
