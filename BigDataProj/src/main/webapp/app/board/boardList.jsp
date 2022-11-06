@@ -110,7 +110,7 @@
                         <tr align="center" valign="middle">
                             <td>
                                 <c:if test="${nowPage > 1}">
-                                    <a href="${pageContext.request.contextPath}/app/board/BoardList.bo?page=${nowPage-1}">[&lt;]</a>
+                                    <a href="${pageContext.request.contextPath}/board/BoardList.bo?page=${nowPage-1}">[&lt;]</a>
                                 </c:if>
                                 <c:forEach var="i" begin="${startPage}" end="${endPage}">
                                     <c:choose>
@@ -118,7 +118,7 @@
                                             <c:out value="[${i}]" />
                                         </c:when>
                                         <c:otherwise>
-                                            <a href="${pageContext.request.contextPath}/app/board/BoardList.bo?page=${i}">
+                                            <a href="${pageContext.request.contextPath}/board/BoardList.bo?page=${i}">
                                                 <c:out value="[${i}]" />
                                             </a>
                                         </c:otherwise>
@@ -126,7 +126,7 @@
                                 </c:forEach>
 
                                 <c:if test="${nowPage < totalPage}">
-                                    <a href="${pageContext.request.contextPath }/app/board/BoardList.bo?page=${nowPage + 1}">[&gt;]</a>
+                                    <a href="${pageContext.request.contextPath }/board/BoardList.bo?page=${nowPage + 1}">[&gt;]</a>
                                 </c:if>
                             </td>
                         </tr>
