@@ -30,8 +30,10 @@ public class CrawlAllUrlInPage {
 	 * 
 	 * CAUIP = CrawlAllUrlInPage WebDriver wd 같은경우는 Main에서 객체화를 시켜서 넘겨야할것같은데 사용할때마다
 	 * URL이 바뀌어들어가야하니
+	 * wd : 웹 드라이버 
+	 * age_range : 연령대
 	 */
-	public ArrayList<String> CAUIP(WebDriver wd) throws InterruptedException {
+	public ArrayList<String> CAUIP( WebDriver wd , String age_range ) throws InterruptedException {
 
 		SearchKeyWord sc = new SearchKeyWord();
 
@@ -41,13 +43,15 @@ public class CrawlAllUrlInPage {
 
 		ArrayList<String> allUrlList = new ArrayList<String>();
 
-		sc.searchEachAgeVideo("10대", wd);
+		Thread.sleep( Config.cf.SearchAfterWaitingSolveCaptha );
 		
-		Thread.sleep(10000);
+		try { sc.searchEachAgeVideo( age_range , wd ) ; } catch (Exception e) { System.out.println( "sc.searchEachAgeVideo( age_range , wd )에서 에러발생" ); }
+		
+		Thread.sleep( Config.cf.SearchAfterWaitingSolveCaptha );
 		
 		for ( int i = 0 ; i < 3 ; i++ ) {
 			
-			Thread.sleep(5000);
+			Thread.sleep( Config.cf.VideoURLScrollTimeTerm );
 			
 			try {
 				
@@ -58,8 +62,6 @@ public class CrawlAllUrlInPage {
 				System.out.println( e );
 				
 			}
-			
-			
 			
 			System.out.println("여기서죽나 ? ");
 			

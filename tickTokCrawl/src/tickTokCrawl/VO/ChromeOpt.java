@@ -39,7 +39,7 @@ public class ChromeOpt {
 
 		webDriver = new ChromeDriver(options);
 		
-		WebDriverWait webDriverWait = new  WebDriverWait(webDriver, Duration.ofMillis(1000000000) ) ;
+		WebDriverWait webDriverWait = new WebDriverWait(webDriver, Duration.ofMillis(1000000000) ) ;
 		
 		webDriver.get(url);
 		/*

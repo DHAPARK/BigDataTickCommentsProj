@@ -51,4 +51,39 @@ public class Config {
 	//10
 	public final String tickTok_Age_10_URL = "https://www.tiktok.com/search?q=10대&t=1667203627551" ;
 	
+	
+	public final int Age_10 = 10 ;
+	
+	public final int Age_20 = 20 ;
+	
+	public final int Age_30 = 30 ;
+	
+	public final int Age_40 = 40 ;
+	
+	public final int Age_50 = 50 ;
+	
+	//Get10SC , 20SC , 30Sc ... 등에 들어갈 10대 , 20대 , 30대 , 검색 키워드
+	public final String Age_10_Keyword = "10대" ;
+	
+	public final String Age_20_Keyword = "20대" ;
+	
+	public final String Age_30_Keyword = "30대" ;
+	
+	public final String Age_40_Keyword = "40대" ;
+	
+	public final String Age_50_Keyword = "50대" ;
+	
+	//각 크롬이 켜질때에 겹치지않고 안전하게 켜지게 텀을 두기위한 변수
+	//getTermBetweenEachChromeOpen_Time
+	public final int getTermBtnECO_Time = 10000 ;
+	
+	//영상 URL 크롤링시에 스크롤 아래로 계속 내리는 시간간격
+	public final int VideoURLScrollTimeTerm = 3000;
+	
+	//댓글 크롤링시에 스크롤 아래로 계속 내리는 시간간격
+	public final int CommentScrollTimeTerm = 3000;
+	
+	//10대 , 20대 등 키워드 검색후 캡차를 풀기까지 기다려주는 시간
+	public final int SearchAfterWaitingSolveCaptha = 10000;
+	
 }
