@@ -47,7 +47,8 @@
                     <div class="top">
                         <h3>제목 ${board.board_title }</h3>
                         <div class="name" style="font-size: 14px;">작성자 : ${board.user_name }</div>
-                        <div style="font-size: 14px;">${board.board_date }</div>
+                        <c:set var="date" value="${board.board_date }"/>
+                        <div style="font-size: 14px;">${fn:substring(date,0,16) }</div>
                         <div>
                             <ul style="display: flex; justify-content: flex-end; font-size: 10px;">
                             	<li><i class="bi bi-heart"></i></li>

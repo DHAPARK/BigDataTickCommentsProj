@@ -105,6 +105,16 @@
   	</footer>
   	<!--footer 끝 -->
 	<!-- #################################################################################################################### -->
+	
+	<!-- #################################################################################################################### -->
+	  <!-- 로그인 모달창 시작 -->
+	  <jsp:include page="/app/user/login.jsp"></jsp:include>
+	  <!-- 로그인 모달창 끝 -->
+	
+	  <!-- 회원가입 모달창 시작 -->
+	  <jsp:include page="/app/user/join.jsp"></jsp:include>
+  	  <!-- 회원가입 모달창 끝 -->
+	<!-- #################################################################################################################### -->
 
 <!-- 섬머노트 스크립트 시작 -->
 <script>
@@ -132,7 +142,4 @@ $(document).ready(function () {
 });
 </script>
 <!-- 폰트 깜박임 방지 끝 -->
-
-<!-- 부트스트랩 -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>Ï
 </html>
