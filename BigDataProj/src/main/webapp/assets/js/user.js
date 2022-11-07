@@ -9,6 +9,7 @@
 	
 	let nameCheckOk = false;
 //이메일 형식/중복 확인
+
 function checkEmail(){
 	if(user_email.val()==""){
 		$("#emailCheck").css("color","red");
