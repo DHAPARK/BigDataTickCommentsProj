@@ -7,7 +7,6 @@ import com.bigdata.action.Action;
 import com.bigdata.action.ActionForward;
 import com.bigdata.dao.BoardDAO;
 
-
 public class BoardListAction implements Action {
 
 	@Override
@@ -30,6 +29,16 @@ public class BoardListAction implements Action {
 		
 		endPage = endPage > totalPage? totalPage : endPage;
 		
+		
+//		List<BoardVO> boardList = dao.getBoardList(startRow, endRow);
+		
+//		String age_range = req.getParameter("age_range");
+//		
+//		if (age_range == null) {
+//			req.setAttribute("boardList", boardList);
+//		}else {
+//			req.setAttribute("boardList", dao.getAge_range(age_range));
+//		}
 		
 		req.setAttribute("totalCnt", totalCnt);
 		req.setAttribute("totalPage", totalPage);

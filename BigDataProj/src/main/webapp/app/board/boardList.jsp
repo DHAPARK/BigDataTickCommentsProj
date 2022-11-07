@@ -62,16 +62,18 @@
         <div id="wrapper">
             
             <h1 style="text-align: center;">커뮤니티 😎</h1>
-            <!-- inquiry_container 시작 -->
-            <div id="inquiry_container">
-                <!-- inquiry_menu 시작 -->
-                <div id="inquiry_menu">
+            <!-- com_container 시작 -->
+            <div id="com_container">
+                <!-- age_range 시작 -->
+                <div id="age_range">
+                	<%-- <a href="${pageContext.request.contextPath }/customerService/CS_BoardList.bo?CS_BOARD_SELECT=상품문의">상품문의</a> --%>
+
                     <a href="">10대</a>
                     <a href="">20대</a>
                     <a href="">30대</a>
                     <a href="">40대</a>
                     <a href="">50대</a>
-                    <!-- inquiry_menu 끝 -->
+                    <!-- age_range 끝 -->
                 </div>
                 <!-- div_table 시작 -->
                 <div id="div_table">
@@ -167,7 +169,7 @@
                 </div>
                 <!-- search_container 끝 -->
             </div>
-            <!-- inquiry_container 끝 -->
+            <!-- com_container 끝 -->
         </div>
         <!-- Wrapper 끝 -->
     </div>

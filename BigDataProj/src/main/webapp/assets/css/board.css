@@ -89,12 +89,12 @@ a {
 	font-size: 12px;
 }
 
-#inquiry_menu {
+#age_range {
 	text-align: center;
 	padding-bottom: inherit;
 }
 
-#inquiry_menu a {
+#age_range a {
 	color: #777777 !important
 }
 
@@ -103,11 +103,11 @@ a {
 	box-sizing: border-box;
 }
 
-#inquiry_menu a {
+#age_range a {
 	padding: 0 20px;
 }
 
-#inquiry_container {
+#com_container {
 	border-width: 1px !important;
 	border-color: transparent !important;
 	background-color: #fff !important;

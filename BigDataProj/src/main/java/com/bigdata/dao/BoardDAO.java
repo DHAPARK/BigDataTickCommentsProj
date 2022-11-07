@@ -17,6 +17,13 @@ public class BoardDAO {
 	public BoardDAO() {
 		sqlsession = factory.openSession(true);
 	}
+	
+	public List<BoardVO> getListByAgeRange(String age_range) {
+		HashMap<String, String> map = new HashMap<>();
+		map.put("age_range", age_range);
+		
+		return sqlsession.selectList("Board.getListByAgeRange", map);
+	}
 
 	public List<BoardVO> getBoardList(int startRow, int endRow) {
 		HashMap<String, Integer> pageMap = new HashMap<>();
