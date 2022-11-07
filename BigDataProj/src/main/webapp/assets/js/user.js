@@ -239,26 +239,26 @@ function login(e){
 
 //	비밀번호 확인
 
-//	let obj2 = "";
-//	let xhr2 = new XMLHttpRequest();
-//	xhr2.open("GET","/user/UserLoginPwOk.us?loginPw="+loginPw.val()+"&loginId="+loginId.val(),true);
-//	xhr2.send();
-//	xhr2.onreadystatechange = function(){
-//	if(xhr2.readyState == xhr2.DONE && xhr2.status == 200){
-//		obj2 = xhr2.responseText;
-//			if(obj2 == 0){
-//				$("#checkLoginPw").css("color","red");
-//				$("#checkLoginPw").html("아이디나 비밀번호를 잘못입력했습니다.");
-//				loginPwCheck = false;
-//			}else if(obj2 != 0){
-//				loginPwCheck = true;
-//			}
-//		}
-//	}
+	let obj2 = "";
+	let xhr2 = new XMLHttpRequest();
+	xhr2.open("GET","/user/UserLoginPwOk.us?loginPw="+loginPw.val()+"&loginId="+loginId.val(),true);
+	xhr2.send();
+	xhr2.onreadystatechange = function(){
+	if(xhr2.readyState == xhr2.DONE && xhr2.status == 200){
+		obj2 = xhr2.responseText;
+			if(obj2 == 0){
+				$("#checkLoginPw").css("color","red");
+				$("#checkLoginPw").html("아이디나 비밀번호를 잘못입력했습니다.");
+				return false;
+			}else if(obj2 != 0){
+				$("#loginForm").submit();
+			}
+		}
+	}
 //
 // 로그인하기
 //	if(loginPwCheck){
-		$("#loginForm").submit();
+//		$("#loginForm").submit();
 //	}else{
 //		alert("로그인실패")
 //	}
