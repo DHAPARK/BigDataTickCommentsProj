@@ -14,7 +14,7 @@ public class UserJoinNameOkAction {
 		UserDAO duao = new UserDAO();
 		String user_name = req.getParameter("user_name");
 		PrintWriter out = resp.getWriter();
-		out.print(duao.emailCheck(user_name));
+		out.print(duao.nameCheck(user_name));
 	}
 
 }

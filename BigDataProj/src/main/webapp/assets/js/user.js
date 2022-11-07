@@ -78,6 +78,7 @@ function checkName(){
 		}
 	}
 }
+
  function join(e){
  // 이메일 입력
 	if(user_email.val() == ""){
@@ -206,6 +207,8 @@ function login(e){
 		$("#checkLoginId").html("이름이나 이메일을 입력하세요.");
 		$(loginId).focus();
 		return false;
+	}else if(loginId.val() != ""){
+		$("#checkLoginId").html("");
 	}
 
 	
@@ -238,25 +241,44 @@ function login(e){
 	}
 */
 
-//	비밀번호 확인
-
-	let obj2 = "";
-	let xhr2 = new XMLHttpRequest();
-	xhr2.open("GET","/user/UserLoginPwOk.us?loginPw="+loginPw.val()+"&loginId="+loginId.val(),true);
-	xhr2.send();
-	xhr2.onreadystatechange = function(){
-	if(xhr2.readyState == xhr2.DONE && xhr2.status == 200){
-		obj2 = xhr2.responseText;
-			if(obj2 == 0){
-				$("#checkLoginPw").css("color","red");
-				$("#checkLoginPw").html("아이디나 비밀번호를 잘못입력했습니다.");
-				return false;
-			}else if(obj2 != 0){
-				$("#loginForm").submit();
+// 	아이디확인
+if(loginId.val()!=""){
+		let obj = "";
+		let xhr = new XMLHttpRequest();
+		xhr.open("GET","/user/UserLoginIdOk.us?loginId="+loginId.val(),true);
+		xhr.send();
+		xhr.onreadystatechange = function(){
+			if(xhr.readyState == xhr.DONE && xhr.status == 200){
+				obj = xhr.responseText;
+				if(obj == 0){
+					$("#checkLoginPw").css("color","red");
+					$("#checkLoginPw").html("아이디나 비밀번호를 잘못입력했습니다.");
+					return false;
+				}else if(loginPw.val()!=""){
+					let obj2 = "";
+					let xhr2 = new XMLHttpRequest();
+					xhr2.open("GET","/user/UserLoginPwOk.us?loginPw="+loginPw.val()+"&loginId="+loginId.val(),true);
+					xhr2.send();
+					xhr2.onreadystatechange = function(){
+					if(xhr2.readyState == xhr2.DONE && xhr2.status == 200){
+						obj2 = xhr2.responseText;
+							if(obj2 == 0){
+								$("#checkLoginPw").css("color","red");
+								$("#checkLoginPw").html("아이디나 비밀번호를 잘못입력했습니다.");
+								return false;
+							}else if(obj2 != 0){
+								$("#loginForm").submit();
+							}
+						}
+					}
+				}
 			}
 		}
 	}
-//
+//	비밀번호 확인
+
+
+
 // 로그인하기
 //	if(loginPwCheck){
 //		$("#loginForm").submit();
