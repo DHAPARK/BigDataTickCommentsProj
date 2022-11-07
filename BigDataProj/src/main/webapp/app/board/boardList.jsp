@@ -175,13 +175,14 @@
     </div>
 
 	<!-- #################################################################################################################### -->
-	  <!-- 로그인 모달창 시작 -->
-	  <jsp:include page="/app/user/login.jsp"></jsp:include>
-	  <!-- 로그인 모달창 끝 -->
-	
-	  <!-- 회원가입 모달창 시작 -->
-	  <jsp:include page="/app/user/join.jsp"></jsp:include>
-  	  <!-- 회원가입 모달창 끝 -->
+	  <!-- 로그인 & 회원가입 모달창 시작 -->
+	 <jsp:include page="/app/user/loginAndRegister.jsp"></jsp:include>
+	  <!-- 로그인 & 회원가입 모달창 끝 -->
 	<!-- #################################################################################################################### -->
+	
+	
 </body>
+<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+<!-- 가입하기 유효성검사-->
+<script type="text/javascript" src="${pageContext.request.contextPath}/assets/js/user.js"></script>
 </html>
