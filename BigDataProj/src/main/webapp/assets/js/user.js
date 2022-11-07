@@ -198,7 +198,7 @@ function checkLoginPw(){
 function login(e){
 //	
 // 아이디 입력
-/*
+
 	if(loginId.val() == ""){
 		$(loginId).val('');
 		$("#checkLoginId").css("color","red");
@@ -206,7 +206,7 @@ function login(e){
 		$(loginId).focus();
 		return false;
 	}
-*/
+
 	
 // 아이디 확인
 /*
@@ -217,14 +217,14 @@ function login(e){
 	}
 */
 // 	비밀번호 입력
-/*
+
  	if(loginPw.val() == ""){
 		$("#checkLoginPw").css("color","red");
 		$("#checkLoginPw").html("비밀번호를 입력하세요.");
 		$(loginPw).focus();
 		return false;
 	}
-*/
+
 // 비밀번호는 6자이상
 /*
  	if(loginPw.val().length < 6 ){
@@ -238,29 +238,28 @@ function login(e){
 */
 
 //	비밀번호 확인
-/*
-	let obj2 = "";
-	let xhr2 = new XMLHttpRequest();
-	xhr2.open("GET","/user/UserLoginPwOk.us?loginPw="+loginPw.val()+"&loginId="+loginId.val(),true);
-	xhr2.send();
-	xhr2.onreadystatechange = function(){
-	if(xhr2.readyState == xhr2.DONE && xhr2.status == 200){
-		obj2 = xhr2.responseText;
-			if(obj2 == 0){
-				$("#checkLoginPw").css("color","red");
-				$("#checkLoginPw").html("비밀번호가 일치하지 않습니다.");
-				$(loginPw).focus();
-				loginPwCheck = false;
-			}else if(obj2 != 0){
-				loginPwCheck = true;
-			}
-		}
-	}
-*/
+
+//	let obj2 = "";
+//	let xhr2 = new XMLHttpRequest();
+//	xhr2.open("GET","/user/UserLoginPwOk.us?loginPw="+loginPw.val()+"&loginId="+loginId.val(),true);
+//	xhr2.send();
+//	xhr2.onreadystatechange = function(){
+//	if(xhr2.readyState == xhr2.DONE && xhr2.status == 200){
+//		obj2 = xhr2.responseText;
+//			if(obj2 == 0){
+//				$("#checkLoginPw").css("color","red");
+//				$("#checkLoginPw").html("아이디나 비밀번호를 잘못입력했습니다.");
+//				loginPwCheck = false;
+//			}else if(obj2 != 0){
+//				loginPwCheck = true;
+//			}
+//		}
+//	}
+//
 // 로그인하기
-	//if(loginIdCheck){
-	//	if(loginPwCheck){
-	$("#loginForm").submit();
-	//	}
-	//}
+//	if(loginPwCheck){
+		$("#loginForm").submit();
+//	}else{
+//		alert("로그인실패")
+//	}
 }

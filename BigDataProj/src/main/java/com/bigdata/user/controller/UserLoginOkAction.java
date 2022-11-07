@@ -31,8 +31,11 @@ public class UserLoginOkAction implements Action {
 				
 				forward.setPath("/index.jsp");
 				forward.setRedirect(false);
+			}else {
+				forward.setPath("/index.jsp");
+				forward.setRedirect(true);
 			}
-		}else {
+		}else if(udao.login(user_name,loginPw) == null){
 			forward.setPath("/index.jsp");
 			forward.setRedirect(true);
 		}

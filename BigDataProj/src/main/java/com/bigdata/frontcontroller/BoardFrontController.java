@@ -16,7 +16,6 @@ import com.bigdata.board.controller.BoardListAction;
 import com.bigdata.board.controller.BoardViewOkAction;
 import com.bigdata.board.controller.BoardWriteOkAction;
 import com.bigdata.board.controller.DeletePostOkAction;
-import com.bigdata.user.controller.CheckUsernameOk;
 import com.bigdata.user.controller.UserJoinOkAction;
 import com.bigdata.user.controller.UserLoginOkAction;
 import com.bigdata.user.controller.UserLogoutAction;

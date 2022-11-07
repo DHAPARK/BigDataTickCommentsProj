@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.bigdata.action.ActionForward;
-import com.bigdata.user.controller.CheckUsernameOk;
 import com.bigdata.user.controller.UserJoinEmailOkAction;
 import com.bigdata.user.controller.UserJoinNameOkAction;
 import com.bigdata.user.controller.UserJoinOkAction;
@@ -37,9 +36,6 @@ public class UserFrontController extends HttpServlet{
 		
 		
 		switch (requestURI) {
-		case "/user/CheckUsernameOk.us": 
-			try {forward = new CheckUsernameOk().execute(req, resp);} catch(Exception e) {System.out.println(e); System.out.println("/user/CheckUsernameOk.us에서 오류");}
-	    	break;
 		case "/user/UserJoinOk.us": 
 			try {forward = new UserJoinOkAction().execute(req, resp);} catch(Exception e) {System.out.println(e); System.out.println("/user/UserJoinOk.us에서 오류");}
 	    	break;
