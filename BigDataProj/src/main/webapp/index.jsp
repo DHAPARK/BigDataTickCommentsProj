@@ -9,9 +9,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Daunter</title>
+  <title>트롤링</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
   integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+  <!-- favicon -->
+  <link rel="icon" href="${pageContext.request.contextPath}/assets/images/favicon.ico" type="image/x-icon">
 
   <!-- 스택 오버플로우 시작 -->
   <style type="text/css">
@@ -53,8 +56,10 @@
   <section class="container-fluid bg-dark p-5">
 
     <header class="py-5 text-white">
-      <h1 class="text-center">세대별 키워드 데이터 분석 툴<br></h1>
-      <h1 class="text-center"><strong>Daunter</strong></h1>
+      <!-- <h1 class="text-center">세대별 키워드 데이터 분석 툴<br></h1>
+      <h1 class="text-center"><strong>Daunter</strong></h1> -->
+      <h1 class="text-center">세대별 트렌드를 긁어오는</h1>
+      <h1 class="text-center">트렌디한 keyword 분석 툴, <strong>트롤링</strong></h1>
     </header> 
     <!-- 공백용 임시 시작-->
     <!-- <div class="py-5 d-none d-lg-block"></div> -->
@@ -259,7 +264,7 @@
       </header>
       
       <article class="pb-3">
-        <h2 class="fw-bolder mb-3">지금 다운터에 가입하세요.</h2>
+        <h2 class="fw-bolder mb-3">지금 다헌터에 가입하세요.</h2>
         <h5>10초 회원가입 후 99,392명이 사용 중인 다운터의 다양한 서비스들을 경험해보세요.</h5>
       </article>
 
@@ -306,7 +311,7 @@
   	</footer>
   	<!--footer 끝 -->
 	<!-- #################################################################################################################### -->
-
+	
 <!-- #################################################################################################################### -->
   <!-- 로그인 모달창 시작 -->
   <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
@@ -445,9 +450,7 @@ $(document).ready(function () {
 </script>
 <!-- 폰트 깜박임 방지 끝 -->
 <!-- 가입하기 유효성검사-->
-<script type="text/javascript" src="./assets/js/user.js">
-
-</script>
+<script type="text/javascript" src="./assets/js/user.js"></script>
 <!-- 부트스트랩 -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 </body>

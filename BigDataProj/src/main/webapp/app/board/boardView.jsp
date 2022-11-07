@@ -7,11 +7,13 @@
 <html>
 
 <head>
-    <title></title>
+    <title>트롤링</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/boardView.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
+    <!-- favicon -->
+  	<link rel="icon" href="${pageContext.request.contextPath}/assets/images/favicon.ico" type="image/x-icon">
 </head>
 <style>
     img { width: 240px; border-radius: 0.5em; }

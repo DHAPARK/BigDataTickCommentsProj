@@ -8,6 +8,10 @@ a {
 #write_button_div{
 	width: auto;
 	height: 40px;
+	display: flex !important;
+    flex-wrap: wrap !important;
+    align-content: center !important;
+    justify-content: flex-end !important;
 }
 
 #div_table  {
@@ -120,7 +124,7 @@ a {
 /* Wrapper */
 
 #wrapper > * {
-	padding: 5em 0 1em 0 ;
+	padding: 4em 0 1em 0 ;
 	overflow: hidden;
 }
 
