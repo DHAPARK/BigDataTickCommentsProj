@@ -8,7 +8,7 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
 
-@WebFilter("*.us")
+@WebFilter("*")
 public class CharacterEncodingFilter implements  javax.servlet.Filter{
 
 	@Override
@@ -19,6 +19,8 @@ public class CharacterEncodingFilter implements  javax.servlet.Filter{
 		arg1.setContentType("text/html ; charset = UTF-8");
 		arg0.setCharacterEncoding("UTF-8");
 		
+		System.out.println("필터 전");
 		arg2.doFilter(arg0, arg1);
+		System.out.println("필터 후");
 	}
 }

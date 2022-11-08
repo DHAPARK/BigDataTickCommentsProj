@@ -21,6 +21,9 @@ public class ReplyUpdateOkAction implements Action{
 		rvo.setReply_content(req.getParameter("update_content"+reply_no));
 		rvo.setReply_no(Integer.parseInt(req.getParameter("reply_no")));
 	
+		
+		System.out.println("댓글입력" + req.getParameter("update_content"+reply_no));
+		
 		if(rdao.updateReply(rvo) ==1 ) {
 			forward.setRedirect(true);
 			forward.setPath(req.getContextPath()+"/board/BoardViewOk.bo?board_no="+board_no);

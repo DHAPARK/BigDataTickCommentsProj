@@ -19,13 +19,13 @@ public class ReplyInsertOkAction implements Action{
 		System.out.println("액션 넘어옴");
 		
 		int board_no = Integer.parseInt(req.getParameter("board_no"));
-		System.out.println(board_no);
-		System.out.println(req.getParameter("user_no"));
-		System.out.println(req.getParameter("reply_content"));
 		
 		rvo.setUser_no(Integer.parseInt(req.getParameter("user_no")));
 		rvo.setBoard_no(Integer.parseInt(req.getParameter("board_no")));
 		rvo.setReply_content(req.getParameter("reply_content"));
+		
+		System.out.println(req.getParameter("reply_content"));
+		
 		
 		if(rdao.insertReply(rvo) == 1) {
 			forward.setPath(req.getContextPath()+"/board/BoardViewOk.bo?board_no="+board_no);

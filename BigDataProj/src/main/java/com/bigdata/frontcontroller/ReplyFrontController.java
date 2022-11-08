@@ -40,7 +40,6 @@ public class ReplyFrontController extends HttpServlet{
 			break;
 		case "/board/updateReply.rp" : 
 			try {forward = new ReplyUpdateOkAction().execute(req, resp);} catch(Exception e) {System.out.println(e); System.out.println("/board/updateReply.rp에서 오류");}
-			System.out.println("수정액션");
 			break;
 	
 		}

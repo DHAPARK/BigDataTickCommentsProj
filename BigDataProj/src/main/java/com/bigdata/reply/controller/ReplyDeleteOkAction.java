@@ -14,7 +14,6 @@ public class ReplyDeleteOkAction implements Action{
 	public ActionForward execute(HttpServletRequest req, HttpServletResponse resp) throws Exception {
 		ActionForward forward = new  ActionForward();
 		ReplyDAO rdao = new ReplyDAO();
-		System.out.println("다오");
 		int reply_no = Integer.parseInt(req.getParameter("reply_no"));
 		int board_no = Integer.parseInt(req.getParameter("board_no"));
 		
