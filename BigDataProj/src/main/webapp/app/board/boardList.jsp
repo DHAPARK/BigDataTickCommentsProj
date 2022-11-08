@@ -40,7 +40,12 @@
 	<c:set var="nowPage" value="${requestScope.nowPage }"/>
 	<c:set var="startPage" value="${requestScope.startPage }"/>
 	<c:set var="endPage" value="${requestScope.endPage }"/>
-	
+	<c:if test="${ empty userInfo }">
+		<script>
+			alert("로그인 후 이용하세요.");
+			location.replace("${pageContext.request.contextPath}/index.jsp");
+		</script>
+	</c:if>
   <!-- #################################################################################################################### -->
   <!-- 네비게이션 시작-->
   <nav class="navbar navbar-expand-md navbar-dark bg-dark px-2 border-bottom fixed-top" aria-label="Third navbar example">
