@@ -17,8 +17,10 @@ public class GetTestAction implements Action{
 		ActionForward forward = new ActionForward();
 		ChartDAO cdao = new ChartDAO();
 		
+		System.out.println("들어오긴 하는건지..");
+		
 		ArrayList<TestDTO> cnt = (ArrayList<TestDTO>) cdao.getTestList();
-
+		
 		req.setAttribute("testList", cnt);
 		
 		forward.setRedirect(false);
