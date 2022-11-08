@@ -20,7 +20,7 @@ public class ChartListAction {
 		
 		ChartDAO cdao = new ChartDAO();
 		
-		ArrayList<ChartDTO> count = cdao.getChartList();
+		ArrayList<ChartDTO> count = (ArrayList<ChartDTO>) cdao.getChartList();
 		
 		System.out.println(count);
 		

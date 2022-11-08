@@ -2,6 +2,7 @@ package com.koreait.chart;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -13,6 +14,8 @@ import javax.servlet.http.HttpServletResponse;
 import org.json.simple.JSONObject;
 
 import com.koreait.action.ActionForward;
+import com.koreait.chart.dao.ChartDAO;
+import com.koreait.chart.dao.TestDTO;
 
 @WebServlet("*.ch")
 public class ChartFrontController extends HttpServlet{
@@ -46,7 +49,25 @@ public class ChartFrontController extends HttpServlet{
 				break;
 				
 			case "/bubble_chart/bubble_test.ch":
-				forward = new GetTestAction().execute(req, resp);
+				System.out.println("들어오긴하는건지");
+				ChartDAO cdao = new ChartDAO();
+				
+				System.out.println("들어오긴 하는건지..");
+				
+				ArrayList<TestDTO> cnt = (ArrayList<TestDTO>) cdao.getTestList();
+				
+				String result = "";
+				
+				for ( TestDTO item : cnt ) {
+					
+					result += item.getCmc() + " : " ;
+					result += item.getCnt() + "\n" ;
+					
+				}
+				
+				
+				PrintWriter out = resp.getWriter() ;
+				out.print( result );
 				break;
 				
 				
@@ -63,13 +84,6 @@ public class ChartFrontController extends HttpServlet{
 				disp.forward(req, resp);
 			}
 		}
-		
-		
-	
-		
-		
-		
-		
 		
 	}
 	

@@ -7,14 +7,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>버블.jsp인가</title>
 	<script src="https://code.highcharts.com/highcharts.js"></script>
 	<script src="https://code.highcharts.com/highcharts-more.js"></script>
 	<script src="https://code.highcharts.com/modules/exporting.js"></script>
 	<script src="https://code.highcharts.com/modules/accessibility.js"></script>
 </head>
 <body>
-	
+	<p>bubble.jsp 제대로 들어왔나요 ? </p>
 <c:set var="cnt" value="${requestScope.cnt }" />	
 	${cnt}
 	
@@ -38,9 +38,22 @@
 			xhr.onreadystatechange = function() {
 				if (xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200) {
 					obj = JSON.parse(xhr.responseText);
+					
+					
+					console.log( obj ) ;
+					
+					
+					setTimeout(()=>{
+
+						
+						
+					},31000);
+					
+					
+					
 					// alert(obj)
-					for (let i = 0; i < obj.search_word2.length; i++) {
-						value[i] = obj.search_word2[i].comments;
+					//for (let i = 0; i < obj.search_word2.length; i++) {
+					//	value[i] = obj.search_word2[i].comments;
 						// alert(value[i])
 						
 // 		 	let obj2 = "";
@@ -100,7 +113,7 @@
 		    name: '10대',
 		    data: [ {
 		      name: value[0],
-		      value: ${cnt}
+		      value: 10
 		    },
 		    {
 		        name: value[1],
