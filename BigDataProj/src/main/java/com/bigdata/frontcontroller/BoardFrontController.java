@@ -28,6 +28,9 @@ public class BoardFrontController extends HttpServlet {
 	}
 
 	protected void doprocess(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		req.setCharacterEncoding("UTF-8");
+		resp.setCharacterEncoding("UTF-8");
+		
 		String requestURI = req.getRequestURI();
 		ActionForward forward = null;
 

@@ -12,6 +12,7 @@ public class ReplyUpdateOkAction implements Action{
 
 	@Override
 	public ActionForward execute(HttpServletRequest req, HttpServletResponse resp) throws Exception {
+		
 		ActionForward forward = new ActionForward();
 		ReplyDAO rdao = new ReplyDAO();
 		ReplyVO rvo = new ReplyVO();

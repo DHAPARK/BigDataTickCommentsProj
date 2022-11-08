@@ -107,8 +107,8 @@
                     <h3>Comment</h3>
                 </header>
 	            <form method="post" action="/board/addReply.rp" class="combined"  id="replyForm" style="width: auto;">
-	            	<input name="board_no" value="${board.board_no}">
-	            	<input name="user_no" value="${userInfo.user_no}">
+	            	<input name="board_no" value="${board.board_no}" type="hidden">
+	            	<input name="user_no" value="${userInfo.user_no}" type="hidden">
 	            	<textarea name="reply_content" id="content" placeholder="비속어를 사용하지 말아주세요." class="invert" rows="5"
 	                style="border-radius: 0; resize: none; font-size: 12px !important; float: left; width: 90% !important;"></textarea>
 	                <input id="register" type="button" class="primary" value="add" style="font-size: 12px !important;" onclick="addReply()">
@@ -118,8 +118,8 @@
 						<c:when test="${!empty replylist}">
 							<c:forEach items="${replylist}" var="reply">
 	<!-- 							<form method="post" id="updateReplyForm"> -->
-									<input name="board_no" value="${board.board_no}" type="">
-		            				<input name="user_no" value="${userInfo.user_no}">
+									<input name="board_no" value="${board.board_no}" type="hidden">
+		            				<input name="user_no" value="${userInfo.user_no}" type="hidden">
 									<table>
 										<tr>
 											<td style="padding-left: 10px;"> 

@@ -13,8 +13,6 @@ public class BoardWriteOkAction implements Action {
 
 	@Override
 	public ActionForward execute(HttpServletRequest req, HttpServletResponse resp) throws Exception {
-		req.setCharacterEncoding("UTF-8");
-		resp.setCharacterEncoding("UTF-8");
 		
 		ActionForward forward = new ActionForward();
 
@@ -29,7 +27,7 @@ public class BoardWriteOkAction implements Action {
 		bdao.insertBoard(bvo);
 		
 		forward.setRedirect(true);
-		forward.setPath(req.getContextPath() + "/board/BoardList.bo");
+		forward.setPath(req.getContextPath() + "/board/BoardList.bo?ageRange=" + req.getParameter("age_range"));
 		
 		return forward;
 	}
