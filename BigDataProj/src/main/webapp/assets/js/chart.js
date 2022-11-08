@@ -6,17 +6,21 @@ const ctx = document.getElementById('myChart').getContext('2d');
 const myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple','Orange','Gray','Pink','Silver','Gold' ],
             datasets: [{
                 label: '# of Votes',
-                data: [12, 19, 3, 5, 2, 3],
+                data: [12, 19, 3, 5, 2, 3, 4, 7, 6, 10],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)',
                     'rgba(255, 206, 86, 0.2)',
                     'rgba(75, 192, 192, 0.2)',
                     'rgba(153, 102, 255, 0.2)',
-                    'rgba(255, 159, 64, 0.2)'
+                    'rgba(255, 159, 64, 0.2)',
+                    'rgba(220, 220, 220, 0.2)',
+                    'rgba(255, 51, 153, 0.2)',
+                    'rgba(192, 192, 192, 0.2)',
+                    'rgba(255, 215, 0, 0.2)'
                 ],
                 borderColor: [
                     'rgba(255, 99, 132, 1)',
@@ -24,7 +28,11 @@ const myChart = new Chart(ctx, {
                     'rgba(255, 206, 86, 1)',
                     'rgba(75, 192, 192, 1)',
                     'rgba(153, 102, 255, 1)',
-                    'rgba(255, 159, 64, 1)'
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(220, 220, 220, 0.2)',
+                    'rgba(255, 51, 153, 0.2)',
+                    'rgba(192, 192, 192, 0.2)',
+                    'rgba(255, 215, 0, 0.2)'
                 ],
                 borderWidth: 1
             }]
@@ -38,18 +46,18 @@ const myChart = new Chart(ctx, {
         }
     })
 
-function see10Age(){
+function see10AgeBubble(){
     axios({
-        url:'/chart/get10SC/BoardList.ch',
+        url:'/chart/get10SC/get10SCBubble.ch',
         method:'get'
     })
     .then((res)=>{
+	
         console.log(res.data);
 
         var valArr = [] ;
 
         Object.keys(res.data).forEach(item => {
-
 
             myChart.data.labels[ valArr.length ] = item ;
 
@@ -57,7 +65,7 @@ function see10Age(){
 
         });;
 
-        for( var i = 0 ; i < 6 ; i++ ) {
+        for( var i = 0 ; i < 10 ; i++ ) {
 
             myChart.data.datasets[ 0 ].data[i] = valArr[ i ] ;
 
@@ -68,9 +76,9 @@ function see10Age(){
     })
 };
 
-function see20Age(){
+function see20AgeBubble(){
     axios({
-        url:'year20',
+        url:'/chart/get20SC/get20SCBubble.ch',
         method:'get'
     })
     .then((res)=>{
@@ -86,38 +94,7 @@ function see20Age(){
 
         });;
 
-        for( var i = 0 ; i < 6 ; i++ ) {
-
-            myChart.data.datasets[ 0 ].data[i] = valArr[ i ] ;
-
-        }
-
-        myChart.update();
-
-    })
-
-
-};
-
-function see30Age(){
-    axios({
-        url:'year30',
-        method:'get'
-    })
-    .then((res)=>{
-        console.log(res.data);
-
-        var valArr = [] ;
-
-        Object.keys(res.data).forEach(item => {
-
-            myChart.data.labels[ valArr.length ] = item ;
-
-            valArr.push(res.data[item]);
-
-        });;
-
-        for( var i = 0 ; i < 6 ; i++ ) {
+        for( var i = 0 ; i < 10 ; i++ ) {
 
             myChart.data.datasets[ 0 ].data[i] = valArr[ i ] ;
 
@@ -130,9 +107,9 @@ function see30Age(){
 
 };
 
-function see40Age(){
+function see30AgeBubble(){
     axios({
-        url:'year40',
+        url:'/chart/get30SC/get30SCBubble.ch',
         method:'get'
     })
     .then((res)=>{
@@ -148,7 +125,38 @@ function see40Age(){
 
         });;
 
-        for( var i = 0 ; i < 6 ; i++ ) {
+        for( var i = 0 ; i < 10 ; i++ ) {
+
+            myChart.data.datasets[ 0 ].data[i] = valArr[ i ] ;
+
+        }
+
+        myChart.update();
+
+    })
+
+
+};
+
+function see40AgeBubble(){
+    axios({
+        url:'/chart/get40SC/get40SCBubble.ch',
+        method:'get'
+    })
+    .then((res)=>{
+        console.log(res.data);
+
+        var valArr = [] ;
+
+        Object.keys(res.data).forEach(item => {
+
+            myChart.data.labels[ valArr.length ] = item ;
+
+            valArr.push(res.data[item]);
+
+        });;
+
+        for( var i = 0 ; i < 10 ; i++ ) {
 
             myChart.data.datasets[ 0 ].data[i] = valArr[ i ] ;
 
@@ -162,9 +170,9 @@ function see40Age(){
 };
 
 
-function see50Age(){
+function see50AgeBubble(){
     axios({
-        url:'year50',
+        url:'/chart/get50SC/get50SCBubble.ch',
         method:'get'
     })
     .then((res)=>{
@@ -180,7 +188,7 @@ function see50Age(){
 
         });;
 
-        for( var i = 0 ; i < 6 ; i++ ) {
+        for( var i = 0 ; i < 10 ; i++ ) {
 
             myChart.data.datasets[ 0 ].data[i] = valArr[ i ] ;
 

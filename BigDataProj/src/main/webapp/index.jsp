@@ -83,28 +83,28 @@
     <!-- 버튼 그룹 -->
     <article class="text-center mb-3 col d-none d-lg-block">
       <div class="btn-group ">
-        <button type="button" class="btn btn-outline-light">10대</button>
-        <button type="button" class="btn btn-outline-light">20대</button>
-        <button type="button" class="btn btn-outline-light">30대</button>
-        <button type="button" class="btn btn-outline-light">40대</button>
-        <button type="button" class="btn btn-outline-light">50대</button>
+        <button type="button" class="btn btn-outline-light" onclick="see10AgeBubble()" >10대</button>
+        <button type="button" class="btn btn-outline-light" onclick="see20AgeBubble()" >20대</button>
+        <button type="button" class="btn btn-outline-light" onclick="see30AgeBubble()">30대</button>
+        <button type="button" class="btn btn-outline-light" onclick="see40AgeBubble()">40대</button>
+        <button type="button" class="btn btn-outline-light" onclick="see50AgeBubble()">50대</button>
       </div>
     </article>
 
     <!-- class="col d-none d-lg-block" -->
     <article class="text-center pb-3">
       <div class="btn d-block d-lg-none">
-        <button type="button" class="btn btn-outline-light">10</button>
-        <button type="button" class="btn btn-outline-light">20</button>
-        <button type="button" class="btn btn-outline-light">30</button>
-        <button type="button" class="btn btn-outline-light">40</button>
-        <button type="button" class="btn btn-outline-light">50</button>
+        <button type="button" class="btn btn-outline-light" onclick="see10AgeBubble()">10</button>
+        <button type="button" class="btn btn-outline-light" onclick="see20AgeBubble()">20</button>
+        <button type="button" class="btn btn-outline-light" onclick="see30AgeBubble()">30</button>
+        <button type="button" class="btn btn-outline-light" onclick="see40AgeBubble()">40</button>
+        <button type="button" class="btn btn-outline-light" onclick="see50AgeBubble()">50</button>
       </div>
     </article>
 
     <!-- 공백 채울거 생각하기-->
-    <article class="container-fluid bg-danger">
-      <div class="row">
+    <article class="container-fluid bg-danger" >
+      <div class="row" style="background-color:white;">
       <!-- 
         <div class="col-12">
           <div class="py-5"></div>
@@ -119,7 +119,7 @@
          -->
          
         <!-- 차트 들어갈 자 -->
-        <div id="chartArea" style="width:600px;height:600px;">
+        <div id="chartArea" style="width:600px;height:600px; margin:0 auto;">
 			<canvas id="myChart" width="100%" height="100%"></canvas>
         </div>
 		<!-- 차트 들어갈 자 -->
@@ -384,9 +384,6 @@ $(document).ready(function () {
 <!-- 부트스트랩 -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 
-<script>
-see10Age();
-</script>
 
 </body>
 </html>

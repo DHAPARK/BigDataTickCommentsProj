@@ -4,32 +4,32 @@
  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="Chart">
 	
-	<select id="get10SC" resultType="bubbleChartVO">
+	<select id="get10SCBubble" resultType="bubbleChartVO">
 		
 		<![CDATA[select cmc , cnt from comments where age_range = 10 and rownum <= 10 order by cnt desc]]>
 
 	</select>
 	
-	<select id="get20SC" resultType="bubbleChartVO">
+	<select id="get20SCBubble" resultType="bubbleChartVO">
 		
 		<![CDATA[select cmc , cnt from comments where age_range = 20 and rownum <= 10 order by cnt desc]]>
 
 	</select>
 	
-	<select id="get30SC" resultType="bubbleChartVO">
+	<select id="get30SCBubble" resultType="bubbleChartVO">
 		
 		<![CDATA[select cmc , cnt from comments where age_range = 30 and rownum <= 10 order by cnt desc]]>
 
 	</select>
 	
-	<select id="get40SC" resultType="bubbleChartVO">
+	<select id="get40SCBubble" resultType="bubbleChartVO">
 		
 		<![CDATA[select cmc , cnt from comments where age_range = 40 and rownum <= 10 order by cnt desc]]>
 
 	</select>
 	
 	
-	<select id="get50SC" resultType="bubbleChartVO">
+	<select id="get50SCBubble" resultType="bubbleChartVO">
 		
 		<![CDATA[select cmc , cnt from comments where age_range = 50 and rownum <= 10 order by cnt desc]]>
 
