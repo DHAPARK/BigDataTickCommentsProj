@@ -3,16 +3,23 @@
  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="Board">
+	<!-- <select id="getBoardList" parameterType="hashmap" resultType="boardVO">
+		SELECT 	BOARD_NO, USER_NAME, AGE_RANGE, BOARD_TITLE, BOARD_DATE, LIKES
+		FROM(	SELECT	ROWNUM R, B.*
+				FROM	(SELECT * FROM TABLE_BOARD WHERE AGE_RANGE LIKE #{ageRange} ORDER BY BOARD_NO DESC) B)
+		WHERE 	R BETWEEN #{startRow} AND #{endRow}
+	</select> -->
+	<!-- 내코드 -->
 	<select id="getBoardList" parameterType="hashmap" resultType="boardVO">
 		SELECT 	BOARD_NO, USER_NAME, AGE_RANGE, BOARD_TITLE, BOARD_DATE, LIKES
 		FROM(	SELECT	ROWNUM R, B.*
-				FROM	(SELECT * FROM TABLE_BOARD ORDER BY BOARD_NO DESC) B)
+				FROM	(SELECT * FROM TABLE_BOARD WHERE age_range LIKE '${ageRange}%' ORDER BY BOARD_NO DESC) B)
 		WHERE 	R BETWEEN #{startRow} AND #{endRow}
-		<!-- SELECT	B.BOARD_NO, B.USER_NO, AGE_RANGE, BOARD_TITLE, BOARD_DATE, LIKES, U.USER_NAME
-		FROM(	SELECT	ROWNUM R, D.*
-				FROM	(SELECT * FROM TABLE_BOARD ORDER BY BOARD_NO DESC) D) B, 
-		TABLE_USER U
-			WHERE 	(R BETWEEN 1 AND 2) AND B.USER_NO = U.USER_NO -->
+	</select>
+	<!-- 내코드 -->
+	
+	<select id="getEachAgeBoardCnt" parameterType="hashmap" resultType="_int">
+		SELECT count(*) FROM TABLE_BOARD WHERE age_range LIKE '${ageRange}%' ORDER BY BOARD_NO DESC
 	</select>
 	
 	<select id="getBoardCnt" resultType="_int">
@@ -40,5 +47,5 @@
 		DELETE FROM TABLE_BOARD
 		WHERE BOARD_NO = ${board_no}
 	</delete>
-
+	
 </mapper>

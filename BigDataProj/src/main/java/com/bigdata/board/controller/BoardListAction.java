@@ -21,7 +21,8 @@ public class BoardListAction implements Action {
 		int endRow = page * pageSize;
 		int startRow = endRow - 9;
 		
-		int totalCnt = dao.getBoardCnt();
+		//int totalCnt = dao.getBoardCnt();
+		int totalCnt = dao.getEachAgeBoardCnt( Integer.parseInt( req.getParameter("ageRange") ) / 10 );
 		
 		int startPage = (page -1) / pageSize * pageSize + 1;
 		int endPage = startPage + 9;
@@ -30,22 +31,16 @@ public class BoardListAction implements Action {
 		endPage = endPage > totalPage? totalPage : endPage;
 		
 		
-//		List<BoardVO> boardList = dao.getBoardList(startRow, endRow);
-		
-//		String age_range = req.getParameter("age_range");
-//		
-//		if (age_range == null) {
-//			req.setAttribute("boardList", boardList);
-//		}else {
-//			req.setAttribute("boardList", dao.getAge_range(age_range));
-//		}
+		System.out.println("nowPage가 뭐길래 : "+ page );
 		
 		req.setAttribute("totalCnt", totalCnt);
 		req.setAttribute("totalPage", totalPage);
-		req.setAttribute("nowPage", page);
+		req.setAttribute("nowPage", page );
 		req.setAttribute("startPage", startPage);
 		req.setAttribute("endPage", endPage);
-		req.setAttribute("boardList", dao.getBoardList(startRow, endRow));
+		req.setAttribute("boardAgeRange", Integer.parseInt( req.getParameter("ageRange") ) / 10 );
+		
+		req.setAttribute("boardList", dao.getBoardList(startRow, endRow , Integer.parseInt( req.getParameter("ageRange") ) / 10 ));
 		
 		forward.setRedirect(false);
 		forward.setPath(req.getContextPath() + "/app/board/boardList.jsp");

@@ -4,7 +4,6 @@ import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,9 +15,6 @@ import com.bigdata.board.controller.BoardListAction;
 import com.bigdata.board.controller.BoardViewOkAction;
 import com.bigdata.board.controller.BoardWriteOkAction;
 import com.bigdata.board.controller.DeletePostOkAction;
-import com.bigdata.user.controller.UserJoinOkAction;
-import com.bigdata.user.controller.UserLoginOkAction;
-import com.bigdata.user.controller.UserLogoutAction;
 
 public class BoardFrontController extends HttpServlet {
 	@Override
@@ -36,7 +32,7 @@ public class BoardFrontController extends HttpServlet {
 		ActionForward forward = null;
 
 		switch(requestURI) {
-		case "/board/BoardList.bo": 
+		case "/board/BoardList.bo":
 			try {forward = new BoardListAction().execute(req, resp);} catch(Exception e) {System.out.println(e); System.out.println("/board/BoardList.bo에서 오류");}
 	    	break;
 		case "/board/BoardWrite.bo":

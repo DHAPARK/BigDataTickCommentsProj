@@ -9,7 +9,6 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import com.bigdata.mybatis.config.SqlMapConfig;
 import com.bigdata.vo.UserVO;
 
-
 public class UserDAO {
 	SqlSessionFactory factory = SqlMapConfig.getFactory();
 	SqlSession sqlSession;
