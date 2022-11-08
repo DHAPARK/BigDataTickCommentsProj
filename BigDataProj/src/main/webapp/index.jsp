@@ -271,7 +271,7 @@
         <!-- 검은 버튼 -->
         <button class="btn btn-dark">무료 가입하기</button>
         <!-- 흰색 버튼 -->
-        <button class="btn btn-outline-dark" type="button" onclick="location.href='${pageContext.request.contextPath}/board/BoardList.bo'">게시판으로 이동</button>
+        <button class="btn btn-outline-dark" type="button" onclick="location.href='${pageContext.request.contextPath}/board/BoardList.bo?ageRange=${ userInfo.age_range }'">게시판으로 이동</button>
       </article>
 
     </section>

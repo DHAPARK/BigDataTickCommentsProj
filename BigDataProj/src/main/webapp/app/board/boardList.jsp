@@ -1,8 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page session="true" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>  
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -33,6 +33,7 @@
 </head>
 
 <body class="is-preload">
+	<c:set var="list" value="${requestScope.list }"/>
 	<c:set var="boardList" value="${requestScope.boardList }"/>
 	<c:set var="totalCnt" value="${requestScope.totalCnt }"/>
 	<c:set var="totalPage" value="${requestScope.totalPage }"/>
@@ -61,20 +62,10 @@
         <!-- Wrapper 시작 -->
         <div id="wrapper">
             
-            <h1 style="text-align: center;">커뮤니티 😎</h1>
+            <h1 style="text-align: center;">${ boardAgeRange }0대 커뮤니티 😎</h1>
             <!-- com_container 시작 -->
             <div id="com_container">
-                <!-- age_range 시작 -->
-                <div id="age_range">
-                	<%-- <a href="${pageContext.request.contextPath }/customerService/CS_BoardList.bo?CS_BOARD_SELECT=상품문의">상품문의</a> --%>
-
-                    <a href="">10대</a>
-                    <a href="">20대</a>
-                    <a href="">30대</a>
-                    <a href="">40대</a>
-                    <a href="">50대</a>
-                    <!-- age_range 끝 -->
-                </div>
+                
                 <!-- div_table 시작 -->
                 <div id="div_table">
                  
@@ -88,12 +79,16 @@
                                 <th class="th-no1">좋아요</th>
                             </tr>
                         </thead>
+                        
+                        <fmt:parseNumber var="nP" integerOnly="true" type="number" value="${nowPage}" />
+                        
                         <c:choose>
                             <c:when test="${boardList != null and fn:length(boardList) > 0}">
-                                <c:forEach var="board" items="${boardList}">
+                                <c:forEach var="board" items="${boardList}" begin="0" end="10" step="1" varStatus="status" >
+                                
                                 <c:set var="date" value="${board.board_date }"/>
                                     <tr align="center" valign="middle">
-                                        <td height="24px">${board.board_no }</td>
+                                        <td height="24px">${ nowPage == 1 ? "" : nowPage - 1 }${ status.count }</td>
                                         <td><a href="${pageContext.request.contextPath}/board/BoardViewOk.bo?board_no=${board.board_no}" style="color: #777777 !important">${board.board_title }</a></td>
                                         <td>${board.user_name }</td>
                                         <td>${fn:substring(date,0,10) }</td>
@@ -101,6 +96,7 @@
                                     </tr>
                                 </c:forEach>
                             </c:when>
+                            
                             <c:otherwise>
                                 <tr height="50px" align="center">
                                     <td colspan="5">등록된 게시물이 없습니다.</td>
@@ -114,7 +110,7 @@
                         <tr align="center" valign="middle">
                             <td>
                                 <c:if test="${nowPage > 1}">
-                                    <a href="${pageContext.request.contextPath}/board/BoardList.bo?page=${nowPage-1}">[&lt;]</a>
+                                    <a href="${pageContext.request.contextPath}/board/BoardList.bo?ageRange=${ userInfo.age_range }&page=${nowPage-1}">[&lt;]</a>
                                 </c:if>
                                 <c:forEach var="i" begin="${startPage}" end="${endPage}">
                                     <c:choose>
@@ -122,7 +118,7 @@
                                             <c:out value="[${i}]" />
                                         </c:when>
                                         <c:otherwise>
-                                            <a href="${pageContext.request.contextPath}/board/BoardList.bo?page=${i}">
+                                            <a href="${pageContext.request.contextPath}/board/BoardList.bo?ageRange=${ userInfo.age_range }&page=${i}">
                                                 <c:out value="[${i}]" />
                                             </a>
                                         </c:otherwise>
@@ -130,7 +126,7 @@
                                 </c:forEach>
 
                                 <c:if test="${nowPage < totalPage}">
-                                    <a href="${pageContext.request.contextPath }/board/BoardList.bo?page=${nowPage + 1}">[&gt;]</a>
+                                    <a href="${pageContext.request.contextPath }/board/BoardList.bo?ageRange=${ userInfo.age_range }&page=${nowPage + 1}">[&gt;]</a>
                                 </c:if>
                             </td>
                         </tr>

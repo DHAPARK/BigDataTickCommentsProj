@@ -17,25 +17,31 @@ public class BoardDAO {
 	public BoardDAO() {
 		sqlsession = factory.openSession(true);
 	}
-	
-	public List<BoardVO> getListByAgeRange(String age_range) {
-		HashMap<String, String> map = new HashMap<>();
-		map.put("age_range", age_range);
-		
-		return sqlsession.selectList("Board.getListByAgeRange", map);
-	}
 
-	public List<BoardVO> getBoardList(int startRow, int endRow) {
+	public List<BoardVO> getBoardList(int startRow, int endRow , int ageRange ) {
 		HashMap<String, Integer> pageMap = new HashMap<>();
+		
+		pageMap.put( "ageRange" , ageRange );
 		
 		pageMap.put("startRow", startRow);
 		pageMap.put("endRow", endRow);
 		
 		List<BoardVO> boardList = sqlsession.selectList("Board.getBoardList", pageMap);
-		
 		return boardList;
 	}
 
+	public List<BoardVO> getList(int startRow, int endRow , int ageRange ) {
+		HashMap<String, Integer> pageMap = new HashMap<>();
+		
+		pageMap.put( "ageRange" , ageRange );
+
+		pageMap.put("startRow", startRow);
+		pageMap.put("endRow", endRow);
+		
+		List<BoardVO> boardList = sqlsession.selectList("Board.getList", pageMap);
+		return boardList;
+	}
+	
 	public int getBoardCnt() {
 		return sqlsession.selectOne("Board.getBoardCnt");
 	}
@@ -43,7 +49,7 @@ public class BoardDAO {
 	//게시글 추가
 	public void insertBoard(BoardVO board) {
 		
-		board.setAge_range(  board.getAge_range() == null ? "임시" : board.getAge_range() );	
+//		board.setAge_range(  board.getAge_range() == null ? "임시" : board.getAge_range() );	
 		System.out.println(board.getAge_range());
 		
 		sqlsession.insert("Board.insertBoard", board);
@@ -60,4 +66,14 @@ public class BoardDAO {
 	public void deletePost(int board_no) {
 		sqlsession.delete("Board.deletePost", board_no);
 	}
+	
+	public int getEachAgeBoardCnt(  int ageRange  ) {
+		HashMap<String, Integer> pageMap = new HashMap<>();
+		
+		pageMap.put( "ageRange" , ageRange );
+		
+		return sqlsession.selectOne("Board.getEachAgeBoardCnt",pageMap);
+		
+	}
+	
 }

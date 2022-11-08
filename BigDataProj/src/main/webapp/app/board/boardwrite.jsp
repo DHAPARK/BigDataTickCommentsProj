@@ -85,6 +85,7 @@
             	</article>
 	            <article>
 	            	<input type="hidden" name="user_name" value="${userInfo.user_name}">
+	            	<input type="hidden" name="age_range" value="${userInfo.age_range}">
 	                <!-- 제목을 입력해주세요. -->
 	                <input id="board_title" name="board_title" type="text" class="form-control form-control-sm mb-3" placeholder="제목을 입력해주세요.">
 	            </article>

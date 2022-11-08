@@ -85,22 +85,14 @@ a {
 	font-size: 12px;
 }
 
-#age_range {
+#community_btn {
 	text-align: center;
 	padding-bottom: inherit;
-}
-
-#age_range a {
-	color: #777777 !important
 }
 
 * {
 	margin: 0;
 	box-sizing: border-box;
-}
-
-#age_range a {
-	padding: 0 20px;
 }
 
 #com_container {
