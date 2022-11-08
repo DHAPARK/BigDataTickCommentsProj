@@ -1,6 +1,0 @@
-INDEX VERSION 1.131+C:\Users\thddy\OneDrive\바탕 화면\프로젝트\final_project\빅데이터 시각화 프로젝트\infographic\test\.metadata\.plugins\org.eclipse.jdt.core
-2274827204.index
-3925521432.index
-1865797976.index
-3855443655.index
-3597426988.index

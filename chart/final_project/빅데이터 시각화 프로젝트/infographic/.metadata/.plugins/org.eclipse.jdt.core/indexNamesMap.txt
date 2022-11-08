@@ -1,3 +1,0 @@
-INDEX VERSION 1.131
-file:/C:/Users/thddy/OneDrive/바탕%20화면/프로젝트/final_project/빅데이터%20시각화%20프로젝트/infographic/.metadata/.plugins/org.eclipse.jdt.core/1865797976.index
-meta_index

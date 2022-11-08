@@ -1,9 +1,0 @@
-{
-	"search_word" : [
-		{"value" : "1", "name" : 100},
-		{"value" : "2", "name" : 200},
-		{"value" : "3", "name" : 300},
-		{"value" : "4", "name" : 400},
-		{"value" : "5", "name" : 500}
-	]
-}
