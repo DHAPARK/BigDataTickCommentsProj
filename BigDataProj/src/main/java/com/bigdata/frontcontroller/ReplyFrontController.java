@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.bigdata.action.ActionForward;
 import com.bigdata.reply.controller.ReplyDeleteOkAction;
-import com.bigdata.reply.controller.ReplyInsertIOkAction;
+import com.bigdata.reply.controller.ReplyInsertOkAction;
 import com.bigdata.reply.controller.ReplyUpdateOkAction;
 
 @WebServlet("*.rp")
@@ -33,7 +33,7 @@ public class ReplyFrontController extends HttpServlet{
 		
 		switch (requestURI) {
 		case "/board/addReply.rp" : 
-			try {forward = new ReplyInsertIOkAction().execute(req, resp);} catch(Exception e) {System.out.println(e); System.out.println("board/addReply.rp에서 오류");}
+			try {forward = new ReplyInsertOkAction().execute(req, resp);} catch(Exception e) {System.out.println(e); System.out.println("board/addReply.rp에서 오류");}
 			break;
 		case "/board/deleteReply.rp" : 
 			try {forward = new ReplyDeleteOkAction().execute(req, resp);} catch(Exception e) {System.out.println(e); System.out.println("/board/deleteReply.rp에서 오류");}

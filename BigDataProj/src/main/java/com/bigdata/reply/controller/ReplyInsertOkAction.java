@@ -8,7 +8,7 @@ import com.bigdata.action.ActionForward;
 import com.bigdata.dao.ReplyDAO;
 import com.bigdata.vo.ReplyVO;
 
-public class ReplyInsertIOkAction implements Action{
+public class ReplyInsertOkAction implements Action{
 
 	@Override
 	public ActionForward execute(HttpServletRequest req, HttpServletResponse resp) throws Exception {

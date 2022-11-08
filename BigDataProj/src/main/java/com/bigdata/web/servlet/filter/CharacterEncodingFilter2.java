@@ -18,7 +18,8 @@ public class CharacterEncodingFilter2 implements javax.servlet.Filter{
 		arg1.setCharacterEncoding("UTF-8");	
 		arg1.setContentType("text/html ; charset = UTF-8");
 		arg0.setCharacterEncoding("UTF-8");
-		
+		System.out.println("필터 전");
 		arg2.doFilter(arg0, arg1);
+		System.out.println("필터 후");
 	}
 }

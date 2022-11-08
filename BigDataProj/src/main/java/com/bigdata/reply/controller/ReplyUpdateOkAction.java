@@ -17,11 +17,10 @@ public class ReplyUpdateOkAction implements Action{
 		ReplyVO rvo = new ReplyVO();
 		
 		int board_no = Integer.parseInt(req.getParameter("board_no"));
-		
-		rvo.setReply_content(req.getParameter("board_content"));
+		int reply_no = Integer.parseInt(req.getParameter("reply_no"));
+		rvo.setReply_content(req.getParameter("update_content"+reply_no));
 		rvo.setReply_no(Integer.parseInt(req.getParameter("reply_no")));
 	
-	System.out.println("수정다오");
 		if(rdao.updateReply(rvo) ==1 ) {
 			forward.setRedirect(true);
 			forward.setPath(req.getContextPath()+"/board/BoardViewOk.bo?board_no="+board_no);

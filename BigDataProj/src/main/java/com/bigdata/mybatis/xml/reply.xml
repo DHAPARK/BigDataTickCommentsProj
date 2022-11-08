@@ -12,7 +12,7 @@
 	<update id="update" parameterType="replyVO">
 		UPDATE TABLE_REPLY 
 		SET  REPLY_CONTENT = #{reply_content}
-		WHERE REPLY_NO in (#{reply_no});
+		WHERE REPLY_NO = #{reply_no}
 	</update>
 	<delete id="delete" parameterType="_int">
 	 	DELETE TABLE_REPLY WHERE reply_no in(#{reply_no})
