@@ -1,0 +1,19 @@
+{
+	"search_word" : [
+		{"key" : "1", "value" : "한국"},
+		{"key" : "2", "value" : "코리아"},
+		{"key" : "3", "value" : "조선"},
+		{"key" : "4", "value" : "국한"},
+		{"key" : "5", "value" : "아리랑"}
+	]
+}
+
+{
+	"search_word" : [
+		{"value" : "1", "name" : "한국"},
+		{"value" : "2", "name" : "코리아"},
+		{"value" : "3", "name" : "조선"},
+		{"value" : "4", "name" : "국한"},
+		{"value" : "5", "name" : "아리랑"}
+	]
+}

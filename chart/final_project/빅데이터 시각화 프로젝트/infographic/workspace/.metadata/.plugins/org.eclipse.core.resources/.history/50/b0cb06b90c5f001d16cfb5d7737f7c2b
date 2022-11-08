@@ -1,0 +1,40 @@
+package com.koreait.chart;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.json.simple.JSONObject;
+
+import com.koreait.chart.dao.ChartDAO;
+import com.koreait.chart.dao.ChartDTO;
+
+public class ChartListAction {
+
+	public void execute(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+		
+		ChartDAO cdao = new ChartDAO();
+		
+		List<ChartDTO> count = cdao.getChartList();
+				
+			 
+		PrintWriter out = resp.getWriter() ;
+		JSONObject jsondata = new JSONObject() ;
+		
+		for (int i = 0; i <= 10; i++) { 
+			 jsondata.put("value", count.get(i).getComments());
+		}
+		
+	
+		// jsondata.put("오늘", 130) ;
+			
+		out.println(jsondata);
+
+
+
+	}
+	}
+

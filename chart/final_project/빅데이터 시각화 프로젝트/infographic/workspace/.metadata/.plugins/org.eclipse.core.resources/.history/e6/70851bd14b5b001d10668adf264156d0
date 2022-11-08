@@ -1,0 +1,23 @@
+package com.koreait.chart.dao;
+
+public class ChartDTO {
+	
+	private int commcount;
+	public int getCommcount() {
+		return commcount;
+	}
+	public void setCommcount(int commcount) {
+		this.commcount = commcount;
+	}
+	public String getCommcontents() {
+		return commcontents;
+	}
+	public void setCommcontents(String commcontents) {
+		this.commcontents = commcontents;
+	}
+	private String commcontents;
+	
+	
+	
+	
+}

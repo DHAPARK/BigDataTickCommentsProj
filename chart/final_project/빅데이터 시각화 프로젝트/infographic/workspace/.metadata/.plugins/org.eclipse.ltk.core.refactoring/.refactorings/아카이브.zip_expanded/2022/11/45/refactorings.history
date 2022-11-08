@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;아카이브.zip_expanded/views/chartPage.ejs&apos; to &apos;chartPage.jsp&apos;" description="Rename resource &apos;chartPage.ejs&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="views/chartPage.ejs" name="chartPage.jsp" stamp="1667349208524" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;아카이브.zip_expanded/views/chartPage.jsp&apos; to &apos;chartPage.ejs&apos;" description="Rename resource &apos;chartPage.jsp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="views/chartPage.jsp" name="chartPage.ejs" stamp="1667349270231" updateReferences="true"/>
+</session>

@@ -1,0 +1,94 @@
+package com.koreait.chart;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.json.simple.JSONObject;
+
+import com.koreait.action.ActionForward;
+
+@WebServlet("*.ca")
+public class ChartFrontController extends HttpServlet{
+	
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) 
+			throws ServletException, IOException {
+		doProcess(req, resp);
+	}
+	
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) 
+			throws ServletException, IOException {
+		doProcess(req, resp);
+	}
+	
+	protected void doProcess(HttpServletRequest req, HttpServletResponse resp) 
+			throws ServletException, IOException {
+		String requestURI = req.getRequestURI();
+		ActionForward forward = null;
+		
+		PrintWriter out = resp.getWriter() ;
+		
+		JSONObject jsondata = new JSONObject() ;
+		jsondata.put("오늘", 130) ;
+		jsondata.put("오늘", 130) ;
+		jsondata.put("오늘", 130) ;
+		jsondata.put("오늘", 130) ;
+		jsondata.put("오늘", 130) ;
+		
+		out.println("하이");
+		
+		
+		switch(requestURI) {
+			case "/chart/ChartList.bo": 
+//				forward = new ActionForward(false, "/board/boardlist.jsp");
+				forward = new ChartListAction().execute(req, resp);
+				break;
+
+			
+		}
+		
+		// 페이지 이동 일괄처리
+		if( forward != null ) {
+			if( forward.isRedirect() ) {
+				// redirect
+				resp.sendRedirect(forward.getPath());
+			} else {
+				// forward
+				RequestDispatcher disp = req.getRequestDispatcher(forward.getPath());
+				disp.forward(req, resp);
+			}
+		}
+		
+		
+	
+		
+		
+		
+		
+		
+	}
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

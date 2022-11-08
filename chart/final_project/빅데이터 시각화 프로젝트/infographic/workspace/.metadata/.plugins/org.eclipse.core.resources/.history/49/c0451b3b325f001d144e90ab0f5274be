@@ -1,0 +1,5 @@
+package com.koreait.chart.dao;
+
+public class TestDTO {
+
+}

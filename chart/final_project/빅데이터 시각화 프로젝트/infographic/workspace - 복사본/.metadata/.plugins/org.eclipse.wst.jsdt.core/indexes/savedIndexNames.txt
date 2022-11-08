@@ -1,0 +1,8 @@
+INDEX VERSION 1.4+C:\Users\thddy\OneDrive\바탕 화면\프로젝트\final_project\빅데이터 시각화 프로젝트\infographic\workspace\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+433711162.index
+3925521432.index
+24353592.index
+2351245774.index
+654067729.index
+1171818874.index
+3855443655.index

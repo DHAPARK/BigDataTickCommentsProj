@@ -1,0 +1,30 @@
+package com.koreait.chart.dao;
+
+import java.util.HashMap;
+import java.util.List;
+
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+
+import com.koreait.chart.mybatis.SqlMapConfig;
+
+public class ChartDAO {
+	SqlSessionFactory factory = SqlMapConfig.getFactory();
+	SqlSession sqlsession;
+	
+	public ChartDAO() {
+		sqlsession = factory.openSession(true);
+	}
+
+	public List<ChartDTO> getChartList(int count) {
+		HashMap<String, Integer> datas = new HashMap<>();
+		datas.put("count", count);
+		List<ChartDTO> chartList = sqlsession.selectList("Board.getBoardList", datas);
+		
+		return chartList;
+	}
+
+
+
+}
+

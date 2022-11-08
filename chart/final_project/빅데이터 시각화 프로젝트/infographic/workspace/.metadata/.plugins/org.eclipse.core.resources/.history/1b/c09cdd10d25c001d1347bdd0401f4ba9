@@ -1,0 +1,10 @@
+
+{
+	"search_word" : [
+		{"name" : "1", "value" : "한국", "size" : 300},
+		{"name" : "3", "value" : "코리아", "size" : 500},
+		{"name" : "3", "value" : "조선" , "size" : 200},
+		{"name" : "5", "value" : "국한" , "size" : 100},
+		{"name" : "1", "value" : "아리랑" , "size" : 300}
+	]
+}

@@ -1,0 +1,42 @@
+package com.koreait.chart;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.json.simple.JSONObject;
+
+import com.koreait.action.Action;
+import com.koreait.action.ActionForward;
+
+public class ChartListAction implements Action{
+
+	@Override
+	public ActionForward execute(HttpServletRequest req, HttpServletResponse resp) {
+		ActionForward forward = new ActionForward();
+		
+		PrintWriter out;
+		JSONObject jsondata = new JSONObject() ;
+		jsondata.put("오늘", 130) ;
+		jsondata.put("하루도", 110) ;
+		jsondata.put("굉장히", 100) ;
+		jsondata.put("재밌었다", 190) ;		
+		
+		try {
+			out = resp.getWriter();
+			out.print(jsondata);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		
+		return forward;
+	}
+
+	
+	
+}

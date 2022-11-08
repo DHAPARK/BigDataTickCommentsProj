@@ -1,0 +1,13 @@
+package com.koreait.chart.dao;
+
+public class ChartDTO {
+	
+	private int cnt;
+	private String comments;
+	
+	
+	
+	
+	
+	
+}

@@ -1,0 +1,43 @@
+package com.koreait.chart;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.koreait.action.Action;
+import com.koreait.action.ActionForward;
+import com.koreait.chart.dao.ChartDAO;
+
+public class ChartListAction implements Action {
+
+	@Override
+	public ActionForward execute(HttpServletRequest req, HttpServletResponse resp) {
+		ActionForward forward = new ActionForward();
+		ChartDAO bdao = new ChartDAO();
+		
+		int commcount = Integer.parseInt( req.getParameter("commcount"));
+		
+
+		req.setAttribute("chartlist", bdao.getChartList(commcount));
+		
+		forward.setRedirect(false);
+		forward.setPath("/bubble_chart/bubble.jsp" );
+		
+		return forward;
+	}
+	
+	
+	
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+

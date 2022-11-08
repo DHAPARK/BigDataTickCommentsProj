@@ -1,0 +1,61 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<script src="https://code.highcharts.com/highcharts.js"></script>
+	<script src="https://code.highcharts.com/modules/exporting.js"></script>
+	<script src="https://code.highcharts.com/modules/export-data.js"></script>
+	<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+</head>
+
+<body>
+
+
+<figure class="highcharts-figure">
+  <div id="container"></div>
+  <p class="highcharts-description">
+    Charts can be styled using CSS, such as this example overriding
+    the default styles for a pie chart. This can be done without the
+    use of Javascript, allowing designers and developers to better
+    collaborate on chart design.
+  </p>
+</figure>
+
+
+	<script>
+	// Data retrieved from https://gs.statcounter.com/vendor-market-share/mobile/
+	var chart = Highcharts.chart('container', {
+	  chart: {
+	    styledMode: true
+	  },
+	  title: {
+	    text: 'Mobile vendor market share, 2021'
+	  },
+	  xAxis: {
+	    categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+	  },
+	  series: [{
+	    type: 'pie',
+	    allowPointSelect: true,
+	    keys: ['name', 'y', 'selected', 'sliced'],
+	    data: [
+	      ['Samsung', 27.79, true, true],
+	      ['Apple', 27.34, false],
+	      ['Xiaomi', 10.87, false],
+	      ['Huawei', 8.48, false],
+	      ['Oppo', 5.38, false],
+	      ['Vivo', 4.17, false],
+	      ['Realme', 99, false],
+	    
+	    ],
+	    showInLegend: true
+	  }]
+	});
+	</script>
+
+</body>
+</html>

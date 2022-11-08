@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="Chart" >
+
+	<select id="getChartCnt"  resultType="_int">
+		SELECT count(*) FROM tbl_comments where comments = '좋아요'
+	</select>
+	
+	<select id="getChartList"  resultType="chartdto">
+		SELECT  comments, cnt
+		FROM (	SELECT 	comments, cnt 
+				FROM 	tbl_comments
+				ORDER BY cnt DESC )
+		 <![CDATA[where rownum <= 10]]>
+	</select>
+	
+	<select id="getTest" resultType="testdto">
+		select cmc , cnt from comments
+		where
+		age_range = '20'
+		and
+		 <![CDATA[where rownum <= 10]]>
+		order by cnt desc
+	</select>
+	
+	
+	
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
