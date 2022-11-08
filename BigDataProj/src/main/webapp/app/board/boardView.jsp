@@ -33,7 +33,9 @@
 
 <body class="is-preload">
 	<c:set var="board" value="${requestScope.board }"/>
-
+ 	<c:set var="replylist" value="${requestScope.reply}"/>
+ 	<c:set var="userInfo" value="${userInfo}"/>
+ 	
     <!-- Page Wrapper -->
     <div id="page-wrapper">
 
@@ -100,20 +102,44 @@
 
             <!-- 댓글 -->
             <!-- <section class="main accent2" style="padding: 3%; margin: 0 14% 0 14%;"> -->
-                <div style="width: 75%; margin: 0 auto; padding-left: 5%;">
-                	<header class="major" style="text-align: left;">
+            <div style="width: 75%; margin: 0 auto; padding-left: 5%;">
+                <header class="major" style="text-align: left;">
                     <h3>Comment</h3>
                 </header>
-                <form method="post" action="#" class="combined" style="width: auto;">
-                    <textarea name="content" id="content" placeholder="비속어를 사용하지 말아주세요." class="invert" rows="5"
-                        style="border-radius: 0; resize: none; font-size: 12px !important; float: left; width: 90% !important;"></textarea>
-                    <input id="register" type="button" class="primary" value="add" style="font-size: 12px !important;"
-                        onclick="">
-                </form>
-                <form id="replies" class="combined"
-                    style="flex-direction: column; margin: 0; display: contents; font-size: 12px !important;">
-                    <p style="width: fit-content;">댓글이 없습니다.</p>
-                </form>
+	            <form method="post" action="/board/addReply.rp" class="combined"  id="replyForm" style="width: auto;">
+	            	<input name="board_no" value="${board.board_no}">
+	            	<input name="user_no" value="${userInfo.user_no}">
+	            	<textarea name="reply_content" id="content" placeholder="비속어를 사용하지 말아주세요." class="invert" rows="5"
+	                style="border-radius: 0; resize: none; font-size: 12px !important; float: left; width: 90% !important;"></textarea>
+<!-- 	                <input id="register" type="button" class="primary" value="add" style="font-size: 12px !important;" onclick="addReply()"> -->
+	                <button onClick="addReply(); return false;">작성</button>
+	            </form>
+	            <c:choose>
+					<c:when test="${!empty replylist}">
+						<c:forEach items="${replylist}" var="reply">
+							<form method="post" id="updateReplyForm">
+								<input name="board_no" value="${board.board_no}">
+	            				<input name="user_no" value="${userInfo.user_no}">
+								<table>
+									<tr>
+										<td style="padding-left: 10px;"> 
+											<textarea id="reply${reply.reply_no}"  name="reply${reply.reply_no}" id="update-content"style="text-align: left; border: 0px;width: 680px;height: 85px;resize: none;" class="textarea" readonly > ${reply.reply_content} </textarea> 
+											<a href="javascript:updateReply(${reply.reply_no});" style="display: none;" id="modifyBtn">[수정]</a>
+											<a href="javascript:updateReadonly('${userInfo.user_no}','${reply.user_no}',${reply.reply_no});"  >[수정하기]</a>
+											<a href="javascript:deleteReply('${userInfo.user_no}','${reply.user_no}',${reply.reply_no});">[삭제]</a>
+										</td>
+									</tr>	
+								</table>
+							</form>
+						</c:forEach>
+					</c:when>
+				<c:otherwise>
+					<form id="replies" class="combined"
+	                   	style="flex-direction: column; margin: 0; display: contents; font-size: 12px !important;">
+	                 	<p style="width: fit-content;">댓글이 없습니다.</p>
+	                </form>
+				</c:otherwise>
+				</c:choose>
                 </div>
             <!-- </section> -->
         </div>
@@ -125,9 +151,9 @@
 
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/assets/js/reply.js"></script>
 <script>
 	function deletePost() {
-		
 		//console.log(`${userInfo.getUser_pw()}`) ;
 		//if( '123456' == `${userInfo.getUser_pw()}` )
 		
@@ -139,6 +165,8 @@
             alert('비밀번호가 틀렸습니다.');
         }
 	}
+	
+
 </script>
 <script>
     var i = 0;
@@ -155,4 +183,55 @@
         
     });
 </script>
+<script>
+
+
+// 댓글 수정완료
+function updateReply(rp_user_no ,wr_user_no ){
+	if($("#update-content").val==""){
+		alert("댓글내용을 입력해주세요.")
+		return false;
+	}
+	$("#updateReplyForm").attr("action","/board/updateReply.rp?reply_no="+reply_no)
+	$("#updateReplyForm").submit();
+	alert("수정완료")
+}
+// 댓글 수정가능여부 확인
+function updateReadonly(reply_no ,info_user_no,user_no){
+	alert("리플번호"+rp_user_no)
+	alert("로그인 유저"+info_user_no)
+	alert("작성한 유저"+user_no)
+	
+	if(wr_user_no != rp_user_no){
+		alert("본인이 작성한 댓글만 수정할 수 있습니다.");
+		return false;
+	}else{
+		alert("수정가능")
+		$('#reply'+reply_no).attr('readonly',false);
+		$('#modify').css("display","none");
+		$('#modifyBtn').css("display","inline");
+	}
+}
+/* 댓글 삭제 */
+function deleteReply(rp_user_no ,wr_user_no,reply_no){
+	alert("삭제 하시겠습니까?")
+	if(rp_user_no != wr_user_no){
+		alert("본인이 작성한 댓글만 삭제할 수 있습니다.");
+		return false;
+	}
+	$("#updateReplyForm").attr("action","/board/deleteReply.rp?reply_no="+reply_no)
+	$("#updateReplyForm").submit();
+	alert("삭제완료")
+}
+// 댓글 입력
+function addReply() {
+ 	if($('#content').val() == ""){
+		alert("댓글내용을 입력해주세요.")
+		return false;
+	}
+	$('#replyForm').submit();
+	alert("댓글등록완료")
+}
+</script>
+
 </html>

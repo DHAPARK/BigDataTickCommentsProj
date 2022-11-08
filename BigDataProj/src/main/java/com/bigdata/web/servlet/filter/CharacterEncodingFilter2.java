@@ -8,8 +8,8 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
 
-@WebFilter("*.us")
-public class CharacterEncodingFilter implements  javax.servlet.Filter{
+@WebFilter("*.rp")
+public class CharacterEncodingFilter2 implements javax.servlet.Filter{
 
 	@Override
 	public void doFilter(ServletRequest arg0, ServletResponse arg1, FilterChain arg2)
@@ -20,7 +20,5 @@ public class CharacterEncodingFilter implements  javax.servlet.Filter{
 		arg0.setCharacterEncoding("UTF-8");
 		
 		arg2.doFilter(arg0, arg1);
-
 	}
-
 }

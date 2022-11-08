@@ -34,5 +34,15 @@
 		<url-pattern>*.bo</url-pattern>
 	</servlet-mapping>
 	
+	<servlet>
+		<servlet-name>ReplyFrontController</servlet-name>
+		<servlet-class>com.bigdata.frontcontroller.ReplyFrontController</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>ReplyFrontController</servlet-name>
+		<url-pattern>*.rp</url-pattern>
+	</servlet-mapping>
+	
 	
 </web-app>

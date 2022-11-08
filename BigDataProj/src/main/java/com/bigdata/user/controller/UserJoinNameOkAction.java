@@ -6,9 +6,11 @@ import java.io.PrintWriter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.bigdata.action.Action;
 import com.bigdata.dao.UserDAO;
 
 public class UserJoinNameOkAction {
+
 
 	public void execute(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 		UserDAO duao = new UserDAO();

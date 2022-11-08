@@ -3,5 +3,18 @@
  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="Reply">
-	
+	<select id="reply" parameterType="_int" resultType="replyVO">
+		SELECT * FROM TABLE_REPLY WHERE BOARD_NO IN(#{board_no}) order by reply_no
+	</select>
+	<insert id="setReply" parameterType="replyVO">
+		INSERT INTO TABLE_REPLY VALUES (SEQ_REPLY.NEXTVAL,#{user_no},#{board_no},#{reply_content},SYSDATE)
+	</insert>
+	<update id="update" parameterType="replyVO">
+		UPDATE TABLE_REPLY 
+		SET  REPLY_CONTENT = #{reply_content}
+		WHERE REPLY_NO in (#{reply_no});
+	</update>
+	<delete id="delete" parameterType="_int">
+	 	DELETE TABLE_REPLY WHERE reply_no in(#{reply_no})
+	</delete>
 </mapper>
