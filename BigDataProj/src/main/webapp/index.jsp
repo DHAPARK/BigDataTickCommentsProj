@@ -40,7 +40,7 @@
   <!-- #################################################################################################################### -->
   <!-- 네비게이션 시작-->
   <nav class="navbar navbar-expand-md navbar-dark bg-dark px-2 border-bottom fixed-top" aria-label="Third navbar example">
-  	<c:choose>
+  		<c:choose>
       		<c:when test="${ empty userInfo }">
         		 <jsp:include page="/fixed/index_nav.jsp"></jsp:include>
       		</c:when>
@@ -268,10 +268,18 @@
       </article>
 
       <article>
-        <!-- 검은 버튼 -->
-        <button class="btn btn-dark">무료 가입하기</button>
+
         <!-- 흰색 버튼 -->
-        <button class="btn btn-outline-dark" type="button" onclick="location.href='${pageContext.request.contextPath}/board/BoardList.bo?ageRange=${ userInfo.age_range }'">게시판으로 이동</button>
+        <c:choose>
+      		<c:when test="${ empty userInfo }">
+      			<!-- 검은 버튼 -->
+        		<button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#joinModal">무료 가입하기</button>
+      		</c:when>
+      		<c:otherwise>
+      			<button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#joinModal">무료 가입하기</button>
+		        <button class="btn btn-outline-dark" type="button" onclick="location.href='${pageContext.request.contextPath}/board/BoardList.bo?ageRange=${ userInfo.age_range }'">게시판으로 이동</button>
+      		</c:otherwise>
+      	</c:choose>
       </article>
 
     </section>

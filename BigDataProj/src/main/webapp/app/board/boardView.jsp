@@ -57,14 +57,12 @@
                                 <li><input type="button" value="글쓰기" class="primary" onclick="location.href='${pageContext.request.contextPath}/board/BoardWrite.bo'"
                                         style="font-size: 12px !important;">
                                 </li>
-                                <li><input type="button" value="목록" class="primary" onclick="location.href='${pageContext.request.contextPath}/board/BoardList.bo'"
+                                <li><input type="button" value="목록" class="primary" onclick="goBack();"
                                         style="font-size: 12px !important;">
                                 </li>
                                 <c:if test="${ userInfo.user_name eq board.user_name }">
                                     <li><input type="button" value="수정" onclick="location.href='${pageContext.request.contextPath}/board/BoardEdit.bo?board_no=${board.board_no }'" style="font-size: 12px !important;">
                                     </li>
-                                    <%-- <li><input type="button" value="삭제" onclick="location.href='${pageContext.request.contextPath}/board/DeletePostOk.bo?board_no=${board.board_no}'" style="font-size: 12px !important;">
-                                    </li> --%>
                                     <li>
 	                                    <form name="deleteForm" action="${pageContext.request.contextPath}/board/DeletePostOk.bo?board_no=${board.board_no}" method="post">
 	                                    	<input type="button" value="삭제" onclick="deletePost()" style="font-size: 12px !important;">
@@ -99,31 +97,40 @@
                     </div>
                 </div>
             </div>
-
+            
+         
             <!-- 댓글 -->
-            <!-- <section class="main accent2" style="padding: 3%; margin: 0 14% 0 14%;"> -->
-            <div style="width: 75%; margin: 0 auto; padding-left: 5%;">
+            <div style="width: 62%; margin: 0 auto;">
+            	<hr>
                 <header class="major" style="text-align: left;">
                     <h3>Comment</h3>
                 </header>
-	            <form method="post" action="/board/addReply.rp" class="combined"  id="replyForm" style="width: auto;">
-	            	<input name="board_no" value="${board.board_no}">
-	            	<input name="user_no" value="${userInfo.user_no}">
-	            	<textarea name="reply_content" id="content" placeholder="비속어를 사용하지 말아주세요." class="invert" rows="5"
-	                style="border-radius: 0; resize: none; font-size: 12px !important; float: left; width: 90% !important;"></textarea>
-	                <input id="register" type="button" class="primary" value="add" style="font-size: 12px !important;" onclick="addReply()">
-	                <button onClick="addReply(); return false;">작성</button>
+	            <form method="post" action="/board/addReply.rp" class="combined"  id="replyForm" style="flex-direction: column; margin: 0; display: contents; font-size: small !important;">
+	            	<input name="board_no" value="${board.board_no}" type="hidden">
+	            	<input name="user_no" value="${userInfo.user_no}" type="hidden">
+	                <div style="display: flex; flex-direction: row; margin-bottom: 3%;">
+	                	<div style="width: 96%;">
+	                		<textarea name="reply_content" id="content" placeholder="비속어를 사용하지 말아주세요." class="invert" rows="5"
+	                		style="border-radius: 0; resize: none; font-size: small !important;"></textarea>
+	                	</div>
+	                	<div>
+	                		<input id="register" type="button" class="primary" value="add" style="font-size: 12px !important;" onclick="addReply()">
+	                	</div>
+	                </div>
+	                
+	                
+	                <!-- <button onClick="addReply(); return false;">작성</button> -->
 	           
 		            <c:choose>
 						<c:when test="${!empty replylist}">
 							<c:forEach items="${replylist}" var="reply">
 	<!-- 							<form method="post" id="updateReplyForm"> -->
-									<input name="board_no" value="${board.board_no}" type="">
-		            				<input name="user_no" value="${userInfo.user_no}">
+									<input name="board_no" value="${board.board_no}" type="hidden">
+		            				<input name="user_no" value="${userInfo.user_no}" type="hidden">
 									<table>
 										<tr>
 											<td style="padding-left: 10px;"> 
-												<textarea id="reply${reply.reply_no}"  name="update_content${reply.reply_no}" style="text-align: left; border: 0px;width: 680px;height: 85px;resize: none;" class="textarea" readonly > ${reply.reply_content} </textarea> 
+												<textarea id="reply${reply.reply_no}"  name="update_content${reply.reply_no}" style="text-align: left; border: 0px; height: 85px; resize: none; font-size: small;" class="textarea" readonly > ${reply.reply_content} </textarea> 
 												<a href="javascript:updateReply(${reply.reply_no});" style="display: none;" id="modifyBtn${reply.reply_no}">[수정]</a>
 												&nbsp;&nbsp;&nbsp;&nbsp;
 												<a href="javascript:updateReadonly('${userInfo.user_no}','${reply.user_no}',${reply.reply_no});" id="modify${reply.reply_no}">[수정하기]</a>
@@ -137,14 +144,13 @@
 						</c:when>
 					<c:otherwise>
 						<form id="replies" class="combined"
-		                   	style="flex-direction: column; margin: 0; display: contents; font-size: 12px !important;">
+		                   	style="flex-direction: column; margin: 0; display: contents; font-size: small !important;">
 		                 	<p style="width: fit-content;">댓글이 없습니다.</p>
 		                </form>
 					</c:otherwise>
 					</c:choose>
 				</form>
              </div>
-            <!-- </section> -->
         </div>
         <!-- container 끝 -->
 
@@ -155,6 +161,11 @@
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/assets/js/reply.js"></script>
+<script>
+function goBack() {
+  window.history.go(-1);
+}
+</script>
 <script>
 	function deletePost() {
 		//console.log(`${userInfo.getUser_pw()}`) ;

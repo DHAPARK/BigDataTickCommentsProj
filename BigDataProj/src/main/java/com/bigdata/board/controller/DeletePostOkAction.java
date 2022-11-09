@@ -11,6 +11,7 @@ public class DeletePostOkAction implements Action {
 	
 	@Override
 	public ActionForward execute(HttpServletRequest req, HttpServletResponse resp) throws Exception {
+		
 		ActionForward forward = new ActionForward();
 		BoardDAO bdao = new BoardDAO();
 		int board_no = Integer.parseInt(req.getParameter("board_no"));
@@ -18,7 +19,7 @@ public class DeletePostOkAction implements Action {
 		bdao.deletePost(board_no);
 		
 		forward.setRedirect(false);
-		forward.setPath("/board/BoardList.bo");
+		forward.setPath(req.getContextPath() + "/board/BoardList.bo?ageRange=" + req.getParameter("age_range"));
 		
 		return forward;
 	}

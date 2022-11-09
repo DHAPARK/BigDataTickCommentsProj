@@ -69,17 +69,17 @@
     	<form action="${pageContext.request.contextPath}/board/BoardWriteOk.bo" method="post" name="boardForm">
         	<div>
             	<article class="d-flex justify-content-between">
-	                <select class="form-select form-select-sm mb-3" aria-label=".form-select-lg example" style="width: 200px;">
+	                <!-- <select class="form-select form-select-sm mb-3" aria-label=".form-select-lg example" style="width: 200px;" >
 	                    <option selected>시연용 연령대 셀렉터</option>
 	                    <option value="1">10대</option>
 	                    <option value="2">20대</option>
 	                    <option value="3">30대</option>
 	                    <option value="4">40대</option>
 	                    <option value="5">50대</option>
-	                </select>
-                	<div>
+	                </select> -->
+                	<div style="margin-left: auto;">
                     	<button type="button" class="btn btn-outline-dark btn-sm mb-3" onclick="goBack();">취소</button>
-<!-- 	                    <button type="button" class="btn btn-primary btn-sm mb-3" onclick="location.href='javascript:document.boardForm.submit();'">등록</button> -->
+						<!-- <button type="button" class="btn btn-primary btn-sm mb-3" onclick="location.href='javascript:document.boardForm.submit();'">등록</button> -->
 	                    <button type="button" class="btn btn-primary btn-sm mb-3" onclick="sendForm()">등록</button>
                 	</div>
             	</article>
