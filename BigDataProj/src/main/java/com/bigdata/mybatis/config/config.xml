@@ -8,6 +8,8 @@
 		<typeAlias type="com.bigdata.vo.BoardVO" alias="boardVO"/>
 		<typeAlias type="com.bigdata.vo.ReplyVO" alias="replyVO"/>
 		<typeAlias type="com.bigdata.vo.FileVO" alias="fileVO"/>
+		<typeAlias type="com.bigdata.vo.BubbleChartVO" alias="bubbleChartVO"/>
+		<typeAlias type="com.bigdata.vo.HardChartVO" alias="hardChartVO"/>
 	</typeAliases>
 
 	<environments default="development">
@@ -29,6 +31,7 @@
 		<mapper resource="./com/bigdata/mybatis/xml/board.xml" />
 		<mapper resource="./com/bigdata/mybatis/xml/reply.xml" />
 		<mapper resource="./com/bigdata/mybatis/xml/file.xml" />
+		<mapper resource="./com/bigdata/mybatis/xml/chart.xml" />
 	</mappers>
 </configuration>
  

@@ -45,4 +45,14 @@
 	</servlet-mapping>
 	
 	
+	<servlet>
+		<servlet-name>ChartController</servlet-name>
+		<servlet-class>com.bigdata.frontcontroller.ChartController</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>ChartController</servlet-name>
+		<url-pattern>*.ch</url-pattern>
+	</servlet-mapping>
+	
 </web-app>

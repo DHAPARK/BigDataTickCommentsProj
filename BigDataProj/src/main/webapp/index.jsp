@@ -10,6 +10,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>트롤링</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
   integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 
@@ -81,28 +83,29 @@
     <!-- 버튼 그룹 -->
     <article class="text-center mb-3 col d-none d-lg-block">
       <div class="btn-group ">
-        <button type="button" class="btn btn-outline-light">10대</button>
-        <button type="button" class="btn btn-outline-light">20대</button>
-        <button type="button" class="btn btn-outline-light">30대</button>
-        <button type="button" class="btn btn-outline-light">40대</button>
-        <button type="button" class="btn btn-outline-light">50대</button>
+        <button type="button" class="btn btn-outline-light" onclick="see10AgeBubble()" >10대</button>
+        <button type="button" class="btn btn-outline-light" onclick="see20AgeBubble()" >20대</button>
+        <button type="button" class="btn btn-outline-light" onclick="see30AgeBubble()">30대</button>
+        <button type="button" class="btn btn-outline-light" onclick="see40AgeBubble()">40대</button>
+        <button type="button" class="btn btn-outline-light" onclick="see50AgeBubble()">50대</button>
       </div>
     </article>
 
     <!-- class="col d-none d-lg-block" -->
     <article class="text-center pb-3">
       <div class="btn d-block d-lg-none">
-        <button type="button" class="btn btn-outline-light">10</button>
-        <button type="button" class="btn btn-outline-light">20</button>
-        <button type="button" class="btn btn-outline-light">30</button>
-        <button type="button" class="btn btn-outline-light">40</button>
-        <button type="button" class="btn btn-outline-light">50</button>
+        <button type="button" class="btn btn-outline-light" onclick="see10AgeBubble()">10</button>
+        <button type="button" class="btn btn-outline-light" onclick="see20AgeBubble()">20</button>
+        <button type="button" class="btn btn-outline-light" onclick="see30AgeBubble()">30</button>
+        <button type="button" class="btn btn-outline-light" onclick="see40AgeBubble()">40</button>
+        <button type="button" class="btn btn-outline-light" onclick="see50AgeBubble()">50</button>
       </div>
     </article>
 
     <!-- 공백 채울거 생각하기-->
-    <article class="container-fluid bg-danger">
-      <div class="row">
+    <article class="container-fluid bg-danger" >
+      <div class="row" style="background-color:white;">
+      <!-- 
         <div class="col-12">
           <div class="py-5"></div>
           <div class="py-5"></div>
@@ -113,6 +116,15 @@
           <div class="py-5"></div>
           <div class="py-5"></div>
         </div>
+         -->
+         
+        <!-- 차트 들어갈 자 -->
+        <div id="chartArea" style="width:600px;height:600px; margin:0 auto;">
+			<canvas id="myChart" width="100%" height="100%"></canvas>
+        </div>
+		<!-- 차트 들어갈 자 -->
+		
+		
       </div>
     </article>
     <!-- 공백 끝-->
@@ -368,7 +380,10 @@ $(document).ready(function () {
 
 <!-- 가입하기 유효성검사-->
 <script type="text/javascript" src="${pageContext.request.contextPath}/assets/js/user.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/assets/js/chart.js"></script>
 <!-- 부트스트랩 -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
+
 </body>
 </html>
