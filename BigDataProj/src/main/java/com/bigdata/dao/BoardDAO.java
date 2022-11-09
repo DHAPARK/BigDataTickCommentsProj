@@ -8,6 +8,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 
 import com.bigdata.mybatis.config.SqlMapConfig;
 import com.bigdata.vo.BoardVO;
+import com.bigdata.vo.FileVO;
 
 
 public class BoardDAO {
@@ -75,5 +76,18 @@ public class BoardDAO {
 		return sqlsession.selectOne("Board.getEachAgeBoardCnt",pageMap);
 		
 	}
+
+	public boolean insertFile(FileVO filevo) {
+		boolean result = false;
+
+		if (sqlsession.insert("File.insertFile", filevo) == 1) {
+			result = true;
+		}
+
+		return result;
+	}
 	
+	public void updateFile_no(int board_no) {
+		sqlsession.update("File.updateFile_no",  board_no);
+	}
 }

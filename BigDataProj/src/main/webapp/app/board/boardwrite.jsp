@@ -30,9 +30,10 @@
     <!-- 폰트링크 끝 -->
 
     <!-- 섬머노트 시작 -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="/js/summernote/summernote-lite.js"></script>
+	<script src="/js/summernote/lang/summernote-ko-KR.js"></script>
+	<link rel="stylesheet" href="/css/summernote/summernote-lite.css">
     <!-- 섬머노트 끝 -->
 
     <!-- style.css -->
@@ -80,7 +81,7 @@
                 	<div style="margin-left: auto;">
                     	<button type="button" class="btn btn-outline-dark btn-sm mb-3" onclick="goBack();">취소</button>
 						<!-- <button type="button" class="btn btn-primary btn-sm mb-3" onclick="location.href='javascript:document.boardForm.submit();'">등록</button> -->
-	                    <button type="button" class="btn btn-primary btn-sm mb-3" onclick="sendForm()">등록</button>
+	                    <button type="button" class="btn btn-dark btn-sm mb-3" onclick="sendForm()">등록</button>
                 	</div>
             	</article>
 	            <article>
@@ -131,12 +132,19 @@ function goBack() {
 		document.boardForm.submit();
 	}
 </script>
+
 <!-- 섬머노트 스크립트 시작 -->
 <script>
     $('#summernote').summernote({
         placeholder: '내용을 입력해주세요.',
         tabsize: 2,
         height: 360,
+		lang: 'ko-KR', // default: 'en-US'
+        callbacks: {
+        	onImageUpload : function(file) {
+        		sendFile(file[0],this);
+        	}
+        },
         toolbar: [
         ['style', ['style']],
         ['font', ['bold', 'underline', 'clear']],
@@ -145,11 +153,32 @@ function goBack() {
         ['insert', ['link', 'picture', 'video']]
         ]
     });
+    
+    // 썸머노트 url 접속을 위한 설정
+	function sendFile(file, editor) {
+	   // 파일 전송을 위한 폼생성
+		data = new FormData();
+		data.append("uploadFile", file);
+		
+		$.ajax({
+	        data: data,
+	        type: "post",
+	        url: "/board/IMGUpload.bo",
+	     	// 원래 있던 기능을 막기 위해
+	        contentType : false,	
+	        processData : false,
+	        
+	        success : function(data){
+	        	alert("이미지가 업로드되었습니다.");
+	        	$(editor).summernote('editor.insertImage', data.url);
+	        }
+		});
+	}
 </script>
 <!-- 섬머노트 스크립트 끝 -->
 
 <!-- 폰트 깜박임 방지 시작 -->
-<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+<!-- <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script> -->
 
 <script type="text/javascript">
 $(document).ready(function () {  

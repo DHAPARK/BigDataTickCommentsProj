@@ -19,12 +19,14 @@ public class BoardWriteOkAction implements Action {
 		BoardDAO bdao = new BoardDAO();
 		BoardVO bvo = new BoardVO();
 		
+		
 		bvo.setBoard_title(req.getParameter("board_title"));
 		bvo.setBoard_content(req.getParameter("board_content"));
 		bvo.setUser_name(req.getParameter("user_name"));
 		bvo.setAge_range(req.getParameter("age_range"));
 		
 		bdao.insertBoard(bvo);
+		
 		
 		forward.setRedirect(true);
 		forward.setPath(req.getContextPath() + "/board/BoardList.bo?ageRange=" + req.getParameter("age_range"));

@@ -15,6 +15,7 @@ import com.bigdata.board.controller.BoardListAction;
 import com.bigdata.board.controller.BoardViewOkAction;
 import com.bigdata.board.controller.BoardWriteOkAction;
 import com.bigdata.board.controller.DeletePostOkAction;
+import com.bigdata.board.controller.IMGUploadAction;
 
 public class BoardFrontController extends HttpServlet {
 	@Override
@@ -55,6 +56,10 @@ public class BoardFrontController extends HttpServlet {
 			break;
 		case "/board/DeletePostOk.bo":
 			try {forward = new DeletePostOkAction().execute(req, resp);} catch (Exception e) {System.out.println(e); System.out.println("/board/DeletePostOk.bo에서 오류");}		
+			break;
+		case "/board/IMGUpload.bo":
+			IMGUploadAction imgUploadAction = new IMGUploadAction();
+			imgUploadAction.execute(req, resp);
 			break;
 		}
 
