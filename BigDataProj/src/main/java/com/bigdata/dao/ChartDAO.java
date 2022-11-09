@@ -7,6 +7,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 
 import com.bigdata.mybatis.config.SqlMapConfig;
 import com.bigdata.vo.BubbleChartVO;
+import com.bigdata.vo.HardChartVO;
 
 public class ChartDAO {
 
@@ -17,6 +18,7 @@ public class ChartDAO {
 		sqlsession = factory.openSession(true);
 	}
 
+	// 버블차트
 	public List<BubbleChartVO> get10SCBubble() {
 
 		List<BubbleChartVO> commentsInfoList = sqlsession.selectList("Chart.get10SCBubble");
@@ -56,4 +58,49 @@ public class ChartDAO {
 		return commentsInfoList;
 
 	}
+
+	// 버블차트
+
+	// 하드차트
+	public List<HardChartVO> get10SCHard() {
+
+		List<HardChartVO> commentsInfoList = sqlsession.selectList("Chart.get10SCHard");
+
+		return commentsInfoList;
+
+	}
+
+	public List<HardChartVO> get20SCHard() {
+
+		List<HardChartVO> commentsInfoList = sqlsession.selectList("Chart.get20SCHard");
+
+		return commentsInfoList;
+
+	}
+
+	public List<HardChartVO> get30SCHard() {
+
+		List<HardChartVO> commentsInfoList = sqlsession.selectList("Chart.get30SCHard");
+
+		return commentsInfoList;
+
+	}
+
+	public List<HardChartVO> get40SCHard() {
+
+		List<HardChartVO> commentsInfoList = sqlsession.selectList("Chart.get40SCHard");
+
+		return commentsInfoList;
+
+	}
+
+	public List<HardChartVO> get50SCHard() {
+
+		List<HardChartVO> commentsInfoList = sqlsession.selectList("Chart.get50SCHard");
+
+		return commentsInfoList;
+
+	}
+
+	// 하드차트
 }
