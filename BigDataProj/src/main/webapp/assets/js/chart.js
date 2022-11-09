@@ -375,6 +375,9 @@ function drawBubbleChart( rangedData ){
 
 //하드차트
 function see10AgeHard(){
+	//차트로딩화면
+    eventoccured();
+
     axios({
         url:'/chart/get10SC/get10SCHard.ch',
         method:'get'
@@ -398,15 +401,15 @@ function see10AgeHard(){
             myChart.data.datasets[ 0 ].data[i] = valArr[ i ] ;
 
         }
-        //차트로딩화면
-        eventoccured();
-
         myChart.update();
 
     })
 };
 
 function see20AgeHard(){
+	//차트로딩화면
+    eventoccured();
+
     axios({
         url:'/chart/get20SC/get20SCHard.ch',
         method:'get'
@@ -430,10 +433,6 @@ function see20AgeHard(){
 
         }
 
-        //차트로딩화면
-        eventoccured();
-
-
         myChart.update();
 
     })
@@ -442,6 +441,9 @@ function see20AgeHard(){
 };
 
 function see30AgeHard(){
+	//차트로딩화면
+    eventoccured();
+
     axios({
         url:'/chart/get30SC/get30SCHard.ch',
         method:'get'
@@ -465,10 +467,6 @@ function see30AgeHard(){
 
         }
         
-        //차트로딩화면
-        eventoccured();
-
-
         myChart.update();
 
     })
@@ -477,6 +475,9 @@ function see30AgeHard(){
 };
 
 function see40AgeHard(){
+    //차트로딩화면
+    eventoccured();
+
     axios({
         url:'/chart/get40SC/get40SCHard.ch',
         method:'get'
@@ -500,11 +501,6 @@ function see40AgeHard(){
 
         }
         
-        
-        //차트로딩화면
-        eventoccured();
-
-
         myChart.update();
 
     })
@@ -578,7 +574,9 @@ function changeChartStatus(){
 		될런지...
 		*/
 		axios.all(bubbleAxiosUrls.map( endpoint => axios.get(endpoint) )).then(axios.spread((...res) => {
-
+			
+			eventoccured();
+			
 			Array.from( res ).forEach( data => {
 				
 				/*
@@ -593,7 +591,7 @@ function changeChartStatus(){
 			} )
 			
 			//차트로딩화면
-	        eventoccured();
+	        
 
 			
 			drawBubbleChart( dataList ) ;
