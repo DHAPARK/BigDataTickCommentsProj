@@ -93,6 +93,8 @@
 	            <article>
 	                <textarea id="summernote" name="board_content"></textarea>
 	            </article>
+	            <div id="등록시디비에보드넘을박습니다">        
+	            </div>
         	</div>
         </form>
     </section>  
@@ -144,8 +146,8 @@ function goBack() {
         	onImageUpload : function(file) {
         		sendFile(file[0],this);
         	}
-        },
-        toolbar: [
+        }
+    ,	toolbar: [
         ['style', ['style']],
         ['font', ['bold', 'underline', 'clear']],
         ['color', ['color']],
@@ -171,6 +173,9 @@ function goBack() {
 	        success : function(data){
 	        	alert("이미지가 업로드되었습니다.");
 	        	$(editor).summernote('editor.insertImage', data.url);
+	        	let html = "";
+	        	html = '<input name="이행의데이터를전송시보드넘을박습니다" value="' + data.fileName + '"/>';
+	        	$('#등록시디비에보드넘을박습니다').append(html);
 	        }
 		});
 	}

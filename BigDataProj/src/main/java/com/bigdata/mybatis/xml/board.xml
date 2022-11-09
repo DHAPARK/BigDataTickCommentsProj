@@ -48,4 +48,9 @@
 		WHERE BOARD_NO = ${board_no}
 	</delete>
 	
+	<select id="getSeq" resultType="_int">
+		SELECT seq_board.currval FROM
+		dual
+	</select>
+
 </mapper>

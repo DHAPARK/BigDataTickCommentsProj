@@ -66,10 +66,11 @@ public class IMGUploadAction {
 				fvo.setFile_name(fileName);
 				fvo.setOrignal_file_name(original);
 				bdao.insertFile(fvo);
-				
+
 				uploadPath += "/" + fileName;
 				JSONObject jobj = new JSONObject();
 				jobj.put("url", uploadPath);
+				jobj.put("fileName", fileName);
 				resp.setContentType("application/json"); // 데이터 타입을 json으로 설정하기 위한 세팅
 				PrintWriter out = resp.getWriter();
 				out.print(jobj.toJSONString());

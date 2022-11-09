@@ -1,4 +1,3 @@
-
 package com.bigdata.vo;
 //
 //public class FileVO {

@@ -87,7 +87,16 @@ public class BoardDAO {
 		return result;
 	}
 	
-	public void updateFile_no(int board_no) {
-		sqlsession.update("File.updateFile_no",  board_no);
+	public void updateFile_no(int board_no, String file_name) {
+		FileVO fvo = new FileVO();
+		fvo.setBoard_no(board_no);
+		fvo.setFile_name(file_name);
+		sqlsession.update("File.updateBoardno",fvo);
+		System.out.println(board_no);
+		System.out.println(file_name);
+	}
+	
+	public int getSeq() {
+		return sqlsession.selectOne("Board.getSeq");
 	}
 }

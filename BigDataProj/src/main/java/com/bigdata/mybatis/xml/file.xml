@@ -7,4 +7,9 @@
 		INSERT INTO TABLE_FILES (FILE_NAME,File_PATH,ORIGINAL_FILE_NAME) 
 			VALUES (#{file_name},#{file_path},#{orignal_file_name})
 	</insert>
+	
+	<update id="updateBoardno" parameterType="filevo">  
+		UPDATE TABLE_FILES SET BOARD_NO = #{board_no} WHERE file_name LIKE #{file_name}
+	</update>
+	
 </mapper>
