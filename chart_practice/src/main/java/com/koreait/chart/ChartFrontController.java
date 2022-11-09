@@ -39,9 +39,7 @@ public class ChartFrontController extends HttpServlet{
 		
 		
 		switch(requestURI) {
-			case "/bubble_chart/bubble.ch": 
-				forward = new ChartCntAction().execute(req, resp);
-				break;
+		
 				
 			case "/bubble_chart/bubble1.ch":
 				ChartListAction chartlistaction = new ChartListAction();
