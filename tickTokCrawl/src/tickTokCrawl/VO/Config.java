@@ -6,7 +6,7 @@ public class Config {
 	
 	public final String id = "webdriver.chrome.driver" ;
 	
-	public final String path = "chromedriver" ;
+	public final String path = "chromedriver.exe" ;
 	/*
 	 * https://www.tiktok.com/@hyunheeofficial/video/7091089199994113281
 	 * var items = document.getElementsByClassName("tiktok-yz6ijl-DivWrapper");

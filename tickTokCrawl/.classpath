@@ -6,7 +6,6 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="/Users/dohyeonpark/Java/resources/selenium-server-4.1.3.jar"/>
-	<classpathentry kind="lib" path="/BigDataProject/src/main/webapp/WEB-INF/lib/ojdbc6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/thddy/OneDrive/바탕 화면/크롤링/selenium-server-4.6.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
