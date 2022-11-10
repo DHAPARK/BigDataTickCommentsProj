@@ -34,14 +34,17 @@ public class UserLoginOkAction implements Action {
 				session.setAttribute( "userInfo" , uvo );
 				forward.setPath("/index.jsp");
 				forward.setRedirect(false);
-				
-				if(autoLogin.equals("true")) {
+				System.out.println(autoLogin);
+				if(autoLogin == null) {
+					session.setAttribute( "userInfo" , uvo );
+					forward.setPath("/index.jsp");
+					forward.setRedirect(false);
+				}else if(autoLogin.equals("true")){
 					Cookie cookie = new Cookie("loginCookie", session.getId());
 					cookie.setPath("/");
 	                cookie.setMaxAge(60*60*24*7); 
 	                resp.addCookie(cookie);
 				}
-				
 			}else {
 				forward.setPath("/index.jsp");
 				forward.setRedirect(true);
