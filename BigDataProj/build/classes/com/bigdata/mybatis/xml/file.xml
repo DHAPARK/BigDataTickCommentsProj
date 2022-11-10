@@ -12,4 +12,9 @@
 		UPDATE TABLE_FILES SET BOARD_NO = #{board_no} WHERE file_name LIKE #{file_name}
 	</update>
 	
+	// board_no가 null인 파일들을 가져온다.
+	<select id="selectFile" resultType="filevo">
+		SELECT * FROM TABLE_FILES WHERE BOARD_NO IS NULL
+	</select>
+
 </mapper>
