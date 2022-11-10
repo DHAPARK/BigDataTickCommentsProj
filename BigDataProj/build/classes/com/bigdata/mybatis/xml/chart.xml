@@ -3,7 +3,11 @@
  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="Chart">
+<<<<<<< HEAD
 	
+=======
+	<!-- 버블차트 -->
+>>>>>>> origin/main
 	<select id="get10SCBubble" resultType="bubbleChartVO">
 		
 		<![CDATA[select cmc , cnt from comments where age_range = 10 and rownum <= 10 order by cnt desc]]>
@@ -34,5 +38,49 @@
 		<![CDATA[select cmc , cnt from comments where age_range = 50 and rownum <= 10 order by cnt desc]]>
 
 	</select>
+<<<<<<< HEAD
+=======
+	<!-- 버블차트 -->
+
+
+
+
+
+
+
+
+	<!--  막대차트 -->
+	<select id="get10SCHard" resultType="hardChartVO">
+		
+		<![CDATA[select cmc , cnt from comments where age_range = 10 and rownum <= 10 order by cnt desc]]>
+
+	</select>
+	
+	<select id="get20SCHard" resultType="hardChartVO">
+		
+		<![CDATA[select cmc , cnt from comments where age_range = 20 and rownum <= 10 order by cnt desc]]>
+
+	</select>
+	
+	<select id="get30SCHard" resultType="hardChartVO">
+		
+		<![CDATA[select cmc , cnt from comments where age_range = 30 and rownum <= 10 order by cnt desc]]>
+
+	</select>
+	
+	<select id="get40SCHard" resultType="hardChartVO">
+		
+		<![CDATA[select cmc , cnt from comments where age_range = 40 and rownum <= 10 order by cnt desc]]>
+
+	</select>
+	
+	
+	<select id="get50SCHard" resultType="hardChartVO">
+		
+		<![CDATA[select cmc , cnt from comments where age_range = 50 and rownum <= 10 order by cnt desc]]>
+
+	</select>
+	<!--  막대차트 -->
+>>>>>>> origin/main
 	
 </mapper>

@@ -125,14 +125,15 @@ function goBack() {
     $('#summernote').summernote({
         placeholder: '내용을 입력해주세요.',
         tabsize: 2,
-        height: 360,
-        toolbar: [
-        ['style', ['style']],
-        ['font', ['bold', 'underline', 'clear']],
-        ['color', ['color']],
-        ['para', ['ul', 'ol', 'paragraph']],
-        ['insert', ['link', 'picture', 'video']]
-        ]
+        height: 360
+//         ,
+//         toolbar: [
+//         ['style', ['style']],
+//         ['font', ['bold', 'underline', 'clear']],
+//         ['color', ['color']],
+//         ['para', ['ul', 'ol', 'paragraph']],
+//         ['insert', ['link', 'picture', 'video']]
+//         ]
     });
 </script>
 <!-- 섬머노트 스크립트 끝 -->

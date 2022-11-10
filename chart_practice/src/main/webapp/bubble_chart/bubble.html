@@ -14,58 +14,16 @@
 	<script src="https://code.highcharts.com/modules/accessibility.js"></script>
 </head>
 <body>
-	<p>bubble.jsp 제대로 들어왔나요 ? </p>
-<c:set var="cnt" value="${requestScope.cnt }" />	
-	${cnt}
-	
 	
 	<figure class="highcharts-figure">
 		<div id="container"></div>
 	</figure>
 
-
 	<script>
 	
 
-		let value = new Array();
-		let size = new Array();
-		
-		 window.onload = function() {
-			let obj = "";
-			let xhr = new XMLHttpRequest();
-			xhr.open("GET", "/bubble_chart/bubble_test.ch ", true);
-			xhr.send();
-			xhr.onreadystatechange = function() {
-				if (xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200) {
-					obj = JSON.parse(xhr.responseText);
 					
 					
-					console.log( obj ) ;
-					
-					
-					setTimeout(()=>{
-
-						
-						
-					},31000);
-					
-					
-					
-					// alert(obj)
-					//for (let i = 0; i < obj.search_word2.length; i++) {
-					//	value[i] = obj.search_word2[i].comments;
-						// alert(value[i])
-						
-// 		 	let obj2 = "";
-// 			let xhr2 = new XMLHttpRequest();
-// 			xhr2.open("GET", "data3.json", true);
-// 			xhr2.send();
-// 			xhr2.onreadystatechange = function() {
-// 				if (xhr2.readyState == XMLHttpRequest.DONE && xhr2.status == 200) {
-// 					obj2 = JSON.parse(xhr2.responseText);
-// 					for (let i = 0; i < obj2.search_word.length; i++) {
-// 						size[i] = obj2.search_word[i].size;    
-
 						
 		// <chart부분>				
 		var chart = Highcharts.chart('container', {
@@ -161,7 +119,6 @@
 		  }]
 		  
 		});
-					}}}}
 
 </script>
 

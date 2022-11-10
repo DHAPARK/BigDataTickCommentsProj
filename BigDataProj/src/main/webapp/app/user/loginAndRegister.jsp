@@ -42,7 +42,15 @@
 	            <div class="mb-3">
 	              <label for="loginPw" class="col-form-label">비밀번호</label>
 	              <input type="password" class="form-control" id="loginPw" name="loginPw" placeholder="Password" />
-	           	  <p id="checkLoginPw"></p>
+	           	  <!-- 로그인 상태 유지 체크박스 -->
+				<div class="checkbox">
+	                <label>
+	                  <input type="checkbox" name="autoLogin" value="true" />
+	                  로그인 상태 유지
+	                </label>
+	            </div>
+
+				  <p id="checkLoginPw"></p>
 	            </div>
 	          </form>
 	        </div>
@@ -51,6 +59,7 @@
 	          <!-- <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#findPwModal" data-bs-dismiss="modal">비밀번호 찾기</button> -->
 	          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
 	          <button type="button" class="btn btn-primary" onclick="login();">로그인</button>
+
 	        </div>
 	      </div>
 	    </div>
