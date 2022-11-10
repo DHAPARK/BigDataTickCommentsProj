@@ -205,12 +205,12 @@
 	
 	<!--  버블 / 하드 스위치 박도현  -->
     <div class="wrapper">
-    	<p class="chart_Choose_Text">막대차트</p>
+    	<p class="chart_Choose_Text">키워드별</p>
 		  <input type="checkbox" id="switch">
 		  <label for="switch" class="switch_label" onclick="changeChartStatus()">
 		    <span class="onf_btn"></span>
 		  </label>
-	  	<p class="chart_Choose_Text">버블차트</p>
+	  	<p class="chart_Choose_Text">세대별</p>
 	</div>
     <!--  버블 / 하드 스위치 박도현  -->
 	
