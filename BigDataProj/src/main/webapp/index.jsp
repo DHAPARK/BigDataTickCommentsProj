@@ -14,6 +14,13 @@
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
   integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+<!-- packedBubble 차트 -->
+	<script src="https://code.highcharts.com/highcharts.js"></script>
+	<script src="https://code.highcharts.com/highcharts-more.js"></script>
+	<script src="https://code.highcharts.com/modules/exporting.js"></script>
+	<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+<!-- packedBubble 차트 -->
+
 
   <!-- favicon -->
   <link rel="icon" href="${pageContext.request.contextPath}/assets/images/favicon.ico" type="image/x-icon">
@@ -32,6 +39,95 @@
 
   <!-- style.css -->
   <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/style.css">
+
+<!-- 임시 스타일 박도현 확정나면 css파일로 옮겨적을것-->
+<style>
+#myBubbleChart{
+	display:none;
+}
+#load {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    display: block;
+    opacity: 0.8;
+    background: white;
+    z-index: 99;
+    text-align: center;
+}
+
+#load > img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 100;
+}
+
+.wrapper {
+  width: 300px;
+  height: 50px;
+  text-align: center;
+  margin: 0 auto;
+}
+#switch {
+  position: absolute;
+  /* hidden */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.switch_label {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  width: 60px;
+  height: 33px;
+  background: #fff;
+  border: 2px solid #daa;
+  border-radius: 20px;
+  transition: 0.2s;
+}
+.switch_label:hover {
+  background: #efefef;
+}
+.onf_btn {
+  position: absolute;
+  top: 4px;
+  left: 3px;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  background: #daa;
+  transition: 0.2s;
+}
+
+/* checking style */
+#switch:checked+.switch_label {
+  background: #c44;
+  border: 2px solid #c44;
+}
+
+#switch:checked+.switch_label:hover {
+  background: #e55;
+}
+
+/* move */
+#switch:checked+.switch_label .onf_btn {
+  left: 34px;
+  background: #fff;
+  box-shadow: 1px 2px 3px #00000020;
+}
+
+.chart_Choose_Text{
+	color:white;
+	display:inline;
+}
+</style>
+<!-- 임시 스타일 박도현 -->
 
 </head>
 
@@ -81,56 +177,71 @@
     <!-- 검색창 끝 -->
     
     <!-- 버튼 그룹 -->
-    <article class="text-center mb-3 col d-none d-lg-block">
-      <div class="btn-group ">
-        <button type="button" class="btn btn-outline-light" onclick="see10AgeBubble()" >10대</button>
-        <button type="button" class="btn btn-outline-light" onclick="see20AgeBubble()" >20대</button>
-        <button type="button" class="btn btn-outline-light" onclick="see30AgeBubble()">30대</button>
-        <button type="button" class="btn btn-outline-light" onclick="see40AgeBubble()">40대</button>
-        <button type="button" class="btn btn-outline-light" onclick="see50AgeBubble()">50대</button>
+    
+    
+    <!--  막대차트  -->
+    <article class="text-center mb-3 col chart_hard">
+      <div class="btn-group d-lg-block d-none">
+        <button type="button" class="btn btn-outline-light" onclick="see10AgeHard()" >10대</button>
+        <button type="button" class="btn btn-outline-light" onclick="see20AgeHard()" >20대</button>
+        <button type="button" class="btn btn-outline-light" onclick="see30AgeHard()">30대</button>
+        <button type="button" class="btn btn-outline-light" onclick="see40AgeHard()">40대</button>
+        <button type="button" class="btn btn-outline-light" onclick="see50AgeHard()">50대</button>
       </div>
     </article>
 
     <!-- class="col d-none d-lg-block" -->
-    <article class="text-center pb-3">
+    <article class="text-center pb-3 chart_hard">
       <div class="btn d-block d-lg-none">
-        <button type="button" class="btn btn-outline-light" onclick="see10AgeBubble()">10</button>
-        <button type="button" class="btn btn-outline-light" onclick="see20AgeBubble()">20</button>
-        <button type="button" class="btn btn-outline-light" onclick="see30AgeBubble()">30</button>
-        <button type="button" class="btn btn-outline-light" onclick="see40AgeBubble()">40</button>
-        <button type="button" class="btn btn-outline-light" onclick="see50AgeBubble()">50</button>
+        <button type="button" class="btn btn-outline-light" onclick="see10AgeHard()">10</button>
+        <button type="button" class="btn btn-outline-light" onclick="see20AgeHard()">20</button>
+        <button type="button" class="btn btn-outline-light" onclick="see30AgeHard()">30</button>
+        <button type="button" class="btn btn-outline-light" onclick="see40AgeHard()">40</button>
+        <button type="button" class="btn btn-outline-light" onclick="see50AgeHard()">50</button>
       </div>
     </article>
+	<!--  막대차트  -->
+	
+	
+	<!--  버블 / 하드 스위치 박도현  -->
+    <div class="wrapper">
+    	<p class="chart_Choose_Text">막대차트</p>
+		  <input type="checkbox" id="switch">
+		  <label for="switch" class="switch_label" onclick="changeChartStatus()">
+		    <span class="onf_btn"></span>
+		  </label>
+	  	<p class="chart_Choose_Text">버블차트</p>
+	</div>
+    <!--  버블 / 하드 스위치 박도현  -->
+	
+	
+	
+	
+
 
     <!-- 공백 채울거 생각하기-->
     <article class="container-fluid bg-danger" >
       <div class="row" style="background-color:white;">
-      <!-- 
-        <div class="col-12">
-          <div class="py-5"></div>
-          <div class="py-5"></div>
-          <div class="py-5"></div>
-          <div class="py-5"></div>
-          <div class="py-5"></div>
-          <div class="py-5"></div>
-          <div class="py-5"></div>
-          <div class="py-5"></div>
-        </div>
-         -->
-         
         <!-- 차트 들어갈 자 -->
         <div id="chartArea" style="width:600px;height:600px; margin:0 auto;">
-			<canvas id="myChart" width="100%" height="100%"></canvas>
+        	<div id="myBubbleChart" style="width:100%; height:100%"></div>
+			<canvas id="myHardChart" width="100%" height="100%"></canvas>
         </div>
 		<!-- 차트 들어갈 자 -->
-		
-		
       </div>
     </article>
     <!-- 공백 끝-->
 
   </section>
   
+  
+			<!-- 차트 로딩화면 -->
+			<div id="load">
+		        <img src="${pageContext.request.contextPath}/assets/images/chartLoading.gif" alt="loading">
+		    </div>
+  			<!-- 차트 로딩화면 -->
+  			
+  			  
   <!-- 좌우 사이즈 줄이고 싶으면 이거 변경 -->
   <!-- 이영님이 회색해달라해서....급하게 레이아웃 급조 -->
   <div style="background-color: #E8E8E8;">

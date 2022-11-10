@@ -1,0 +1,52 @@
+diff a/BigDataProj/build/classes/com/bigdata/mybatis/xml/chart.xml b/BigDataProj/build/classes/com/bigdata/mybatis/xml/chart.xml	(rejected hunks)
+@@ -38,5 +38,49 @@
+ 		<![CDATA[select cmc , cnt from comments where age_range = 50 and rownum <= 10 order by cnt desc]]>
+ 
+ 	</select>
++<<<<<<< HEAD
++=======
++	<!-- 버블차트 -->
++
++
++
++
++
++
++
++
++	<!--  막대차트 -->
++	<select id="get10SCHard" resultType="hardChartVO">
++		
++		<![CDATA[select cmc , cnt from comments where age_range = 10 and rownum <= 10 order by cnt desc]]>
++
++	</select>
++	
++	<select id="get20SCHard" resultType="hardChartVO">
++		
++		<![CDATA[select cmc , cnt from comments where age_range = 20 and rownum <= 10 order by cnt desc]]>
++
++	</select>
++	
++	<select id="get30SCHard" resultType="hardChartVO">
++		
++		<![CDATA[select cmc , cnt from comments where age_range = 30 and rownum <= 10 order by cnt desc]]>
++
++	</select>
++	
++	<select id="get40SCHard" resultType="hardChartVO">
++		
++		<![CDATA[select cmc , cnt from comments where age_range = 40 and rownum <= 10 order by cnt desc]]>
++
++	</select>
++	
++	
++	<select id="get50SCHard" resultType="hardChartVO">
++		
++		<![CDATA[select cmc , cnt from comments where age_range = 50 and rownum <= 10 order by cnt desc]]>
++
++	</select>
++	<!--  막대차트 -->
++>>>>>>> origin/main
+ 	
+ </mapper>
+\ No newline at end of file

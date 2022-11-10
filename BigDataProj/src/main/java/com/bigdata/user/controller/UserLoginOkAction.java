@@ -21,7 +21,8 @@ public class UserLoginOkAction implements Action {
 		UserVO uvo = new UserVO();
 		String user_name = req.getParameter("loginId");
 		String loginPw = req.getParameter("loginPw");
-		String autoLogin = req.getParameter("autoLogin");
+		//수정 박도현 _ req.getParameter("autoLogin")값이 null일경우 (autoLogin체크 안하고 로그인 시) 에러발생 아래와같이 수정 
+		String autoLogin = req.getParameter("autoLogin") == null ? "" : req.getParameter("autoLogin");
 		
 		HttpSession session = req.getSession();
 		Cookie[] cookies = req.getCookies();
