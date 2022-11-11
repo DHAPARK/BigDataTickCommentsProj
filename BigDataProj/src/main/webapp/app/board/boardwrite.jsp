@@ -171,7 +171,9 @@ function goBack() {
 	        processData : false,
 	        
 	        success : function(data){
-	
+				
+
+
 	        	alert("이미지가 업로드되었습니다.");
 	        	$(editor).summernote('editor.insertImage', data.url);
 	        	let html = "";
