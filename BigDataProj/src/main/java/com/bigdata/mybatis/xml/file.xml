@@ -12,5 +12,8 @@
 		UPDATE TABLE_FILES SET BOARD_NO = #{board_no} WHERE file_name LIKE #{file_name}
 	</update>
 	
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/main
 </mapper>

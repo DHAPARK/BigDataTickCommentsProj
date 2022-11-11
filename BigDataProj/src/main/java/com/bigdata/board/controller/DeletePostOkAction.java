@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.bigdata.action.Action;
 import com.bigdata.action.ActionForward;
 import com.bigdata.dao.BoardDAO;
+import com.bigdata.vo.FileVO;
 
 public class DeletePostOkAction implements Action {
 	

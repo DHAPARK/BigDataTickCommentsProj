@@ -153,11 +153,17 @@
   <!-- 섹션 요소 -->
   <section class="container-fluid bg-dark p-5">
 
-    <header class="py-5 text-white">
+<!--     <header class="py-5 text-white"> -->
+    <header class="row justify-content-center w-70" style="float: none; margin:100 auto;">
       <!-- <h1 class="text-center">세대별 키워드 데이터 분석 툴<br></h1>
       <h1 class="text-center"><strong>Daunter</strong></h1> -->
-      <h1 class="text-center">세대별 트렌드를 긁어오는</h1>
-      <h1 class="text-center">트렌디한 keyword 분석 툴, <strong>트롤링</strong></h1>
+      
+    	<img class="col-lg-6 pt-5" src = "/assets/images/임시 메인.png" alt="못본걸로 하자">
+      
+      
+      
+<!--       <h1 class="text-center">세대별 트렌드를 긁어오는</h1> -->
+<!--       <h1 class="text-center">트렌디한 keyword 분석 툴, <strong>트롤링</strong></h1> -->
     </header> 
     <!-- 공백용 임시 시작-->
     <!-- <div class="py-5 d-none d-lg-block"></div> -->
