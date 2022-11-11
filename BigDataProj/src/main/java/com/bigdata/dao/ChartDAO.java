@@ -7,6 +7,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 
 import com.bigdata.mybatis.config.SqlMapConfig;
 import com.bigdata.vo.BubbleChartVO;
+import com.bigdata.vo.CloudChartVO;
 import com.bigdata.vo.HardChartVO;
 
 public class ChartDAO {
@@ -103,4 +104,21 @@ public class ChartDAO {
 	}
 
 	// 하드차트
+	
+	
+	// 클라우드 차트
+	
+	public List<CloudChartVO> getTop40() {
+		return sqlsession.selectList("Chart.getTop40");
+	}
+	
+	public List<CloudChartVO> getTop10() {
+		return sqlsession.selectList("Chart.getTop10");
+	}
+	
+	public List<CloudChartVO> getTop10Cnt() {
+		return sqlsession.selectList("Chart.getTop10Cnt");
+	}
+	
+	// 클라우드 차트
 }

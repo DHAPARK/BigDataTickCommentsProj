@@ -3,11 +3,7 @@
  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="Chart">
-<<<<<<< HEAD
-	
-=======
 	<!-- 버블차트 -->
->>>>>>> origin/main
 	<select id="get10SCBubble" resultType="bubbleChartVO">
 		
 		<![CDATA[select cmc , cnt from comments where age_range = 10 and rownum <= 10 order by cnt desc]]>
@@ -38,8 +34,6 @@
 		<![CDATA[select cmc , cnt from comments where age_range = 50 and rownum <= 10 order by cnt desc]]>
 
 	</select>
-<<<<<<< HEAD
-=======
 	<!-- 버블차트 -->
 
 
@@ -81,6 +75,32 @@
 
 	</select>
 	<!--  막대차트 -->
->>>>>>> origin/main
+	
+	
+	
+	
+	
+	
+	
+	
+	<!-- 클라우드 차트 -->
+	<select id="getTop40" resultType="cloudChartVO">
+		SELECT 	cmc
+		FROM(	SELECT * FROM COMMENTS ORDER BY CNT DESC) 
+		WHERE 	ROWNUM BETWEEN 1 AND 40
+	</select>
+	
+	<select id="getTop10" resultType="cloudChartVO">
+		SELECT 	cmc
+		FROM(	SELECT * FROM COMMENTS ORDER BY CNT DESC) 
+		WHERE 	ROWNUM BETWEEN 1 AND 10
+	</select>
+	
+	<select id="getTop10Cnt" resultType="cloudChartVO">
+		SELECT 	cnt
+		FROM(	SELECT * FROM COMMENTS ORDER BY CNT DESC) 
+		WHERE 	ROWNUM BETWEEN 1 AND 10
+	</select>
+	<!-- 클라우드 차트 -->
 	
 </mapper>
