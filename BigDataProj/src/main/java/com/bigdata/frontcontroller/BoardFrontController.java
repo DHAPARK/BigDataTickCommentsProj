@@ -16,19 +16,20 @@ import com.bigdata.board.controller.BoardViewOkAction;
 import com.bigdata.board.controller.BoardWriteOkAction;
 import com.bigdata.board.controller.DeletePostOkAction;
 import com.bigdata.board.controller.IMGUploadAction;
+import com.bigdata.board.controller.ImgEditAction;
 
 public class BoardFrontController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		doprocess(req, resp);
+		doProcess(req, resp);
 	}
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		doprocess(req, resp);
+		doProcess(req, resp);
 	}
 
-	protected void doprocess(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	protected void doProcess(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		req.setCharacterEncoding("UTF-8");
 		resp.setCharacterEncoding("UTF-8");
 		
@@ -60,6 +61,9 @@ public class BoardFrontController extends HttpServlet {
 		case "/board/IMGUpload.bo":
 			IMGUploadAction imgUploadAction = new IMGUploadAction();
 			imgUploadAction.execute(req, resp);
+			break;
+		case "/board/ImgEdit.bo":
+			try {forward = new ImgEditAction().execute(req, resp);} catch (Exception e) {System.out.println(e); System.out.println("/board/DeletePostOk.bo에서 오류");}		
 			break;
 		}
 

@@ -3,6 +3,7 @@ package com.bigdata.frontcontroller;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -11,8 +12,10 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.json.simple.JSONObject;
 
+import com.bigdata.action.ActionForward;
 import com.bigdata.dao.ChartDAO;
 import com.bigdata.vo.BubbleChartVO;
+import com.bigdata.vo.CloudChartVO;
 import com.bigdata.vo.HardChartVO;
 
 /**
@@ -20,8 +23,17 @@ import com.bigdata.vo.HardChartVO;
  */
 
 public class ChartController extends HttpServlet {
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		doProcess(req, resp);
+	}
 
-	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		doProcess(req, resp);
+	}
+
+	protected void doProcess(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 
 		req.setCharacterEncoding("UTF-8");
 		res.setCharacterEncoding("UTF-8");
@@ -31,6 +43,8 @@ public class ChartController extends HttpServlet {
 		String requestURI = req.getRequestURI();
 
 		PrintWriter out = res.getWriter();
+		
+		ActionForward forward = null;
 
 		switch (requestURI) {
 		// 버블차트
@@ -191,8 +205,66 @@ public class ChartController extends HttpServlet {
 			out.print(hobj50);
 
 			break;
-
+			
 		// 하드차트
+			
+		// 클라우드 차트
+		
+		case "/chart/Top40.ch":
+			
+			List<CloudChartVO> cnt = cdao.getTop40();
+			
+			List<CloudChartVO> top40 = new ArrayList<>(cnt.subList(0, 40));
+		
+			String result = "";
+			
+			for(int i = 0; i < 40; i++) {
+				
+				result += top40.get(i).getCmc()+",";
+			
+			}
+			
+			out.print( result );
+			
+			break;
+			
+		case "/chart/Top10.ch":
+			
+			List<CloudChartVO> rank = cdao.getTop10();
+			
+			List<CloudChartVO> top10 = new ArrayList<>(rank.subList(0, 10));
+		
+			String str = "";
+			
+			for(int i = 0; i < 10; i++) {
+				
+				str += top10.get(i).getCmc()+",";
+			
+			}
+			
+			out.print( str );
+			
+			break;
+			
+		case "/chart/Top10Cnt.ch":
+			
+			List<CloudChartVO> cnt10 = cdao.getTop10Cnt();
+			
+			List<CloudChartVO> top10cnt = new ArrayList<>(cnt10.subList(0, 10));
+		
+			String tt = "";
+			
+			for(int i = 0; i < 10; i++) {
+				
+				tt += top10cnt.get(i).getCnt() +",";
+			
+			}
+			
+			out.print( tt );
+			
+			break;
+			
+		// 클라우드 차트
 
 		default:
 
@@ -200,5 +272,4 @@ public class ChartController extends HttpServlet {
 
 		}
 	}
-
 }
