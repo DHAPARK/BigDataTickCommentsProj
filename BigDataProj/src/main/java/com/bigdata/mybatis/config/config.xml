@@ -10,6 +10,7 @@
 		<typeAlias type="com.bigdata.vo.FileVO" alias="fileVO"/>
 		<typeAlias type="com.bigdata.vo.BubbleChartVO" alias="bubbleChartVO"/>
 		<typeAlias type="com.bigdata.vo.HardChartVO" alias="hardChartVO"/>
+		<typeAlias type="com.bigdata.vo.CloudChartVO" alias="cloudChartVO"/>
 	</typeAliases>
 
 	<environments default="development">

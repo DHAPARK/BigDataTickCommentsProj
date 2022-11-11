@@ -76,4 +76,31 @@
 	</select>
 	<!--  막대차트 -->
 	
+	
+	
+	
+	
+	
+	
+	
+	<!-- 클라우드 차트 -->
+	<select id="getTop40" resultType="cloudChartVO">
+		SELECT 	cmc
+		FROM(	SELECT * FROM COMMENTS ORDER BY CNT DESC) 
+		WHERE 	ROWNUM BETWEEN 1 AND 40
+	</select>
+	
+	<select id="getTop10" resultType="cloudChartVO">
+		SELECT 	cmc
+		FROM(	SELECT * FROM COMMENTS ORDER BY CNT DESC) 
+		WHERE 	ROWNUM BETWEEN 1 AND 10
+	</select>
+	
+	<select id="getTop10Cnt" resultType="cloudChartVO">
+		SELECT 	cnt
+		FROM(	SELECT * FROM COMMENTS ORDER BY CNT DESC) 
+		WHERE 	ROWNUM BETWEEN 1 AND 10
+	</select>
+	<!-- 클라우드 차트 -->
+	
 </mapper>
