@@ -12,8 +12,4 @@
 		UPDATE TABLE_FILES SET BOARD_NO = #{board_no} WHERE file_name LIKE #{file_name}
 	</update>
 	
-	<select id="selectFile" resultType="filevo">
-		SELECT * FROM TABLE_FILES WHERE BOARD_NO IS NULL
-	</select>
-
 </mapper>
