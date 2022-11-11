@@ -158,7 +158,7 @@
       <!-- <h1 class="text-center">세대별 키워드 데이터 분석 툴<br></h1>
       <h1 class="text-center"><strong>Daunter</strong></h1> -->
       
-    	<img class="col-lg-6 pt-5" src = "/assets/images/임시 메인.png" alt="못본걸로 하자">
+    	<img class="col-lg-6 pt-5" src = "/assets/images/main.png" alt="못본걸로 하자">
       
       
       
