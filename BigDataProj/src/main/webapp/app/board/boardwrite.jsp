@@ -144,7 +144,12 @@ function goBack() {
 		lang: 'ko-KR', // default: 'en-US'
         callbacks: {
         	onImageUpload : function(file) {
-        		sendFile(file[0],this);
+				var result = confirm("이미지를 수정하시겠습니까?");
+				if(result){
+					window.open("/board/ImgEdit.bo","imgEdit","width=700px; height=800px");
+				} else {
+        			sendFile(file[0],this);
+        		}
         	}
         }
     ,	toolbar: [
