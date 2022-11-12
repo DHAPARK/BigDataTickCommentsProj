@@ -161,8 +161,6 @@
 
     	<img class="col-lg-6 pt-5" src = "/assets/images/main.png" alt="못본걸로 하자">
 
-    	<img class="col-lg-4 pt-5" src = "/assets/images/임시 메인.png" alt="못본걸로 하자">
-
       
       
       

@@ -143,3 +143,28 @@ $('#sepiaFilter').on('click', function () {
     // Canvas에 다시 그린다.
     ctx.putImageData(filteredData, 0 , 0);
 });
+
+function thresholdFilter(pixels, threshold) {
+    var d = pixels.data;
+    for(var i =0; i< d.length; i+=4){
+        var r = d[i];
+        var g = d[i+1];
+        var b = d[i+2];
+
+        var v = (0.2126*r + 0.7152*g + 0.0722*b >= threshold) ? 255 : 0;
+        d[i] = d[i+1] = d[i+2] = v;
+    }
+    return pixels;
+}
+
+$('#thresholdFilter').on('click', function () {
+    // imageData를 가져온다.
+    var pixels = ctx.getImageData(0,0, canvas.width, canvas.height);
+
+    // image processing
+    var filteredData = thresholdFilter(pixels, 100);
+
+    // Canvas에 다시 그린다.
+    ctx.putImageData(filteredData, 0 , 0);
+});
+

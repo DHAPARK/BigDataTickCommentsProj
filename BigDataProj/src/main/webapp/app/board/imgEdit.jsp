@@ -4,7 +4,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+
+<title>이미지 필터(beta)</title>
 <style>
 	canvas {
 	    border : black 1px solid;
@@ -14,19 +15,29 @@
 </head>
 
 <body>
-	<canvas id="canvas" width="600px" height="600px"></canvas><br>
-	<!-- <canvas id="canvas"></canvas><br> -->
-
-	<!-- action="imgSave_test.jsp" 잠시 주석-->
-
-	<input id="loadButton" type="file" accept="image/*">
-		
-	<p>	<button id="invertFilter">invertFilter</button>
+	<fieldset>
+		<legend>이미지</legend>
+		<canvas id="canvas" width="300" height="300"></canvas><br>
+	</fieldset>
+	
+	<fieldset>
+		<legend>파일을 고르시오.</legend>
+			<input id="loadButton" type="file" accept="image/*">
+	</fieldset>
+	
+    <fieldset>
+        <legend>필터</legend>
+		<button id="invertFilter">invertFilter</button>
 		<button id="brightnessFilter">brightnessFilter</button>
 		<button id="grayscaleFilter">grayscaleFilter</button>
 		<button id="sepiaFilter">sepiaFilter</button>
+		<button id="thresholdFilter">thresholdFilter</button>
+	</fieldset>
 	
-	<p><button id="download">제출</button> 
+	<fieldset>
+		<legend>"C:\upload" 혹은 지정하신 경로에 다운로드 됩니다.</legend>
+		<button id="download">다운로드</button> 
+	</fieldset>
 
 
 	
@@ -60,7 +71,7 @@ uploadCanvasToServer = function() {
 	  processData: false,
 	  contentType: false,
 	  success: function (data) {
-	     	alert("이미지가 업로드되었습니다.");
+	     	alert("이미지가 다운로드되었습니다.");
 	  }
 	})
 };
