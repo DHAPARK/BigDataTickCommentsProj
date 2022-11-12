@@ -32,10 +32,11 @@ public class BoardWriteOkAction implements Action {
 		// for문출력
 		
 		bdao.insertBoard(bvo);
-
-		for (int i = 0; i < imgNameArr.length; i++) {
-			// 작성중에 취소된 이미지도 들어간다 차후 대안을 찾아야한다. 현재로써는 모르겠다.
-			bdao.updateFile_no(bdao.getSeq(), imgNameArr[i]);
+		if (imgNameArr!= null) {
+			for (int i = 0; i < imgNameArr.length; i++) {
+				// 작성중에 취소된 이미지도 들어간다 차후 대안을 찾아야한다. 현재로써는 모르겠다.
+				bdao.updateFile_no(bdao.getSeq(), imgNameArr[i]);
+			}
 		}
 		
 		forward.setRedirect(true);

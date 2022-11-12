@@ -21,6 +21,7 @@ public class DeletePostOkAction implements Action {
 		
 		forward.setRedirect(false);
 		forward.setPath(req.getContextPath() + "/board/BoardList.bo?ageRange=" + req.getParameter("age_range"));
+		System.out.println(req.getParameter("age_range"));
 		
 		return forward;
 	}
