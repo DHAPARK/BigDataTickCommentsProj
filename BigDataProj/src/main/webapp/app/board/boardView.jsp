@@ -65,6 +65,7 @@
                                     </li>
                                     <li>
 	                                    <form name="deleteForm" action="${pageContext.request.contextPath}/board/DeletePostOk.bo?board_no=${board.board_no}" method="post">
+	                                    	<input type="hidden" name="age_range" value="${userInfo.age_range}">
 	                                    	<input type="button" value="삭제" onclick="deletePost()" style="font-size: 12px !important;">
 	                                    </form>
                                     </li>
