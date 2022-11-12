@@ -13,7 +13,7 @@ public class ImgEditAction implements Action{
 		// TODO Auto-generated method stub
 		ActionForward forward = new ActionForward();
 		
-		forward.setRedirect(false);
+		forward.setRedirect(true);
 		forward.setPath(req.getContextPath() + "/app/board/imgEdit.jsp");
 		return forward;
 	}

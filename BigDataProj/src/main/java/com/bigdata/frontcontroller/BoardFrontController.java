@@ -63,7 +63,7 @@ public class BoardFrontController extends HttpServlet {
 			imgUploadAction.execute(req, resp);
 			break;
 		case "/board/ImgEdit.bo":
-			try {forward = new ImgEditAction().execute(req, resp);} catch (Exception e) {System.out.println(e); System.out.println("/board/DeletePostOk.bo에서 오류");}		
+			try {forward = new ImgEditAction().execute(req, resp);} catch (Exception e) {System.out.println(e); System.out.println("이미지업로드에서 오류 신호에게 문의");}
 			break;
 		}
 
