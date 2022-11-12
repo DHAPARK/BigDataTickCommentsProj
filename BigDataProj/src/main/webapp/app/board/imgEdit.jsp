@@ -15,6 +15,7 @@
 
 <body>
 	<canvas id="canvas" width="600px" height="600px"></canvas><br>
+	<!-- <canvas id="canvas"></canvas><br> -->
 
 	<!-- action="imgSave_test.jsp" 잠시 주석-->
 

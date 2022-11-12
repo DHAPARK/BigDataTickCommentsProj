@@ -10,18 +10,20 @@ var canvas = $('#canvas')[0];
 var ctx = canvas.getContext('2d');
 
 function drawImageData(image) {
-    image.height *= canvas.offsetWidth / image.width;
-    image.width = canvas.offsetWidth;
-
-    if(image.height > canvas.offsetHeight){
-        image.width *= canvas.offsetHeight / image.height;
-        image.height = canvas.offsetHeight;
-    }
-
-    ctx.drawImage(image, 0, 0, image.width, image.height);
+//    image.height *= canvas.offsetWidth / image.width;
+//    image.width = canvas.offsetWidth;
+//
+//    if(image.height > canvas.offsetHeight){
+//        image.width *= canvas.offsetHeight / image.height;
+//        image.height = canvas.offsetHeight;
+//    }
+	canvas.width = image.width;
+	canvas.height = image.height;
+    ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
     //로그 확인
     console.log(ctx.getImageData(0,0, canvas.width, canvas.height));
 }
+
 
 $('#loadButton').on('change', function (e) {
     var file = e.target.files[0];
