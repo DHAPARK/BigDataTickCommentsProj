@@ -70,6 +70,10 @@
     	<form action="${pageContext.request.contextPath}/board/BoardWriteOk.bo" method="post" name="boardForm">
         	<div>
             	<article class="d-flex justify-content-between">
+					<div>
+						<!-- 버튼 -->
+						<button id="imgedit" type="button" class="btn btn-dark btn-sm mb-2">이미지 필터(beta)</button>
+					</div>
 	                <!-- <select class="form-select form-select-sm mb-3" aria-label=".form-select-lg example" style="width: 200px;" >
 	                    <option selected>시연용 연령대 셀렉터</option>
 	                    <option value="1">10대</option>
@@ -79,9 +83,9 @@
 	                    <option value="5">50대</option>
 	                </select> -->
                 	<div style="margin-left: auto;">
-                    	<button type="button" class="btn btn-outline-dark btn-sm mb-3" onclick="goBack();">취소</button>
+                    	<button type="button" class="btn btn-outline-dark btn-sm mb-2" onclick="goBack();">취소</button>
 						<!-- <button type="button" class="btn btn-primary btn-sm mb-3" onclick="location.href='javascript:document.boardForm.submit();'">등록</button> -->
-	                    <button type="button" class="btn btn-dark btn-sm mb-3" onclick="sendForm()">등록</button>
+	                    <button type="button" class="btn btn-dark btn-sm mb-2" onclick="sendForm()">등록</button>
                 	</div>
             	</article>
 	            <article>
@@ -93,7 +97,8 @@
 	            <article>
 	                <textarea id="summernote" name="board_content"></textarea>
 	            </article>
-	            <div id="등록시디비에보드넘을박습니다">        
+<!-- 	            테스트 시 d-none 지우시길 -->
+	            <div id="등록시디비에보드넘을박습니다" class="d-none">        
 	            </div>
         	</div>
         </form>
@@ -137,6 +142,11 @@ function goBack() {
 
 <!-- 섬머노트 스크립트 시작 -->
 <script>
+	// imgedit 클릭시 이벤트
+	$("#imgedit").click(function(){
+		window.open("/board/ImgEdit.bo","imgEdit","width=700px; height=800px");
+	});
+
     $('#summernote').summernote({
         placeholder: '내용을 입력해주세요.',
         tabsize: 2,
@@ -144,12 +154,13 @@ function goBack() {
 		lang: 'ko-KR', // default: 'en-US'
         callbacks: {
         	onImageUpload : function(file) {
-				var result = confirm("이미지를 수정하시겠습니까?");
-				if(result){
-					window.open("/board/ImgEdit.bo","imgEdit","width=700px; height=800px");
-				} else {
+        		// 잠시 주석
+// 				var result = confirm("이미지를 수정하시겠습니까?");
+// 				if(result){
+// 					window.open("/board/ImgEdit.bo","imgEdit","width=700px; height=800px");
+// 				} else {
         			sendFile(file[0],this);
-        		}
+//         		}
         	}
         }
     ,	toolbar: [
@@ -176,9 +187,6 @@ function goBack() {
 	        processData : false,
 	        
 	        success : function(data){
-				
-
-
 	        	alert("이미지가 업로드되었습니다.");
 	        	$(editor).summernote('editor.insertImage', data.url);
 	        	let html = "";
