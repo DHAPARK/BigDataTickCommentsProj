@@ -21,8 +21,8 @@
 				<property name="url" value="jdbc:oracle:thin:@localhost:1521:xe" />
              	<property name="username" value="dt"/>
 	            <property name="password" value="1234"/>
-	            <!-- <property name="url" value="jdbc:oracle:thin:@dtdb_high?TNS_ADMIN=./src/main/resources/Wallet_dtdb"/> -->
-	            <!-- <property name="username" value="ADMIN"/>
+	            <!-- <property name="url" value="jdbc:oracle:thin:@dtdb_high?TNS_ADMIN=./src/main/resources/Wallet_dtdb"/>
+	            <property name="username" value="ADMIN"/>
 	            <property name="password" value="Ehgusdlsp486"/> -->
 			</dataSource>
 		</environment>

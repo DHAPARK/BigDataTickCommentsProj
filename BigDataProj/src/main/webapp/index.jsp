@@ -237,7 +237,7 @@
 
 
 
-		<!-- 공백 채울거 생각하기-->
+
 		<article class="container-fluid bg-danger">
 			<div class="row" style="background-color: white;">
 				<!-- 차트 들어갈 자리 -->
@@ -249,7 +249,6 @@
 				<!-- 차트 들어갈 자리 -->
 			</div>
 		</article>
-		<!-- 공백 끝-->
 
 	</section>
 
@@ -662,25 +661,8 @@
 		<section>
 			<header class="text-center py-5">
 				<h2 class="fw-bolder">영향력 순위 🏆</h2>
-				<h5>네이버, 구글에서 가장 영향력 있는 블로그, 웹사이트가 궁금하신가요?</h5>
+				<h5>세대별 가장 영향력 있는 키워드가 궁금하신가요?</h5>
 			</header>
-
-			<!-- 공백 채울거 생각하기-->
-			<article class="container-fluid bg-danger">
-				<div class="row">
-					<div class="col-12">
-						<div class="py-5"></div>
-						<div class="py-5"></div>
-						<div class="py-5"></div>
-						<div class="py-5"></div>
-						<div class="py-5"></div>
-						<div class="py-5"></div>
-						<div class="py-5"></div>
-						<div class="py-5"></div>
-					</div>
-				</div>
-			</article>
-			<!-- 공백 끝-->
 		</section>
 
 		<!-- 섹션5 -->
@@ -694,8 +676,8 @@
 			</header>
 
 			<article class="pb-3">
-				<h2 class="fw-bolder mb-3">지금 다헌터에 가입하세요.</h2>
-				<h5>10초 회원가입 후 99,392명이 사용 중인 다운터의 다양한 서비스들을 경험해보세요.</h5>
+				<h2 class="fw-bolder mb-3">지금 트롤링에 가입하세요.</h2>
+				<h5>10초 회원가입 후 99,392명이 사용 중인 트롤링의 다양한 서비스들을 경험해보세요.</h5>
 			</article>
 
 			<article>
