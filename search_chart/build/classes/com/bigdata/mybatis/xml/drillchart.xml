@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="Chart" >
+
+	
+<!-- 	<select id="getTest" resultType="testdto"> -->
+<!-- 		select cmc , cnt from comments -->
+<!-- 		where -->
+<!-- 		age_range = 20 -->
+<!-- 		and -->
+<!-- 		 <![CDATA[where rownum <= 10]]> -->
+<!-- 		order by cnt desc -->
+<!-- 	</select> -->
+	
+	
+<!-- 	20대 댓글, 댓글수 -->
+<!-- 	<select id="getComment" resultType="chartdto"> -->
+<!-- 		SELECT cmc,cnt -->
+<!-- 		from( -->
+<!-- 			select cmc , cnt  -->
+<!-- 			from comments -->
+<!-- 			WHERE age_range = 20 -->
+<!-- 			order by cnt DESC) -->
+<!-- 		<![CDATA[where rownum <= 10]]> -->
+<!-- 	</select> -->
+	
+	<select id="getcomm" parameterType="string" resultType="chartdto">
+<!-- 		SELECT 	cmc,cnt, AGE_RANGE  -->
+<!-- 		FROM 	COMMENTS c  -->
+<!-- 		WHERE  	cmc= #{cmc}  -->
+<!-- # : 받아온값 -->
+
+		SELECT  a.AGE_RANGE age_range, nvl(b.cnt,0) cnt
+		FROM 	(	SELECT * 
+					FROM (
+							SELECT 10 AS age_range FROM dual UNION ALL
+							SELECT 20 AS age_range FROM dual UNION ALL
+							SELECT 30 AS age_range FROM dual UNION ALL
+							SELECT 40 AS age_range FROM dual UNION ALL
+							SELECT 50 AS age_range FROM dual
+					)		
+				)a
+		LEFT    OUTER JOIN
+			(	SELECT *
+				FROM COMMENTS 
+				WHERE cmc = #{cmc}
+				
+			)b 		
+		ON a.age_range = b.age_range
+		ORDER BY  age_range ASC
+	
+		
+	
+	
+	</select>
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
