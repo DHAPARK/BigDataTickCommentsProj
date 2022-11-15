@@ -11,6 +11,7 @@
 		<typeAlias type="com.bigdata.vo.BubbleChartVO" alias="bubbleChartVO"/>
 		<typeAlias type="com.bigdata.vo.HardChartVO" alias="hardChartVO"/>
 		<typeAlias type="com.bigdata.vo.CloudChartVO" alias="cloudChartVO"/>
+		<typeAlias type="com.bigdata.vo.DrillChartDTO" alias="chartdto"/>
 	</typeAliases>
 
 	<environments default="development">
@@ -36,6 +37,7 @@
 		<mapper resource="./com/bigdata/mybatis/xml/reply.xml" />
 		<mapper resource="./com/bigdata/mybatis/xml/file.xml" />
 		<mapper resource="./com/bigdata/mybatis/xml/chart.xml" />
+		<mapper resource="com/bigdata/mybatis/xml/drillchart.xml"/>
 	</mappers>
 </configuration>
  

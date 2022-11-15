@@ -176,8 +176,11 @@
       <div class="row justify-content-center w-70">
         <div class="col-lg-6 ">
           <div class="input-group mb-5">
-            <input type="text" class="form-control" placeholder="검색어를 입력하세요" aria-label="Recipient's username" aria-describedby="button-addon2">
-            <button class="btn btn-dark border" type="button" id="button-addon2">검색</button>
+          
+           <input type="text" class="form-control" id="cmc" placeholder="검색어를 입력하세요"  aria-label="Recipient's username" aria-describedby="button-addon2">
+			<button class="btn btn-dark border" type="button" id="button" onclick="getvalue()">검색</button>
+			 <script src="/drill/js2/drill.js"></script>
+          
           </div>
         </div>
       </div>
@@ -247,6 +250,12 @@
 					<canvas id="myHardChart" width="100%" height="100%"></canvas>
 				</div>
 				<!-- 차트 들어갈 자리 -->
+				
+				<figure class="highcharts-figure">
+					<div id="container"></div>
+					<div id=drillChart></div>
+				</figure>
+				
 			</div>
 		</article>
 

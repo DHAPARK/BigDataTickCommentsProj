@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.json.simple.JSONObject;
 
 import com.bigdata.action.ActionForward;
+import com.bigdata.board.controller.GetCommAction;
 import com.bigdata.dao.ChartDAO;
 import com.bigdata.vo.BubbleChartVO;
 import com.bigdata.vo.CloudChartVO;
@@ -263,6 +264,17 @@ public class ChartController extends HttpServlet {
 			out.print( tt );
 			
 			break;
+			
+		 case "/drilldown_chart/drill.ch":	// 프론트단에서 시작해준다
+				// case "index.ch":	// 프론트단에서 시작해준다
+					
+					System.out.println("프론트컨트롤러까지");
+					GetCommAction getComm = new GetCommAction();
+					getComm.execute(req, res);
+					break;	
+			
+			
+			
 			
 		// 클라우드 차트
 
