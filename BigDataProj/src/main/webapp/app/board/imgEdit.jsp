@@ -32,6 +32,7 @@
 		<button id="grayscaleFilter">grayscaleFilter</button>
 		<button id="sepiaFilter">sepiaFilter</button>
 		<button id="thresholdFilter">thresholdFilter</button>
+		<button id="blurFilter">blurFilter</button>
 	</fieldset>
 	
 	<fieldset>
