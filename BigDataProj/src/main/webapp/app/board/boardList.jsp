@@ -62,18 +62,56 @@
   <!-- #################################################################################################################### -->
 	
     <!-- Page Wrapper -->
-    <div id="page-wrapper">
+<!--     <div id="page-wrapper"> -->
 
         <!-- Wrapper 시작 -->
-        <div id="wrapper">
+        <div class="container-fluid" id="wrapper">
             
             <h1 style="text-align: center;">${ boardAgeRange }0대 커뮤니티 😎</h1>
+            
             <!-- com_container 시작 -->
             <div id="com_container">
                 
                 <!-- div_table 시작 -->
                 <div id="div_table">
-                 
+               	<div class="justify-content-between">
+	 				<div class="d-flex flex-row justify-content-between" >
+						<div class="item col-10">
+							<div class="row">
+								<div class="col-2">
+									<div class="input-group mb-3">
+									  	<select class="form-select-sm" id="inputGroupSelect01">
+										    <option selected>전체</option>
+										    <option value="1">하루</option>
+										    <option value="2">일주일</option>
+										    <option value="3">한달</option>
+									  </select>
+									</div>
+								</div>
+								<div class="col-2" >
+									<div class="input-group mb-3">
+										<select class="form-select-sm" id="inputGroupSelect01">
+											<option selected>제목</option>
+											<option value="1">내용</option>
+											<option value="2">글쓴이</option>
+											<option value="3">아이디</option>
+										</select>
+									</div>
+								</div>
+								<!-- form-control-sm 검색창 -->
+								<div class="col-8">
+									<div class="input-group mb-3">
+										<input type="text" class="form-control form-control-sm" placeholder="게시글 검색" aria-label="Recipient's username" aria-describedby="button-addon2">
+										<button class="btn btn-outline-secondary btn-sm" type="button" id="button-addon2">검색</button>
+									</div>
+								</div>
+							</div>
+						</div>
+		                <div class="item">
+			                <button class="btn btn-dark" type="button" onclick="location.href='${pageContext.request.contextPath}/board/BoardWrite.bo'">글쓰기</button>
+		                </div>
+		        	</div>
+               	</div>
                     <table>
                         <fmt:parseNumber var="nP" integerOnly="true" type="number" value="${nowPage}" />
                         
@@ -82,8 +120,8 @@
                         		<div class="row justify-content-center">
 	                                <c:forEach var="board" items="${boardList}" begin="0" end="10" step="1" varStatus="status" >
 	                                <c:set var="date" value="${board.board_date }"/>
-<%-- 										<a href="${pageContext.request.contextPath}/board/BoardViewOk.bo?board_no=${board.board_no}"> --%>
 											<div class="col-lg-4 col-md-6 mb-4">
+										<a href="${pageContext.request.contextPath}/board/BoardViewOk.bo?board_no=${board.board_no}">
 												<div class="card h-100" >
 													<div class="card-header justify-content-between">
 														<div class="row mb-0">
@@ -96,7 +134,7 @@
 														</div>
 													</div>
 													<div class="card-body">
-														${ nowPage == 1 ? "" : nowPage - 1 }${ status.count }번째 게시글 입니다.
+														${ nowPage == 1 ? "" : nowPage - 1 }${ status.count }번째 게시판 콘텐츠 미리보기를 넣을 예정입니다.
 													</div>
 													<div class="card-footer justify-content-between">
 														<div class="row">
@@ -109,8 +147,8 @@
 														</div>
 													</div>
 												</div>
+	                       				</a>
 											</div>
-<!-- 	                       				</a> -->
 	                                </c:forEach>
                                 </div>
                             </c:when>
@@ -159,28 +197,28 @@
                 <!-- div_table 끝 -->
 
                 <!-- search_container 시작 -->
-                <div id="search_container" style="margin: 0 auto; width: 400px; height: 40px;">
-                    <ul>
-                        <li style="float: left;"><select id="search_date" name="search_date">
-                                <option value="">일주일</option>
-                                <option value="">한달</option>
-                                <option value="">세달</option>
-                                <option value="all">전체</option>
-                            </select></li>
-                        <li style="float: left;"><select id="search_key" name="search_key">
-                                <option value="subject">제목</option>
-                                <option value="content">내용</option>
-                                <option value="writer">글쓴이</option>
-                                <option value="userid">아이디</option>
-                            </select></li>
-                        <li style="float: left;"><input id="search" name="search" class="inputTypeText" placeholder=""
-                                value="" type="text"></li>
-                        <li style="float: left;"><a href="#" class="" onclick=""><i class="fa fa-search"
-                                    aria-hidden="true"></i></a></li>
-                    </ul>
-                </div>
+<!--                 <div id="search_container" style="margin: 0 auto; width: 400px; height: 40px;"> -->
+<!--                     <ul> -->
+<!--                         <li style="float: left;"><select id="search_date" name="search_date"> -->
+<!--                                 <option value="">일주일</option> -->
+<!--                                 <option value="">한달</option> -->
+<!--                                 <option value="">세달</option> -->
+<!--                                 <option value="all">전체</option> -->
+<!--                             </select></li> -->
+<!--                         <li style="float: left;"><select id="search_key" name="search_key"> -->
+<!--                                 <option value="subject">제목</option> -->
+<!--                                 <option value="content">내용</option> -->
+<!--                                 <option value="writer">글쓴이</option> -->
+<!--                                 <option value="userid">아이디</option> -->
+<!--                             </select></li> -->
+<!--                         <li style="float: left;"><input id="search" name="search" class="inputTypeText" placeholder="" -->
+<!--                                 value="" type="text"></li> -->
+<!--                         <li style="float: left;"><a href="#" class="" onclick=""><i class="fa fa-search" -->
+<!--                                     aria-hidden="true"></i></a></li> -->
+<!--                     </ul> -->
+<!--                 </div> -->
                 <!-- search_container 끝 -->
-            </div>
+<!--             </div> -->
             <!-- com_container 끝 -->
         </div>
         <!-- Wrapper 끝 -->
