@@ -178,7 +178,7 @@
     
     <!-- 검색창 (이건 그냥 더미)-->
     <article class="container">
-      <div class="row justify-content-center w-70">
+      <div class="row justify-content-center w-70" id="searchInput">
         <div class="col-lg-6 ">
           <div class="input-group mb-5">
           
@@ -366,7 +366,7 @@
 
 	<div class="container-sm">
 		<!-- 섹션3 -->
-		<section>
+		<section class="py-5" id="section3">
 			<header class="text-center py-5">
 				<h2 class="fw-bolder">트렌드 🔥</h2>
 				<h5>매일 빠르게 변화하는 트렌드를 추적하고, 키워드 아이디어를 획득해보세요.</h5>
@@ -863,5 +863,25 @@
 	    })
 		
 	},10000);
+</script>
+<script>
+	$(document).ready(function(){ 
+		/* 탭 클릭 */
+		$('.anchor_tab li a').on('click',function(){
+		   var sectionId = $(this).attr('data-anchor');
+		   // 스크롤 이동
+		   scroll_to_anchor_tab(sectionId);
+		});
+	});
+	 // 탭 이동 - 부드러운 스크롤
+	function scroll_to_anchor_tab(sectionId, speed) {
+	        if( !speed ) var speed = 'slow';
+	        var a_tag = $("#" + sectionId);
+	        if(a_tag.length > 0){
+	            $('html, body').animate({
+	                scrollTop: a_tag.offset().top - $('').height() -  $('').height() // 상단에 특정 위치를 제외하고 스크롤할때 해당 이름 작성
+	            }, speed);
+	        }
+	    }
 </script>
 </html>

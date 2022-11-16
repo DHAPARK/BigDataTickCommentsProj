@@ -51,10 +51,10 @@
   <nav class="navbar navbar-expand-md navbar-dark bg-dark px-2 border-bottom fixed-top" aria-label="Third navbar example">
   	<c:choose>
       		<c:when test="${ empty userInfo }">
-        		 <jsp:include page="/fixed/nav.jsp"></jsp:include>
+        		 <jsp:include page="/fixed/nav_login.jsp"></jsp:include>
       		</c:when>
       		<c:otherwise>
-		         <jsp:include page="/fixed/nav_login.jsp"></jsp:include>
+		         <jsp:include page="/fixed/nav.jsp"></jsp:include>
       		</c:otherwise>
       	</c:choose>
   </nav>
