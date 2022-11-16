@@ -10,6 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.bigdata.action.ActionForward;
+import com.bigdata.user.controller.KakaoLoginOkAction;
+import com.bigdata.user.controller.KakaoLoginOkAction;
+import com.bigdata.user.controller.KakaoLoginOkAction;
 import com.bigdata.user.controller.UserJoinEmailOkAction;
 import com.bigdata.user.controller.UserJoinNameOkAction;
 import com.bigdata.user.controller.UserJoinOkAction;
@@ -65,6 +68,12 @@ public class UserFrontController extends HttpServlet{
 	    	break;
 		case "/user/UserLogout.us":
 			try {forward = new UserLogoutAction().execute(req, resp);} catch(Exception e) {System.out.println(e); System.out.println("/user/UserLogout.us에서 오류");}
+			break;
+		case "/user/KakaoJoinOk.us":
+			try {forward = new KakaoLoginOkAction().execute(req, resp);} catch(Exception e) {System.out.println(e); System.out.println("/user/KakaoLoginOk.us에서 오류");}
+			break;
+		case "/user/KakaoLoginOk.us":
+			try {forward = new KakaoLoginOkAction().execute(req, resp);} catch(Exception e) {System.out.println(e); System.out.println("/user/KakaoLoginOk.us에서 오류");}
 			break;
 		}
 		

@@ -1,7 +1,5 @@
 package com.bigdata.user.controller;
 
-import java.net.HttpCookie;
-
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

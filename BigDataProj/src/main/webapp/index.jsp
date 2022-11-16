@@ -144,7 +144,7 @@
   <!-- 네비게이션 시작-->
   <nav class="navbar navbar-expand-md navbar-dark bg-dark px-2 border-bottom fixed-top" aria-label="Third navbar example">
   		<c:choose>
-      		<c:when test="${ empty userInfo }">
+      		<c:when test="${ empty userInfo and empty kakaoInfo }">
         		 <jsp:include page="/fixed/index_nav.jsp"></jsp:include>
       		</c:when>
       		<c:otherwise>
@@ -166,8 +166,6 @@
 
     	<img class="col-lg-6 pt-5" src = "/assets/images/main.png" alt="못본걸로 하자">
 
-      
-      
       
 <!--       <h1 class="text-center">세대별 트렌드를 긁어오는</h1> -->
 <!--       <h1 class="text-center">트렌디한 keyword 분석 툴, <strong>트롤링</strong></h1> -->
@@ -798,6 +796,8 @@
 		src="${pageContext.request.contextPath}/assets/js/user.js"></script>
 	<script type="text/javascript"
 		src="${pageContext.request.contextPath}/assets/js/chart.js"></script>
+	<script type="text/javascript"
+		src="${pageContext.request.contextPath}/assets/js/kakao.js"></script>
 	<!-- 부트스트랩 -->
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"

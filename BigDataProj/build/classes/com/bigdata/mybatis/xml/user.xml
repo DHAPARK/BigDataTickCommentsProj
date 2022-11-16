@@ -6,7 +6,7 @@
 <!-- 회원가입 -->
 	<insert id="join" parameterType="userVO" >
 		INSERT INTO TABLE_USER VALUES 
-		(SEQ_USER.NEXTVAL,#{user_name},#{user_email},#{user_pw},#{birth_year},0,0)
+		(SEQ_USER.NEXTVAL,#{user_name},#{user_email},#{user_pw},#{birth_year},#{age_range},#{user_status},#{kakao_id})
 	</insert>
 <!-- 로그인 이름-->
 	<select id="loginName" parameterType="string" resultType="userVO">
@@ -40,4 +40,17 @@
 		AGE_RANGE = (SELECT TRUNC(MONTHS_BETWEEN(TRUNC(SYSDATE), TO_DATE(BIRTH_YEAR,'YYYY-MM-DD')) / 12) AS AGE FROM TABLE_USER WHERE USER_NAME = #{user_name})
 		WHERE USER_NAME = #{user_name}
 	</update>
+	
+	<!-- kakao_id 체크 -->
+	<select id="checkKakaoId" parameterType="string" resultType="userVO">
+		SELECT *
+		FROM TABLE_USER
+		WHERE KAKAO_ID = #{kakao_id}
+	</select>
+	
+	<select id="kakaoLogin" parameterType="hashmap" resultType="_int">
+		SELECT USER_NO, USER_NAME, USER_EMAIL, AGE_RANGE, USER_STATUS, KAKAO_ID 
+		FROM TABLE_USER
+		WHERE KAKAO_ID = #{kakao_id} AND USER_EMAIL = #{user_email}
+	</select>
 </mapper>

@@ -20,7 +20,9 @@ public class UserJoinOkAction implements Action {
 		uvo.setUser_email(req.getParameter("user_email"));
 		uvo.setUser_pw(req.getParameter("user_pw"));
 		uvo.setBirth_year(req.getParameter("birth_year"));
-		
+		uvo.setAge_range(0);
+		uvo.setUser_status(0);
+		uvo.setKakao_id("");
 		
 		if(udao.join(uvo)) {
 			forward.setRedirect(true);

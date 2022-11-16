@@ -3,7 +3,7 @@ package com.bigdata.vo;
 public class UserVO {
 	
 	private int user_no, age_range, user_status;
-	private String user_name, user_email, user_pw, birth_year;
+	private String user_name, user_email, user_pw, birth_year, kakao_id;
 	
 	public UserVO() {;}
 
@@ -62,4 +62,13 @@ public class UserVO {
 	public void setBirth_year(String birth_year) {
 		this.birth_year = birth_year;
 	}
+
+	public String getKakao_id() {
+		return kakao_id;
+	}
+
+	public void setKakao_id(String kakao_id) {
+		this.kakao_id = kakao_id;
+	}
+	
 }

@@ -1,5 +1,6 @@
 package com.bigdata.dao;
 
+import java.util.HashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -54,7 +55,18 @@ public class UserDAO {
 		}
 		return uvo;
 	}
-
+	
+	public UserVO checkKakaoId(String kakao_id) {
+		return sqlSession.selectOne("User.checkKakaoId", kakao_id);
+	}
+	
+	public boolean kakaoLogin(String kakao_id, String user_email) {
+		HashMap<String, String> map = new HashMap<>();
+		map.put("kakao_id", kakao_id);
+		map.put("user_email", user_email);
+		
+		return (Integer)sqlSession.selectOne("User.kakaoLogin", map) == 1;
+	}
 }
 
 
