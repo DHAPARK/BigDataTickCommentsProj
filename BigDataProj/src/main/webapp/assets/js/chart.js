@@ -119,7 +119,8 @@ function drawBubbleChart( rangedData ){
 			  },
 			  plotOptions: {
 			    packedbubble: {
-			 
+					minSize: '30%',
+	   				maxSize: '100%',
 			      layoutAlgorithm: {
 			                gravitationalConstant: 0.05,
 			                splitSeries: true,
