@@ -26,7 +26,7 @@
 	        </div>
 	        <div class="modal-body"> 
 	          <form action="${pageContext.request.contextPath}/user/UserLoginOk.us" method="post" id="loginForm">
-	            <div class="mb-3">
+	            <div class="mb-3" id="kakaologin">
 	              <label for="loginId" class="col-form-label">간편 로그인</label>
 	              <!-- ################간편 로그인################### -->
 	              <input type="text" class="form-control" >

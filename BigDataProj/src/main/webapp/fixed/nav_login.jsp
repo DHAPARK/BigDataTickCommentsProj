@@ -16,12 +16,12 @@
       </button>
 
       <div class="collapse navbar-collapse" id="navbarsExample03">
-        <ul class="navbar-nav me-auto mb-2 mb-sm-0">
+        <ul class="navbar-nav me-auto mb-2 mb-sm-0 anchor_tab">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">키워드 추천</a>
+            <a class="nav-link active" aria-current="page" href="#" data-anchor="section3">트렌드</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="#">영향력 순위</a>
+            <a class="nav-link active" href="${pageContext.request.contextPath}/board/BoardList.bo?ageRange=${ userInfo.age_range }">커뮤니티</a>
           </li>
           <!-- 네브바 줄어들 시 숨길 수 있는 px을 정할 수 있게 css에 정의해놓았다. -->
           <li class="nav-item dropdown">
@@ -29,14 +29,11 @@
               data-bs-toggle="dropdown" aria-expanded="false">
               모든 서비스
             </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <li><a class="dropdown-item" href="#">키워드 추천</a></li>
-              <li><a class="dropdown-item" href="#">키워드 분석</a></li>
+            <ul class="dropdown-menu anchor_tab" aria-labelledby="navbarDropdownMenuLink">
+              <li><a class="dropdown-item" aria-current="page" href="#" data-anchor="section3">트렌드</a></li>
+              <li><a class="dropdown-item" href="${pageContext.request.contextPath}/board/BoardList.bo?ageRange=${ userInfo.age_range }">커뮤니티</a></li>
+              <li><a class="dropdown-item" aria-current="page" href="#" data-anchor="searchInput">키워드 분석</a></li>
               <li><a class="dropdown-item" href="#">영향력 순위</a></li>
-              <li><a class="dropdown-item" href="#">키워드 확장</a></li>
-              <li><a class="dropdown-item" href="#">트렌드</a></li>
-              <li><a class="dropdown-item" href="#">간편 키워드 조회</a></li>
-              <li><a class="dropdown-item" href="#">대량 키워드 분석</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">
@@ -47,8 +44,6 @@
             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <li><a class="dropdown-item" href="#">서비스 소개</a></li>
               <li><a class="dropdown-item" href="#">도움말</a></li>
-              <li><a class="dropdown-item" href="#">업데이트 소식</a></li>
-              <li><a class="dropdown-item" href="#">크레딧</a></li>
             </ul>
           </li>
         </ul>
@@ -67,4 +62,7 @@
       </div>
     </div>
 </body>
+<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+<!-- 부트스트랩 -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 </html>
