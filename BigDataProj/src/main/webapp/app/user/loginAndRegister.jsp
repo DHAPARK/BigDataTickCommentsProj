@@ -89,7 +89,7 @@
 	          </h5>
 	          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 	        </div>
-	        <div class="modal-body" style="width: 421px;"> 
+	        <div class="modal-body"> 
           	<form action="${pageContext.request.contextPath}/user/UserJoinOk.us" method="post" id="joinForm">
 	            <div class="mb-3">
 	              <label for="joinEmail" class="col-form-label">이메일</label>
