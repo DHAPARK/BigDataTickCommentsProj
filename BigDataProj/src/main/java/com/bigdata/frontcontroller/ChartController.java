@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.json.simple.JSONObject;
 
 import com.bigdata.action.ActionForward;
-import com.bigdata.board.controller.GetCommAction;
+import com.bigdata.chart.controller.GetCommAction;
 import com.bigdata.dao.ChartDAO;
 import com.bigdata.vo.BubbleChartVO;
 import com.bigdata.vo.CloudChartVO;

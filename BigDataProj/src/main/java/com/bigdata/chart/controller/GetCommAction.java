@@ -1,4 +1,4 @@
-package com.bigdata.board.controller;
+package com.bigdata.chart.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
