@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,8 +28,14 @@
         </ul>
         <ul class="navbar-nav">
           <li class="nav-item">
-            <!-- <a class="nav-link active" aria-current="page" href="#">멤버십 구독하기 😎</a> -->
-            <a class="nav-link active" aria-current="page" href="#">${ userInfo.user_name }님 어서오세요 😎</a>
+            <c:choose>
+	      		<c:when test="${ not empty userInfo }">
+	        		 <a class="nav-link active" aria-current="page" href="#">${ userInfo.user_name }님 어서오세요 😎</a>
+	      		</c:when>
+	      		<c:otherwise>
+			         <a class="nav-link active" aria-current="page" href="#">${ kakaoInfo.user_name }님 어서오세요 😎</a>
+	      		</c:otherwise>
+      		</c:choose>
           </li>
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="${pageContext.request.contextPath}/user/UserLogout.us">로그아웃</a>

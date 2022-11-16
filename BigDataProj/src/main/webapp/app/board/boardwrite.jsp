@@ -42,7 +42,7 @@
 </head>
 
 <body>
-	<c:if test="${ empty userInfo }">
+	<c:if test="${ empty userInfo and empty kakaoInfo }">
 		<script>
 			alert("로그인 후 이용하세요.");
 			location.replace("${pageContext.request.contextPath}/index.jsp");
@@ -53,13 +53,13 @@
   <!-- 네비게이션 시작-->
   <nav class="navbar navbar-expand-md navbar-dark bg-dark px-2 border-bottom fixed-top" aria-label="Third navbar example">
   	<c:choose>
-      		<c:when test="${ empty userInfo }">
-        		 <jsp:include page="/fixed/nav.jsp"></jsp:include>
-      		</c:when>
-      		<c:otherwise>
-		         <jsp:include page="/fixed/nav_login.jsp"></jsp:include>
-      		</c:otherwise>
-      	</c:choose>
+      	<c:when test="${ empty userInfo and empty kakaoInfo }">
+        	 <jsp:include page="/fixed/nav.jsp"></jsp:include>
+      	</c:when>
+      	<c:otherwise>
+		     <jsp:include page="/fixed/nav_login.jsp"></jsp:include>
+      	</c:otherwise>
+  	</c:choose>
   </nav>
   <!-- 네비게이션 끝 -->
   <!-- #################################################################################################################### -->
@@ -89,6 +89,14 @@
                 	</div>
             	</article>
 	            <article>
+	            <c:choose>
+			      	<c:when test="${ empty userInfo and empty kakaoInfo }">
+			        	 <jsp:include page="/fixed/nav.jsp"></jsp:include>
+			      	</c:when>
+			      	<c:otherwise>
+					     <jsp:include page="/fixed/nav_login.jsp"></jsp:include>
+			      	</c:otherwise>
+  				</c:choose>
 	            	<input type="hidden" name="user_name" value="${userInfo.user_name}">
 	            	<input type="hidden" name="age_range" value="${userInfo.age_range}">
 	                <!-- 제목을 입력해주세요. -->

@@ -39,6 +39,10 @@ public class KakaoLoginOkAction implements Action {
 			
 			user = udao.checkKakaoId(id);
 			
+			System.out.println("???????? " + user.getAge_range());
+			System.out.println("??????? " + user.getUser_email());
+			System.out.println("??????? " + user.getUser_no());
+			
 			System.out.println("로그인 성공");
 			session.setAttribute( "kakaoInfo" , user );
 			
@@ -54,7 +58,7 @@ public class KakaoLoginOkAction implements Action {
 			user.setUser_status(1);
 			user.setKakao_id(id);
 			
-			//session.invalidate();
+			session.invalidate();
 			
 			if(udao.join(user)) {
 				forward.setRedirect(true);

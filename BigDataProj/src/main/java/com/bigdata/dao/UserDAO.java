@@ -66,7 +66,7 @@ public class UserDAO {
 		map.put("user_email", user_email);
 		
 		return (Integer)sqlSession.selectOne("User.kakaoLogin", map) == 1;
-	}
+	}	
 }
 
 

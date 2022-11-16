@@ -53,4 +53,5 @@
 		FROM TABLE_USER
 		WHERE KAKAO_ID = #{kakao_id} AND USER_EMAIL = #{user_email}
 	</select>
+
 </mapper>

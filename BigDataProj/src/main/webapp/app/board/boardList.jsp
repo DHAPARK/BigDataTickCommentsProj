@@ -40,7 +40,7 @@
 	<c:set var="nowPage" value="${requestScope.nowPage }"/>
 	<c:set var="startPage" value="${requestScope.startPage }"/>
 	<c:set var="endPage" value="${requestScope.endPage }"/>
-	<c:if test="${ empty userInfo }">
+	<c:if test="${ empty userInfo and empty kakaoInfo }">
 		<script>
 			alert("로그인 후 이용하세요.");
 			location.replace("${pageContext.request.contextPath}/index.jsp");
@@ -50,7 +50,7 @@
   <!-- 네비게이션 시작-->
   <nav class="navbar navbar-expand-md navbar-dark bg-dark px-2 border-bottom fixed-top" aria-label="Third navbar example">
   	<c:choose>
-      		<c:when test="${ empty userInfo }">
+      		<c:when test="${ empty userInfo and empty kakaoInfo }">
         		 <jsp:include page="/fixed/nav_login.jsp"></jsp:include>
       		</c:when>
       		<c:otherwise>
@@ -188,7 +188,7 @@
                         </tr>
                     </table>
                     <div id="write_button_div">
-                    	<c:if test="${ not empty userInfo }">
+                    	<c:if test="${ not empty userInfo or not empty kakaoInfo }">
                         	<button class="btn btn-dark" type="button" onclick="location.href='${pageContext.request.contextPath}/board/BoardWrite.bo'" style="font-size:12px;">글쓰기</button>
                         </c:if>
                     </div>

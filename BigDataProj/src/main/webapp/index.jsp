@@ -693,15 +693,20 @@
 
 				<!-- 흰색 버튼 -->
 				<c:choose>
-					<c:when test="${ empty userInfo }">
+					<c:when test="${ empty userInfo and empty kakaoInfo }">
 						<!-- 검은 버튼 -->
 						<button class="btn btn-dark" data-bs-toggle="modal"
 							data-bs-target="#joinModal">무료 가입하기</button>
 					</c:when>
+					<c:when test="${ not empty kakaoInfo }">
+						<button class="btn btn-outline-dark" type="button"
+							onclick="location.href='${pageContext.request.contextPath}/board/BoardList.bo?ageRange=${ kakaoInfo.age_range }'">게시판으로 이동
+						</button>
+					</c:when>
 					<c:otherwise>
 						<button class="btn btn-outline-dark" type="button"
-							onclick="location.href='${pageContext.request.contextPath}/board/BoardList.bo?ageRange=${ userInfo.age_range }'">게시판으로
-							이동</button>
+							onclick="location.href='${pageContext.request.contextPath}/board/BoardList.bo?ageRange=${ userInfo.age_range }'">게시판으로 이동
+						</button>
 					</c:otherwise>
 				</c:choose>
 			</article>

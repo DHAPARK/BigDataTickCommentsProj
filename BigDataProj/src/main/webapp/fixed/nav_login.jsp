@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page session="true" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <!DOCTYPE html>
@@ -28,7 +29,7 @@
 	      			<a class="nav-link active" href="${pageContext.request.contextPath}/board/BoardList.bo?ageRange=${ userInfo.age_range }">커뮤니티</a>
 	      		</c:when>
 	      		<c:otherwise>
-			         <a class="nav-link active" href="${pageContext.request.contextPath}/board/BoardList.bo?ageRange=${ kakao_info.age_range }">커뮤니티</a>
+			         <a class="nav-link active" href="${pageContext.request.contextPath}/board/BoardList.bo?ageRange=${ kakaoInfo.age_range }">커뮤니티</a>
 	      		</c:otherwise>
       		</c:choose>
           </li>
