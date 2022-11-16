@@ -75,31 +75,44 @@
                 <div id="div_table">
                  
                     <table>
-                        <thead>
-                            <tr>
-                                <th class="th-no1">번호</th>
-                                <th class="th-title1">제목</th>
-                                <th class="th-writer1">작성자</th>
-                                <th class="th-date1">작성일</th>
-                                <th class="th-no1">좋아요</th>
-                            </tr>
-                        </thead>
-                        
                         <fmt:parseNumber var="nP" integerOnly="true" type="number" value="${nowPage}" />
                         
                         <c:choose>
                             <c:when test="${boardList != null and fn:length(boardList) > 0}">
-                                <c:forEach var="board" items="${boardList}" begin="0" end="10" step="1" varStatus="status" >
-                                
-                                <c:set var="date" value="${board.board_date }"/>
-                                    <tr align="center" valign="middle">
-                                        <td height="24px">${ nowPage == 1 ? "" : nowPage - 1 }${ status.count }</td>
-                                        <td><a href="${pageContext.request.contextPath}/board/BoardViewOk.bo?board_no=${board.board_no}" style="color: #777777 !important">${board.board_title }</a></td>
-                                        <td>${board.user_name }</td>
-                                        <td>${fn:substring(date,0,10) }</td>
-                                        <td>${board.likes }</td>
-                                    </tr>
-                                </c:forEach>
+                        		<div class="row justify-content-center">
+	                                <c:forEach var="board" items="${boardList}" begin="0" end="10" step="1" varStatus="status" >
+	                                <c:set var="date" value="${board.board_date }"/>
+<%-- 										<a href="${pageContext.request.contextPath}/board/BoardViewOk.bo?board_no=${board.board_no}"> --%>
+											<div class="col-lg-4 col-md-6 mb-4">
+												<div class="card h-100" >
+													<div class="card-header justify-content-between">
+														<div class="row mb-0">
+															<div class="col">
+																${board.board_title }
+															</div>
+															<div class="col" style="text-align: right;">
+																${board.user_name }
+															</div>
+														</div>
+													</div>
+													<div class="card-body">
+														${ nowPage == 1 ? "" : nowPage - 1 }${ status.count }번째 게시글 입니다.
+													</div>
+													<div class="card-footer justify-content-between">
+														<div class="row">
+															<div class="col-8">
+																작성일 : ${fn:substring(date,0,10)}
+															</div>
+															<div class="col" style="text-align: right;">
+															 	❤️ : ${board.likes }
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+<!-- 	                       				</a> -->
+	                                </c:forEach>
+                                </div>
                             </c:when>
                             
                             <c:otherwise>
@@ -136,8 +149,6 @@
                             </td>
                         </tr>
                     </table>
-
-                    
                     <div id="write_button_div">
                     	<c:if test="${ not empty userInfo }">
                         	<button class="btn btn-dark" type="button" onclick="location.href='${pageContext.request.contextPath}/board/BoardWrite.bo'" style="font-size:12px;">글쓰기</button>
