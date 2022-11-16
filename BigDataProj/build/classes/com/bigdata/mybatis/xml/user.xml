@@ -42,7 +42,13 @@
 	</update>
 	
 	<!-- kakao_id 체크 -->
-	<select id="checkKakaoId" parameterType="string" resultType="userVO">
+	<select id="checkKakaoId" parameterType="string" resultType="_int">
+		SELECT COUNT(*)
+		FROM TABLE_USER
+		WHERE KAKAO_ID = #{kakao_id}
+	</select>
+	
+	<select id="kakaoInfo" parameterType="string" resultType="userVO">
 		SELECT *
 		FROM TABLE_USER
 		WHERE KAKAO_ID = #{kakao_id}

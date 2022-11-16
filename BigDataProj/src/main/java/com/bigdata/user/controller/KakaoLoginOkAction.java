@@ -35,23 +35,13 @@ public class KakaoLoginOkAction implements Action {
 		System.out.println("age 뭐가 들어오길래 ???? " + age);
 		System.out.println("id 뭐들어옴????? " + id);
 		
-		if (udao.kakaoLogin(id, email)) {
+		
+		if (udao.checkKakaoId(id) == false) {
 			
-			user = udao.checkKakaoId(id);
-			
-			System.out.println("???????? " + user.getAge_range());
-			System.out.println("??????? " + user.getUser_email());
-			System.out.println("??????? " + user.getUser_no());
-			
-			System.out.println("로그인 성공");
-			session.setAttribute( "kakaoInfo" , user );
-			
-			forward.setPath(req.getContextPath() + "/index.jsp");
-			
-		} else {
+			System.out.println("들어옴 ㅇㅇㅇㅇㅇㅇ");
 			
 			user.setUser_name(kakao_id);
-			user.setUser_pw(""); 
+			user.setUser_pw("1234"); 
 			user.setBirth_year("");
 			user.setAge_range(age);
 			user.setUser_email(email);
@@ -73,11 +63,34 @@ public class KakaoLoginOkAction implements Action {
 				out.println("alert('회원가입 실패. 잠시 후 다시 시도해주세요.');");
 				out.println("</script>");
 				out.close();
-			}
-		}		
-		
+				
+			}			
+			
+		} else if (udao.checkKakaoId(id) == true) {
+			
+			System.out.println("w제발 ㅠㅠㅠㅠ");
+			
+//			if (udao.kakaoLogin(id, email)) {
+				
+				user = udao.kakaoInfo(id);
+				
+					
+				
+				System.out.println("???????? " + user.getAge_range());
+				System.out.println("??????? " + user.getUser_email());
+				System.out.println("??????? " + user.getUser_no());
+				
+				System.out.println("로그인 성공");
+				session.setAttribute( "kakaoInfo" , user );
+				
+				forward.setPath(req.getContextPath() + "/index.jsp");
+				
 
-		forward.setRedirect(true);
+//			} 
+			
+		}
+		
+		forward.setRedirect(false);
 		return forward;
 	}
 }

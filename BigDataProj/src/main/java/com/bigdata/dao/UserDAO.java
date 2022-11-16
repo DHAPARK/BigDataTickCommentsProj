@@ -56,8 +56,17 @@ public class UserDAO {
 		return uvo;
 	}
 	
-	public UserVO checkKakaoId(String kakao_id) {
-		return sqlSession.selectOne("User.checkKakaoId", kakao_id);
+	public boolean checkKakaoId(String kakao_id) {
+		boolean result = false;
+		
+		if ((Integer)sqlSession.selectOne("User.checkKakaoId", kakao_id) == 1) {
+			result = true;
+		}
+		return result;
+	}
+	
+	public UserVO kakaoInfo(String kakao_id) {
+		return sqlSession.selectOne("User.kakaoInfo", kakao_id);
 	}
 	
 	public boolean kakaoLogin(String kakao_id, String user_email) {

@@ -264,6 +264,9 @@ public class ChartController extends HttpServlet {
 			out.print( tt );
 			
 			break;
+
+			// 클라우드 차트
+			
 			
 		 case "/drilldown_chart/drill.ch":	// 프론트단에서 시작해준다
 				// case "index.ch":	// 프론트단에서 시작해준다
@@ -273,10 +276,6 @@ public class ChartController extends HttpServlet {
 					getComm.execute(req, res);
 					break;	
 			
-			
-			
-			
-		// 클라우드 차트
 
 		default:
 
