@@ -667,7 +667,7 @@
 		</section>
 
 		<!-- 섹션4 -->
-		<section>
+		<section id="section4">
 			<header class="text-center py-5">
 				<h2 class="fw-bolder">영향력 순위 🏆</h2>
 				<h5>세대별 가장 영향력 있는 키워드가 궁금하신가요?</h5>

@@ -21,7 +21,7 @@
             <a class="nav-link active" aria-current="page" href="#" data-anchor="section3">트렌드</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="#">영향력 순위</a>
+            <a class="nav-link active" href="#" data-anchor="section4">영향력 순위</a>
           </li>
           <!-- 네브바 줄어들 시 숨길 수 있는 px을 정할 수 있게 css에 정의해놓았다. -->
           <li class="nav-item dropdown">
@@ -41,10 +41,10 @@
               리소스
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li><a class="dropdown-item" href="${pageContext.request.contextPath}/fixed/term.jsp">이용약관</a></li>
+              <li><a class="dropdown-item" href="${pageContext.request.contextPath}/fixed/privacyPolicy.jsp">개인정보처리방침</a></li>
               <li><a class="dropdown-item" href="#">서비스 소개</a></li>
               <li><a class="dropdown-item" href="#">도움말</a></li>
-              <li><a class="dropdown-item" href="#">이용약관</a></li>
-              <li><a class="dropdown-item" href="#">개인정보처리방침</a></li>
             </ul>
           </li>
         </ul>

@@ -52,6 +52,8 @@
               리소스
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li><a class="dropdown-item" href="${pageContext.request.contextPath}/fixed/term.jsp">이용약관</a></li>
+              <li><a class="dropdown-item" href="${pageContext.request.contextPath}/fixed/privacyPolicy.jsp">개인정보처리방침</a></li>
               <li><a class="dropdown-item" href="#">서비스 소개</a></li>
               <li><a class="dropdown-item" href="#">도움말</a></li>
             </ul>
