@@ -387,8 +387,6 @@
 											style="display: block; margin: 0 auto">
 											<g transform="translate(378, 180)">
 											
-										<%-- <c:forEach var="str" items="${chartList }" varStatus="status" > --%>
-										
 											<text class="cloudChartTXT" cursor="pointer"
 												fill="rgb(135, 151, 104)" font-family="Noto Sans"
 												font-style="normal" font-weight="400" text-anchor="middle"
@@ -550,7 +548,6 @@
 												font-style="normal" font-weight="400" text-anchor="middle"
 												transform="translate(-99, 133)" font-size="13px">마크툽</text>
 										
-										<%-- </c:forEach> --%>	
 											</g>
 										</svg>
 									</div>
@@ -704,8 +701,6 @@
 							data-bs-target="#joinModal">무료 가입하기</button>
 					</c:when>
 					<c:otherwise>
-						<button class="btn btn-dark" data-bs-toggle="modal"
-							data-bs-target="#joinModal">무료 가입하기</button>
 						<button class="btn btn-outline-dark" type="button"
 							onclick="location.href='${pageContext.request.contextPath}/board/BoardList.bo?ageRange=${ userInfo.age_range }'">게시판으로
 							이동</button>
