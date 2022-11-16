@@ -21,6 +21,11 @@
 	<script src="https://code.highcharts.com/modules/accessibility.js"></script>
 <!-- packedBubble 차트 -->
 
+<!-- drillChart -->
+	<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script src="https://code.highcharts.com/modules/data.js"></script>
+	<script src="https://code.highcharts.com/modules/drilldown.js"></script>
+	<script src="https://code.highcharts.com/modules/export-data.js"></script>
 
   <!-- favicon -->
   <link rel="icon" href="${pageContext.request.contextPath}/assets/images/favicon.ico" type="image/x-icon">
