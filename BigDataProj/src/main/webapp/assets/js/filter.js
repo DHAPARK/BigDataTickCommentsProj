@@ -138,7 +138,7 @@ $('#sepiaFilter').on('click', function () {
     var pixels = ctx.getImageData(0,0, canvas.width, canvas.height);
 
     // image processing
-    var filteredData = grayscaleFilter(pixels);
+    var filteredData = sepiaFilter(pixels);
 
     // Canvas에 다시 그린다.
     ctx.putImageData(filteredData, 0 , 0);
