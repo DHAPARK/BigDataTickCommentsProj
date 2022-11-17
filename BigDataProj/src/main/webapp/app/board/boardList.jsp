@@ -120,34 +120,35 @@
                         		<div class="row justify-content-center">
 	                                <c:forEach var="board" items="${boardList}" begin="0" end="10" step="1" varStatus="status" >
 	                                <c:set var="date" value="${board.board_date }"/>
+	                                <c:set var="content" value="${board.board_content }"/>
 											<div class="col-lg-4 col-md-6 mb-4">
-										<a href="${pageContext.request.contextPath}/board/BoardViewOk.bo?board_no=${board.board_no}">
-												<div class="card h-100" >
-													<div class="card-header justify-content-between">
-														<div class="row mb-0">
-															<div class="col">
-																${board.board_title }
+												<a href="${pageContext.request.contextPath}/board/BoardViewOk.bo?board_no=${board.board_no}" style="color: #777777">
+													<div class="card h-100" >
+														<div class="card-header justify-content-between">
+															<div class="row mb-0">
+																<div class="col">
+																	${board.board_title }
+																</div>
+																<div class="col" style="text-align: right; font-weight: bold;">
+																	${board.user_name }
+																</div>
 															</div>
-															<div class="col" style="text-align: right;">
-																${board.user_name }
+														</div>
+														<div class="card-body" style="display: flex;">
+															${ nowPage == 1 ? "" : nowPage - 1 }${ status.count }번째 게시글 &ensp; ${fn:substring(content,0,20)} ...
+														</div>
+														<div class="card-footer justify-content-between">
+															<div class="row">
+																<div class="col-8">
+																	작성일 : ${fn:substring(date,0,10)}
+																</div>
+																<div class="col" style="text-align: right;">
+																 	❤️ : ${board.likes }
+																</div>
 															</div>
 														</div>
 													</div>
-													<div class="card-body">
-														${ nowPage == 1 ? "" : nowPage - 1 }${ status.count }번째 게시판 콘텐츠 미리보기를 넣을 예정입니다.
-													</div>
-													<div class="card-footer justify-content-between">
-														<div class="row">
-															<div class="col-8">
-																작성일 : ${fn:substring(date,0,10)}
-															</div>
-															<div class="col" style="text-align: right;">
-															 	❤️ : ${board.likes }
-															</div>
-														</div>
-													</div>
-												</div>
-	                       				</a>
+			                       				</a>
 											</div>
 	                                </c:forEach>
                                 </div>

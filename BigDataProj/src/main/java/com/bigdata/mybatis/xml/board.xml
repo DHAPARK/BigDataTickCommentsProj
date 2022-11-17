@@ -11,7 +11,7 @@
 	</select> -->
 	<!-- 내코드 -->
 	<select id="getBoardList" parameterType="hashmap" resultType="boardVO">
-		SELECT 	BOARD_NO, USER_NAME, AGE_RANGE, BOARD_TITLE, BOARD_DATE, LIKES
+		SELECT 	BOARD_NO, USER_NAME, AGE_RANGE, BOARD_TITLE, BOARD_CONTENT, BOARD_DATE, LIKES
 		FROM(	SELECT	ROWNUM R, B.*
 				FROM	(SELECT * FROM TABLE_BOARD WHERE age_range LIKE '${ageRange}%' ORDER BY BOARD_NO DESC) B)
 		WHERE 	R BETWEEN #{startRow} AND #{endRow}
