@@ -89,8 +89,19 @@
                 	</div>
             	</article>
 	            <article>
-	            	<input type="hidden" name="user_name" value="${userInfo.user_name}">
-	            	<input type="hidden" name="age_range" value="${userInfo.age_range}">
+	            	<c:choose>
+				      	<c:when test="${ not empty userInfo }">
+				      		<input type="hidden" name="user_name" value="${userInfo.user_name}">
+	            			<input type="hidden" name="age_range" value="${userInfo.age_range}">
+				      	</c:when>
+				      	<c:otherwise>
+				      		<c:if test="${ not empty kakaoInfo }">
+				      			<input type="hidden" name="user_name" value="${kakaoInfo.user_name}">
+	            				<input type="hidden" name="age_range" value="${kakaoInfo.age_range}">
+				      		</c:if>
+				      	</c:otherwise>
+				  	</c:choose>
+	            	
 	                <!-- 제목을 입력해주세요. -->
 	                <input id="board_title" name="board_title" type="text" class="form-control mb-3" placeholder="제목을 입력해주세요.">
 	            </article>

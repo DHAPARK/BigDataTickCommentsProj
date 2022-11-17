@@ -121,15 +121,15 @@
 	            </div>
 	          <div class="mb-3">
 	            <label><input type="checkbox" class=""> <span id="choice">&nbsp;이벤트 등 프로모션 알림 메일 수신에 동의합니다. (선택)</span></label>
-	            <label><input type="checkbox" class="">
-	              <a href="" target="_blank"> <span id="choice">&nbsp;개인정보처리방침</span>
+	            <label><input type="checkbox" class="" checked >
+	              <a href="${pageContext.request.contextPath}/fixed/privacyPolicy.jsp" target="_blank"> <span id="choice">&nbsp;개인정보처리방침</span>
 	                <svg class="style__SVG-sc-17sew62-0 eWSRQr" size="1" aria-hidden="true" focusable="false" role="img"
 	                  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="width: 0.7rem; height: 0.7rem;">
 	                  <path fill="currentColor" d="M432,320H400a16,16,0,0,0-16,16V448H64V128H208a16,16,0,0,0,16-16V80a16,16,0,0,0-16-16H48A48,48,0,0,0,0,112V464a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V336A16,16,0,0,0,432,320ZM488,0h-128c-21.37,0-32.05,25.91-17,41l35.73,35.73L135,320.37a24,24,0,0,0,0,34L157.67,377a24,24,0,0,0,34,0L435.28,133.32,471,169c15,15,41,4.5,41-17V24A24,24,0,0,0,488,0Z"></path>
 	                </svg>
 	              </a> <span id="choice">및 </span>
 
-	                <a href="" target=" _blank"><span id="choice">이용약관</span>
+	                <a href="${pageContext.request.contextPath}/fixed/term.jsp" target=" _blank"><span id="choice">이용약관</span>
 	                <svg class="" size="1" aria-hidden="true" focusable="false" role="img"
 	                  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="width: 0.7rem; height: 0.7rem;">
 	                  <path fill="currentColor" d="M432,320H400a16,16,0,0,0-16,16V448H64V128H208a16,16,0,0,0,16-16V80a16,16,0,0,0-16-16H48A48,48,0,0,0,0,112V464a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V336A16,16,0,0,0,432,320ZM488,0h-128c-21.37,0-32.05,25.91-17,41l35.73,35.73L135,320.37a24,24,0,0,0,0,34L157.67,377a24,24,0,0,0,34,0L435.28,133.32,471,169c15,15,41,4.5,41-17V24A24,24,0,0,0,488,0Z"></path>

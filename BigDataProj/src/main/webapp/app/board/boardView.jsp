@@ -60,12 +60,21 @@
                                 <li><input type="button" value="목록" class="primary" onclick="goBack();"
                                         style="font-size: 12px !important;">
                                 </li>
-                                <c:if test="${ userInfo.user_name eq board.user_name }">
+                                <c:if test="${ userInfo.user_name eq board.user_name or kakaoInfo.user_name eq kakaoInfo.user_name }">
                                     <li><input type="button" value="수정" onclick="location.href='${pageContext.request.contextPath}/board/BoardEdit.bo?board_no=${board.board_no }'" style="font-size: 12px !important;">
                                     </li>
                                     <li>
-	                                    <form name="deleteForm" action="${pageContext.request.contextPath}/board/DeletePostOk.bo?board_no=${board.board_no}" method="post">
-	                                    	<input type="hidden" name="age_range" value="${userInfo.age_range}">
+	                                    <form name="deleteForm" action="${pageContext.request.contextPath}/board/DeletePostOk.bo?board_no=${board.board_no }" method="post">
+	                                    <c:choose>
+									      	<c:when test="${ not empty userInfo }">
+						            			<input type="hidden" name="age_range" value="${userInfo.age_range}">
+									      	</c:when>
+									      	<c:otherwise>
+									      		<c:if test="${ not empty kakaoInfo }">
+						            				<input type="hidden" name="age_range" value="${kakaoInfo.age_range}">
+									      		</c:if>
+									      	</c:otherwise>
+									  	</c:choose>
 	                                    	<input type="button" value="삭제" onclick="deletePost()" style="font-size: 12px !important;">
 	                                    </form>
                                     </li>

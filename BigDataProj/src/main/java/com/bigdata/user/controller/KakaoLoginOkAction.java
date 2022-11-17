@@ -38,7 +38,7 @@ public class KakaoLoginOkAction implements Action {
 		
 		if (udao.checkKakaoId(id) == false) {
 			
-			System.out.println("들어옴 ㅇㅇㅇㅇㅇㅇ");
+			System.out.println("회원가입 들어옴 ㅇㅇㅇㅇㅇㅇ");
 			
 			user.setUser_name(kakao_id);
 			user.setUser_pw("1234"); 
@@ -68,17 +68,9 @@ public class KakaoLoginOkAction implements Action {
 			
 		} else if (udao.checkKakaoId(id) == true) {
 			
-			System.out.println("w제발 ㅠㅠㅠㅠ");
-			
 //			if (udao.kakaoLogin(id, email)) {
 				
 				user = udao.kakaoInfo(id);
-				
-					
-				
-				System.out.println("???????? " + user.getAge_range());
-				System.out.println("??????? " + user.getUser_email());
-				System.out.println("??????? " + user.getUser_no());
 				
 				System.out.println("로그인 성공");
 				session.setAttribute( "kakaoInfo" , user );

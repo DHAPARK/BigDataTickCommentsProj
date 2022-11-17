@@ -282,7 +282,7 @@
 			<section class="py-5">
 				<header class="text-center py-5">
 					<h2 class="fw-bolder">주요 서비스 🧐</h2>
-					<h5>블랙키위의 강력한 서비스들과 함께하면 검색 엔진 마케팅이 쉬워집니다.</h5>
+					<h5>트롤링의 강력한 서비스들과 함께하면 검색 엔진 마케팅이 쉬워집니다.</h5>
 				</header>
 
 				<article>

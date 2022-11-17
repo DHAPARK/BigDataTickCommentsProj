@@ -13,8 +13,8 @@
         <h6 class="pb-2"><strong>Service</strong></h6>
         <ul class="flex-column list-unstyled anchor_tab">
           <li class="mb-1"><a href="#" class="nav-link p-0 text-white" data-anchor="section3">트렌드</a></li>
-          <li class="mb-1"><a href="#" class="nav-link p-0 text-white" data-anchor="section4">영향력 순위</a></li>
-          <li class="mb-1"><a href="#" class="nav-link p-0 text-white" data-anchor="searchInput">키워드 검색</a></li>
+          <li class="mb-1"><a href="#" class="nav-link p-0 text-white" data-anchor="searchInput">영향력 순위</a></li>
+          <li class="mb-1"><a href="#" class="nav-link p-0 text-white">키워드 검색</a></li>
         </ul>
       </div>
 
