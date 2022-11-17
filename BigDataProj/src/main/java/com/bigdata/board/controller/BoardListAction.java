@@ -18,8 +18,8 @@ public class BoardListAction implements Action {
 		int page = temp == null ? 1 : Integer.parseInt(temp);
 		int pageSize = 10;
 		
-		int endRow = page * pageSize;
-		int startRow = endRow - 9;
+		int endRow = page * 9;
+		int startRow = endRow - 8;
 		
 		//int totalCnt = dao.getBoardCnt();
 		int totalCnt = dao.getEachAgeBoardCnt( Integer.parseInt( req.getParameter("ageRange") ) / 10 );
