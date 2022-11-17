@@ -42,11 +42,11 @@
 </head>
 
 <body>
-	<c:if test="${ empty userInfo and empty kakaoInfo }">
-		<script>
+ 	<c:if test="${ empty userInfo and empty kakaoInfo }">
+ 		<script>
 			alert("로그인 후 이용하세요.");
 			location.replace("${pageContext.request.contextPath}/index.jsp");
-		</script>
+ 		</script>
 	</c:if>
 
   <!-- #################################################################################################################### -->
