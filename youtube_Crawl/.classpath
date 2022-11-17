@@ -6,7 +6,7 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/gyqls/Downloads/selenium-server-4.6.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/gyqls/0803_gb_ahb/1조/ojdbc8-full/ojdbc8.jar"/>
+	<classpathentry kind="lib" path="C:/Users/thddy/OneDrive/바탕 화면/크롤링하기!/ojdbc8.jar"/>
+	<classpathentry kind="lib" path="C:/Users/thddy/OneDrive/바탕 화면/selenium-server-4.6.0 (2).jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
