@@ -75,7 +75,7 @@
                 <!-- div_table 시작 -->
                 <div id="div_table">
                	<div class="justify-content-between">
-	 				<div class="d-flex flex-row justify-content-between" >
+	 				<div class="d-flex flex-row justify-content-between mb-1" >
 						<div class="item col-10">
 							<div class="row">
 								<div class="col-2">
@@ -159,10 +159,6 @@
                                 </tr>
                             </c:otherwise>
                         </c:choose>
-                    </table>
-                    
-
-                   <table>
                         <tr align="center" valign="middle">
                             <td>
                                 <c:if test="${nowPage > 1}">
@@ -187,12 +183,6 @@
                             </td>
                         </tr>
                     </table>
-                    <div id="write_button_div">
-                    	<c:if test="${ not empty userInfo or not empty kakaoInfo }">
-                        	<button class="btn btn-dark" type="button" onclick="location.href='${pageContext.request.contextPath}/board/BoardWrite.bo'" style="font-size:12px;">글쓰기</button>
-                        </c:if>
-                    </div>
-
                 </div>
                 <!-- div_table 끝 -->
 
@@ -223,7 +213,11 @@
         </div>
         <!-- Wrapper 끝 -->
     </div>
-
+  	<!-- footer 시작 -->
+  	<footer class="container-fluid bg-dark p-5" style="margin-top: auto;">
+    	<jsp:include page="/fixed/footer.jsp"></jsp:include>
+  	</footer>
+  	<!--footer 끝 -->
 	<!-- #################################################################################################################### -->
 	  <!-- 로그인 & 회원가입 모달창 시작 -->
 	 <jsp:include page="/app/user/loginAndRegister.jsp"></jsp:include>

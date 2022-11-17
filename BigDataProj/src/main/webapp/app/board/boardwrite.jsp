@@ -42,11 +42,11 @@
 </head>
 
 <body>
-	<c:if test="${ empty userInfo and empty kakaoInfo }">
-		<script>
+ 	<c:if test="${ empty userInfo and empty kakaoInfo }">
+ 		<script>
 			alert("로그인 후 이용하세요.");
 			location.replace("${pageContext.request.contextPath}/index.jsp");
-		</script>
+ 		</script>
 	</c:if>
 
   <!-- #################################################################################################################### -->
@@ -89,18 +89,10 @@
                 	</div>
             	</article>
 	            <article>
-	            <c:choose>
-			      	<c:when test="${ empty userInfo and empty kakaoInfo }">
-			        	 <jsp:include page="/fixed/nav.jsp"></jsp:include>
-			      	</c:when>
-			      	<c:otherwise>
-					     <jsp:include page="/fixed/nav_login.jsp"></jsp:include>
-			      	</c:otherwise>
-  				</c:choose>
 	            	<input type="hidden" name="user_name" value="${userInfo.user_name}">
 	            	<input type="hidden" name="age_range" value="${userInfo.age_range}">
 	                <!-- 제목을 입력해주세요. -->
-	                <input id="board_title" name="board_title" type="text" class="form-control form-control-sm mb-3" placeholder="제목을 입력해주세요.">
+	                <input id="board_title" name="board_title" type="text" class="form-control mb-3" placeholder="제목을 입력해주세요.">
 	            </article>
 	            <article>
 	                <textarea id="summernote" name="board_content"></textarea>
