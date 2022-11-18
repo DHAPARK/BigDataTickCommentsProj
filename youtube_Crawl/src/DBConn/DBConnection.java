@@ -14,13 +14,6 @@ public class DBConnection {
 		
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			
-//			final String dbURL = "jdbc:oracle:thin:@dtdb_high?TNS_ADMIN=Wallet_dtdb" ;
-//
-//			final String dbID = "ADMIN" ;
-//
-//			final String dbPW = "Ehgusdlsp486" ;
-			
-			
 			final String dbURL = "jdbc:oracle:thin:@localhost:1521:xe" ;
 			
 			final String dbID = "aron" ;
