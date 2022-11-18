@@ -14,14 +14,11 @@ public class DBConnector {
 			
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 
-			//final String dbURL = "jdbc:oracle:thin:@localhost:1521:xe" ;
-
-//			final String dbURL = "jdbc:oracle:thin:@dtdb_high?TNS_ADMIN=/Users/vanessa/importantKeyPair/Wallet_dtdb" ;
-			final String dbURL = "jdbc:oracle:thin:@arondb_high?TNS_ADMIN=/Users/vanessa/importantKeyPair/Wallet_arondb" ;
+			final String dbURL = "jdbc:oracle:thin:@localhost:1521:xe" ;
 			
-			final String dbID = "ADMIN" ;
+			final String dbID = "dt" ;
 			
-			final String dbPW = "Ehgusdlsp486" ;
+			final String dbPW = "1234" ;
 			
 			conn = DriverManager.getConnection(dbURL, dbID, dbPW);
 			
