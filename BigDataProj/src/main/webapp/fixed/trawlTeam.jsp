@@ -45,7 +45,7 @@ background-color: hsla(0,0%,0%,1);
     <div style="text-align: center;">
       <header class="text-center py-5">
         <h2 class="fw-bolder">트롤 크루 🌝</h2>
-        <h5>트롤링을 이끌고 있는 틀링이들을 소개합니다.</h5>
+        <h5>트롤링을 이끌고 있는 트링이들을 소개합니다.</h5>
         <img src="${pageContext.request.contextPath}/assets/images/TTeam.png" width="100%;">
       </header>
       
