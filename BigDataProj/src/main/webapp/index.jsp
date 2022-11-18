@@ -137,6 +137,7 @@
 </head>
 
 <body>
+ 
   <header>
   </header>
   
@@ -157,6 +158,7 @@
   
   <!-- 섹션 요소 -->
   <section class="container-fluid bg-dark p-5">
+  
 
 <!--     <header class="py-5 text-white"> -->
     <header class="row justify-content-center w-60" style="float: none; margin:100 auto;">
@@ -272,13 +274,11 @@
 			alt="loading">
 	</div>
 	<!-- 차트 로딩화면 -->
-
-
+	
 	<!-- 좌우 사이즈 줄이고 싶으면 이거 변경 -->
 	<!-- 이영님이 회색해달라해서....급하게 레이아웃 급조 -->
 	<div style="background-color: #E8E8E8;">
 		<div class="container-sm">
-			<!-- 섹션2 -->
 			<section class="py-5">
 				<header class="text-center py-5">
 					<h2 class="fw-bolder">주요 서비스 🧐</h2>
@@ -665,9 +665,24 @@
 			</article>
 
 		</section>
+		
+		</div>
 
 		<!-- 섹션4 -->
-		<section id="section4">
+		<div style="background-color: hsla(0,0%,0%,1);">
+			<div class="container-sm">
+				<section class="py-5" id="section4" style="background-color: hsla(0,0%,0%,1);">
+					<header class="text-center py-5" style="color: white;">
+						<h2 class="fw-bolder pt-5 pb-2">트롤 크루 🌝</h2>
+						<h5>트롤링을 이끌고 있는 틀링이들을 소개합니다.</h5>
+						<img src="${pageContext.request.contextPath}/assets/images/TTeam.png" width="70%;">
+					</header>
+				</section>
+			</div>
+		</div>
+		
+		<div class="container-sm">
+		<section class="py-5" id="section4">
 			<header class="text-center py-5">
 				<h2 class="fw-bolder">영향력 순위 🏆</h2>
 				<h5>세대별 가장 영향력 있는 키워드가 궁금하신가요?</h5>
@@ -675,7 +690,7 @@
 		</section>
 
 		<!-- 섹션5 -->
-		<section class="container text-center py-5 ">
+		<section class="container text-center pb-5 ">
 			<header class="pb-5">
 				<div>
 					<img class="col-md-3"
@@ -689,7 +704,7 @@
 				<h5>10초 회원가입 후 99,392명이 사용 중인 트롤링의 다양한 서비스들을 경험해보세요.</h5>
 			</article>
 
-			<article>
+			<article class="pb-5">
 
 				<!-- 흰색 버튼 -->
 				<c:choose>
@@ -712,6 +727,8 @@
 			</article>
 
 		</section>
+		
+		</div>
 
 		<!-- 섹션6 -->
 		<!-- <section>
@@ -738,7 +755,6 @@
       </article>
     </section> -->
 
-	</div>
 
 	<!-- #################################################################################################################### -->
 	<!-- footer 시작 -->

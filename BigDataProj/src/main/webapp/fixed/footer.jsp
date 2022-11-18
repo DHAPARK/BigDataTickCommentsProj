@@ -38,7 +38,7 @@
       <div class="col-lg-2 pb-4 text-truncate" style="margin-left: auto;">
         <h6 class="pb-2"><strong>Resource</strong></h6>
         <ul class="flex-column list-unstyled">
-          <li class="mb-1"><a href="#" class="nav-link p-0 text-white">트롤링 소개</a></li>
+          <li class="mb-1"><a href="${pageContext.request.contextPath}/fixed/trawlTeam.jsp" class="nav-link p-0 text-white">트롤링 소개</a></li>
           <li class="mb-1"><a href="#" class="nav-link p-0 text-white">멤버십 소개</a></li>
           <li class="mb-1"><a href="#" class="nav-link p-0 text-white">크레딧</a></li>
           <li class="mb-1"><a href="#" class="nav-link p-0 text-white">업데이트 소식</a></li>
